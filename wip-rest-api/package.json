@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "PGDATABASE=wip_test jest src/test/*.test.js --watch"
+    "test": "PGDATABASE=wip_test jest src/test/*.test.js --watch",
+    "start": "nodemon src/server.js"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +13,7 @@
   "devDependencies": {
     "eslint": "^7.0.0",
     "jest": "^26.0.1",
+    "nodemon": "^2.0.4",
     "supertest": "^4.0.2"
   },
   "dependencies": {

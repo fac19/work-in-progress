@@ -21,15 +21,16 @@ describe("File tests are running", () => {
 //   });
 // });
 
+build();
+
 // Tests user-models 
 describe("Database tests are running", () => {
-  test("information can be retrieved", () => {
-    build().then(() => {
-      getUsers().then((data) => {
+  test("information can be retrieved", async () => {
+    await getUsers()
+      .then((data) => {
         expect(data.username).toEqual("CampbellDocherty")
       })
-    })
-    .catch(console.error)
+      .catch(console.error)
   })
 })
 

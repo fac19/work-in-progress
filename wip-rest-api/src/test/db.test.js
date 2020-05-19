@@ -1,20 +1,40 @@
+const dbconnection = require('../database/connection');
 const build = require('../database/build')
+const {getUsers} = require('../model/users-model')
 // const model = require('../model')
 
-// beforeAll(() => {
-//   build();
-// });
 
-// afterAll(() => {
-//   build();
-// });
+describe("File tests are running", () => {
+  test("1 should equal 1", () => {
+    expect(1).toEqual(1);
+  });
+});
 
 // build();
 
-describe("Databse test are running", () => {
-  test("1 should equal 1", () => {
+// describe("Database tests are running", () => {
+//   test("information can be retrieved", () => {
     
-    expect(1).toEqual(1);
+//     const username = getUsers();
+//     expect(username).toEqual('CampbellDocherty');
 
-  });
+//   });
+// });
+
+build();
+
+// Tests user-models 
+describe("Database tests are running", () => {
+  test("information can be retrieved", async () => {
+    await getUsers()
+      .then((data) => {
+        expect(data.username).toEqual("CampbellDocherty")
+      })
+      .catch(console.error)
+  })
+})
+
+afterAll(() => {
+  console.log("End of testing for Database")
+  return dbconnection.end();
 });

@@ -9,7 +9,6 @@ const server = express();
 server.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));
 
 server.use(express.json()); //so that express knows to use JSON
-const logger = require('./middleware/logger')
 
 //Routes for users
 

@@ -1,6 +1,6 @@
-const supertest = require("supertest")
-const server = require("../server");
-const build = require("../db/build");
+// const supertest = require("supertest")
+// const server = require("../server");
+// const build = require("../db/build");
 
 
 describe("Server tests are running!", () => {

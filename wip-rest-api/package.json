@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "PGDATABASE=wip_test jest src/test/*.test.js"
+    "test": "PGDATABASE=wip_test jest src/test/*.test.js --watch"
   },
   "keywords": [],
   "author": "",

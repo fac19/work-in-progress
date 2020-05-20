@@ -1,7 +1,7 @@
 const express = require("express");
 // const auth = require("../middleware/auth");
 // const error = require("../middleware/error");
-// const logger = require('./middleware/logger');
+const logger = require('./middleware/logger');
 const users = require('./handlers/users')
 const auth = require('./middleware/authorise')
 
@@ -10,13 +10,14 @@ const PORT = process.env.PORT || 3000;
 const server = express();
 server.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));
 
+server.use(logger)
 server.use(express.json()); //so that express knows to use JSON
 
 //Routes for users
-// server.get('/user/:username', auth, users.get)
-// server.post('user', users.post)
-// server.put('/user/:username', auth, users.put)
-// server.delete('/user/:username', auth, users.delete)
+server.get('/user/:username', auth, users.get)
+server.post('user', users.post)
+server.put('/user/:username', auth, users.put)
+server.delete('/user/:username', auth, users.delete)
 
 
 //Routes for projects

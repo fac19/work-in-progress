@@ -7,7 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "app": "cd wip-app && npm start",
     "api": "cd wip-rest-api && npm start",
-    "build": "cd wip-app && npm run build",
     "prettier": "./node_modules/.bin/prettier . --write",
     "backeslint": "./wip-rest-api/node_modules/.bin/eslint wip-rest-api --fix"
   },
@@ -26,7 +25,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run prettier && npm run backeslint && npm run build"
+      "pre-commit": "npm run prettier && npm run backeslint"
     }
   }
 }

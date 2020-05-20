@@ -1,16 +1,16 @@
-const jwt = require("jsonwebtoken");
+const jwt = require("jsonwebtoken")
 const dotenv = require("dotenv")
 
 dotenv.config()
-const SECRET = process.env.JWT_SECRET;
+const SECRET = process.env.JWT_SECRET
 
-function getUser(req, res, next){
-    const token = req.cookies.token;
-    if (token) {
-      const user = jwt.verify(token, SECRET);
-      req.user = user.username;
-    }
-    next();
+function getUser(req, res, next) {
+  const token = req.cookies.token
+  if (token) {
+    const user = jwt.verify(token, SECRET)
+    req.user = user.username
+  }
+  next()
 }
 
-module.exports = getUser;
+module.exports = getUser

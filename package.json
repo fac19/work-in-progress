@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "app": "cd wip-app && npm start",
-    "api": "cd wip-rest-api && npm start"
+    "api": "cd wip-rest-api && npm start",
+    "prettier": "./node_modules/.bin/prettier . --write",
+    "backeslint": "./wip-rest-api/node_modules/.bin/eslint wip-rest-api --fix"
   },
   "repository": {
     "type": "git",
@@ -17,5 +19,15 @@
   "bugs": {
     "url": "https://github.com/fac19/work-in-progress/issues"
   },
-  "homepage": "https://github.com/fac19/work-in-progress#readme"
+  "homepage": "https://github.com/fac19/work-in-progress#readme",
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && npm run prettier && npm run backeslint"
+    }
+  }
 }

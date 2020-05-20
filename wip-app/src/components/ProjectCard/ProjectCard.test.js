@@ -1,7 +1,7 @@
-import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
-import ProjectCard from './ProjectCard';
+import React from "react"
+import { render, screen, fireEvent } from "@testing-library/react"
+import ProjectCard from "./ProjectCard"
 
 test("Jest is working", () => {
-  expect(true).toBeTruthy();
-});
+  expect(true).toBeTruthy()
+})

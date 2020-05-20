@@ -18,11 +18,11 @@ server.use(logger);
 server.use(express.json()); //so that express knows to use JSON
 
 //Routes for users
-server.get('/user/:username', auth, users.get)
+// server.get('/user/:username', auth, users.get)
 server.post('/logIn', users.postLogIn)
 server.post('/signUp', users.postSignUp)
-server.put('/user/:username', auth, users.put)
-server.delete('/user/:username', auth, users.delete)
+// server.put('/user/:username', auth, users.put)
+// server.delete('/user/:username', auth, users.delete)
 
 
 //Routes for projects

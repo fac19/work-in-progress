@@ -1,13 +1,13 @@
-import React from 'react';
-import './App.css';
+import React from "react"
+import "./App.css"
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link,
   useRouteMatch,
-  useParams
-} from "react-router-dom";
+  useParams,
+} from "react-router-dom"
 
 export default function App() {
   return (
@@ -38,19 +38,19 @@ export default function App() {
         </Switch>
       </div>
     </Router>
-  );
+  )
 }
 
 function Home() {
-  return <h2>Home</h2>;
+  return <h2>Home</h2>
 }
 
 function About() {
-  return <h2>About</h2>;
+  return <h2>About</h2>
 }
 
 function Topics() {
-  let match = useRouteMatch();
+  let match = useRouteMatch()
 
   return (
     <div>
@@ -61,9 +61,7 @@ function Topics() {
           <Link to={`${match.url}/components`}>Components</Link>
         </li>
         <li>
-          <Link to={`${match.url}/props-v-state`}>
-            Props v. State
-          </Link>
+          <Link to={`${match.url}/props-v-state`}>Props v. State</Link>
         </li>
       </ul>
 
@@ -80,10 +78,10 @@ function Topics() {
         </Route>
       </Switch>
     </div>
-  );
+  )
 }
 
 function Topic() {
-  let { topicId } = useParams();
-  return <h3>Requested topic ID: {topicId}</h3>;
+  let { topicId } = useParams()
+  return <h3>Requested topic ID: {topicId}</h3>
 }

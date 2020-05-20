@@ -1,8 +1,8 @@
-import React from 'react';
-import { render, screen, fireEvent } from '@testing-library/react';
-import App from './App';
+import React from "react"
+import { render, screen, fireEvent } from "@testing-library/react"
+import App from "./App"
 
-test('renders home link', () => {
-  render(<App />);
-  screen.getAllByText('Home');
-});
+test("renders home link", () => {
+  render(<App />)
+  screen.getAllByText("Home")
+})

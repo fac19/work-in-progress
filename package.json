@@ -8,7 +8,6 @@
     "app": "cd wip-app && npm start",
     "api": "cd wip-rest-api && npm start",
     "prettier": "./node_modules/.bin/prettier . --write",
-    "fronteslint": "cd wip-app && ./node_modules/.bin/eslint",
     "backeslint": "./wip-rest-api/node_modules/.bin/eslint wip-rest-api --fix"
   },
   "repository": {
@@ -28,7 +27,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && npm run prettier && npm run fronteslint && npm run backeslint"
+      "pre-commit": "pretty-quick --staged && npm run prettier && npm run backeslint"
     }
   }
 }

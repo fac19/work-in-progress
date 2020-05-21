@@ -7,6 +7,10 @@ const LandingPage = ({ setLoggedIn }) => {
   return (
     <div>
       <h1>Work In Progress</h1>
+      <p>
+        A social media platform for creatives to receive feedback on their works
+        in progress
+      </p>
       <LandingUlStyle>
         <LandingLiStyle>
           <Link to="/log-in">

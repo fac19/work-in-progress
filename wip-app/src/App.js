@@ -12,10 +12,18 @@ import NotificationPage from "./pages/NotificationPage/NotificationPage";
 import { MainWrapper } from "./pages/page.style";
 
 const App = () => {
+  const [loggedIn, setLoggedIn] = React.useState(false);
+
   return (
     <Router>
-      <TopNavbar />
-      <BottomNavbar />
+      {loggedIn && (
+        <>
+          <TopNavbar setLoggedIn={setLoggedIn} />
+          <BottomNavbar />
+        </>
+      )}
+
+      {!loggedIn && <LandingPage setLoggedIn={setLoggedIn} />}
 
       <Switch>
         <Route path="/new-project">
@@ -23,11 +31,7 @@ const App = () => {
             <AddProjectPage />
           </MainWrapper>
         </Route>
-        <Route path="/sign-out">
-          <MainWrapper>
-            <LandingPage />
-          </MainWrapper>
-        </Route>
+        <Route path="/sign-out"></Route>
         <Route path="/feed">
           <MainWrapper>
             <FeedPage />

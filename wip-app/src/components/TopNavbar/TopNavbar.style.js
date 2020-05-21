@@ -13,6 +13,7 @@ const TopNavbarUlStyle = styled.ul`
   flex-direction: row;
   list-style: none;
   justify-content: space-evenly;
+  padding: 0;
 `;
 
 export { TopNavbarStyle, TopNavbarUlStyle };

@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import HomePage from "./HomePage";
+import ExplorePage from "./ExplorePage";
 
 test("Jest is working", () => {
   expect(true).toBeTruthy();

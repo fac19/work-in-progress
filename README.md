@@ -15,7 +15,7 @@ Co-authored-by: Alexreid95 <alexreid95@gmail.com>
 
 ## Database set up
 
-![schema](https://i.imgur.com/XdYbGn4.png)
+![schema](https://i.imgur.com/4S9e6wz.png)
 
 Add the following information into a `.env` file inside the `wip-rest-api/` folder:
 

@@ -16,7 +16,7 @@ const App = () => {
 
   return (
     <Router>
-      {loggedIn === true && (
+      {loggedIn && (
         <>
           <TopNavbar setLoggedIn={setLoggedIn} />
           <BottomNavbar />

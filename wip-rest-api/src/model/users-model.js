@@ -47,10 +47,15 @@ function updateUser(userId, newUserData) {
     .then((result) => result.rows[0]);
 }
 
+function deleteUser(userId) {
+  return db.query("DELETE FROM users WHERE id=($1)", [userId]);
+}
+
 module.exports = {
   //   getUsers,
   addUser,
   getUserByName,
   getUserById,
   updateUser,
+  deleteUser,
 };

@@ -77,4 +77,14 @@ function put(req, res, next) {
     .catch(next);
 }
 
-module.exports = { postSignUp, postLogIn, get, put };
+function deleteUser(req, res, next) {
+  const userId = req.user.userId;
+  model
+    .deleteUser(userId)
+    .then(() => {
+      res.status(204).send();
+    })
+    .catch(next);
+}
+
+module.exports = { postSignUp, postLogIn, get, put, deleteUser };

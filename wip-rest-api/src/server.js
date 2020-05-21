@@ -20,7 +20,7 @@ server.get("/user", checkAuth, users.get);
 server.post("/logIn", users.postLogIn);
 server.post("/signUp", users.postSignUp);
 server.put("/user", checkAuth, users.put);
-// server.delete('/user/:username', auth, users.delete)
+server.delete("/user/:username", checkAuth, users.delete);
 
 //Routes for projects
 // server.get('/project/:projectId', auth, project.get)

@@ -6,6 +6,7 @@ const {
   getUserByName,
   getUserById,
   updateUser,
+  deleteUser,
 } = require("../model/users-model");
 // const model = require('../model')
 
@@ -56,7 +57,7 @@ describe("Database tests for users", () => {
     });
   });
 
-  test.only("Can update user data", async () => {
+  test("Can update user data", async () => {
     const testUpdateUser = {
       username: "CampbellDocherty",
       email: "hey@123.com",
@@ -69,6 +70,14 @@ describe("Database tests for users", () => {
         "I am a freelance illustrator trying to make it bigger!!"
       );
       expect(user.user_vocation).toEqual("Freelance Illustrator");
+    });
+  });
+
+  test("User can be deleted from the database", async () => {
+    await deleteUser("1").then(() => {
+      getUserById("1").then((result) => {
+        expect(result).toEqual(null);
+      });
     });
   });
 });

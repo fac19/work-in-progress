@@ -1,9 +1,10 @@
 const express = require("express");
+const getUser = require("./middleware/getUser");
 const logger = require("./middleware/logger");
-const users = require("./handlers/users");
 const checkAuth = require("./middleware/authorise");
 const handleErrors = require("./middleware/error");
-const getUser = require("./middleware/getUser");
+const users = require("./handlers/users");
+const feedback = require("./handlers/feedback");
 
 const PORT = process.env.PORT || 3000;
 
@@ -20,7 +21,7 @@ server.get("/user", checkAuth, users.get);
 server.post("/logIn", users.postLogIn);
 server.post("/signUp", users.postSignUp);
 server.put("/user", checkAuth, users.put);
-server.delete("/user/:username", checkAuth, users.delete);
+// server.delete("/user/:username", checkAuth, users.delete);
 
 //Routes for projects
 // server.get('/project/:projectId', auth, project.get)
@@ -34,11 +35,11 @@ server.delete("/user/:username", checkAuth, users.delete);
 // server.put('/step/:projectId/:stepId', auth, step.put)
 // server.delete('/step/:projectId/:stepId', auth, step.delete)
 
-//Routes for comments
-// server.get('/comments/:stepId', auth, comments.get)
-// server.post('comments/:stepId', auth, comments.post)
-// server.put('/comments/:commentId', auth, comments.put)
-// server.delete('/comments/:commentId', auth, comments.delete)
+//Routes for feedback
+server.get("/feedback/:stepId", checkAuth, feedback.get);
+// server.post('feedback/:stepId', auth, feedback.post)
+// server.put('/feedback/:feedbackId', auth, feedback.put)
+// server.delete('/feedback/:feedbackId', auth, feedback.delete)
 
 //Error handler
 server.use(handleErrors);

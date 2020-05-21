@@ -6,9 +6,10 @@ const {
   getUserByName,
   getUserById,
   updateUser,
-  deleteUser,
+  // deleteUser,
 } = require("../model/users-model");
-// const model = require('../model')
+
+const { getFeedback } = require("../model/feedback-model");
 
 describe("File tests are running", () => {
   test("1 should equal 1", () => {
@@ -16,13 +17,10 @@ describe("File tests are running", () => {
   });
 });
 
-beforeEach(() => {
-  build();
-});
-// build();
-
-// Tests user-models
 describe("Database tests for users", () => {
+  beforeEach(() => {
+    build();
+  });
   // test("information can be retrieved", async () => {
   //   await getUsers().then((data) => {
   //     expect(data.username).toEqual("CampbellDocherty");
@@ -73,11 +71,25 @@ describe("Database tests for users", () => {
     });
   });
 
-  test("User can be deleted from the database", async () => {
-    await deleteUser("1").then(() => {
-      getUserById("1").then((result) => {
-        expect(result).toEqual(null);
-      });
+  // test.only("User can be deleted from the database", async () => {
+  //   await deleteUser("1").then(() => {
+  //     getUserById("1").then((result) => {
+  //       expect(result).toEqual(null);
+  //     });
+  //   });
+  // });
+});
+
+describe("Database tests for feedback", () => {
+  beforeEach(() => {
+    build();
+  });
+
+  test("Get feedback from database using stepId", async () => {
+    await getFeedback("1").then((feedback) => {
+      expect(feedback[0].feedback_text).toEqual(
+        "Nice work! Look forward to seeing it in colour!"
+      );
     });
   });
 });

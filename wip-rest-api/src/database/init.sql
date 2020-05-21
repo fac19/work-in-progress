@@ -43,24 +43,30 @@ BEGIN;
         feedback_tag VARCHAR(50)
     );
 
+    CREATE TABLE user_like
+    (
+        user_id INTEGER REFERENCES users(id),
+        project_id INTEGER REFERENCES projects(id)
+    );
+
     INSERT INTO users
         (username, email, password, user_bio, user_vocation, user_link_1, user_link_2, user_link_3)
     VALUES
         ('CampbellDocherty', 'hey@123.com', 'progression', 'I am a freelance illustrator trying to make it big', 'Freelance Illustrator', 'www.facebook.com', 'www.instagram.com', 'www.dribbble.com');
 
     INSERT INTO projects
-        (project_name, project_description)
+        (user_id, project_name, project_description)
     VALUES
-        ('A tree', 'My first attempt at drawing a tree');
+        ('1', 'A tree', 'My first attempt at drawing a tree');
 
     INSERT INTO steps
-        (step_name, step_description, step_link)
+        (project_id, step_name, step_description, step_link)
     VALUES
-        ('1st sketch', 'My frst sketch of the trunk', 'https://i.pinimg.com/originals/01/0b/5e/010b5e4a0f38a9331d872ac0c179efff.jpg');
+        ('1', '1st sketch', 'My frst sketch of the trunk', 'https://i.pinimg.com/originals/01/0b/5e/010b5e4a0f38a9331d872ac0c179efff.jpg');
 
     INSERT INTO feedback
-        (feedback_text, feedback_tag)
+        (user_id, project_id, step_id, feedback_text, feedback_tag)
     VALUES
-        ('Nice work! Look forward to seeing it in colour!', 'Compliment');
+        ('1', '1', '1', 'Nice work! Look forward to seeing it in colour!', 'Compliment');
 
 END;

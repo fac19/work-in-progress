@@ -6,6 +6,10 @@ A social media platform for creatives to receive feedback on their works in prog
 
 Weeks 11-13 Student Project
 
+Deployed on [Netlify](https://wip-app.netlify.app/)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fdfedb67-dd70-4820-9e62-1c24f12fa5ab/deploy-status)](https://app.netlify.com/sites/wip-app/deploys)
+
 ## Co-authoring credits
 
 Co-authored-by: Jack Heriz-Smith <jackherizsmith@gmail.com>

@@ -6,17 +6,24 @@ require("dotenv").config();
 const SECRET = process.env.JWT_SECRET;
 
 function postSignUp(req, res, next) {
-  const username = req.body.username;
-  const email = req.body.email;
-  const bio = req.body.bio;
-  const vocation = req.vocation.bio;
-  const password = req.body.password;
+  const newUsername = req.body.username;
+  const newEmail = req.body.email;
+  const newBio = req.body.bio;
+  const newVocation = req.vocation.bio;
+  const newPassword = req.body.password;
   bcrypt
     .genSalt(10)
-    .then((salt) => bcrypt.hash(password, salt))
+    .then((salt) => bcrypt.hash(newPassword, salt))
     .then((hash) => {
+      const newUser = {
+        username: newUsername,
+        email: newEmail,
+        bio: newBio,
+        vocation: newVocation,
+        password: hash,
+      };
       model
-        .addUser(username, email, bio, vocation, hash)
+        .addUser(newUser)
         .then((result) => {
           const token = jwt.sign({ user: result.id }, SECRET, {
             expiresIn: "24h",
@@ -52,4 +59,32 @@ function postLogIn(req, res, next) {
     .catch(next);
 }
 
-module.exports = { postSignUp, postLogIn };
+function get(req, res, next) {
+  const userId = req.user.userId;
+  model
+    .getUserById(userId)
+    .then((user) => res.status(201).send(user))
+    .catch(next);
+}
+
+function put(req, res, next) {
+  const userId = req.user.userId;
+  const newUserData = req.body;
+
+  model
+    .updateUser(userId, newUserData)
+    .then((newData) => res.status(200).send(newData))
+    .catch(next);
+}
+
+function deleteUser(req, res, next) {
+  const userId = req.user.userId;
+  model
+    .deleteUser(userId)
+    .then(() => {
+      res.status(204).send();
+    })
+    .catch(next);
+}
+
+module.exports = { postSignUp, postLogIn, get, put, deleteUser };

@@ -27,7 +27,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && npm run prettier && npm run backeslint"
+      "pre-commit": "pretty-quick --staged && npm run backeslint"
     }
   }
 }

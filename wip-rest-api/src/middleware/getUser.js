@@ -8,7 +8,7 @@ function getUser(req, res, next) {
   const token = req.cookies.token
   if (token) {
     const user = jwt.verify(token, SECRET)
-    req.user = user.username
+    req.user = user.userId
   }
   next()
 }

@@ -14,7 +14,6 @@ const TopNavbarUlStyle = styled.ul`
   list-style: none;
   justify-content: space-evenly;
   padding: 0;
-  padding: 0;
 `;
 
 export { TopNavbarStyle, TopNavbarUlStyle };

@@ -1,9 +1,9 @@
-import React from "react"
-import "./App.css"
-import TopNavbar from "./components/TopNavbar/TopNavbar"
+import React from "react";
+import "./App.css";
+import TopNavbar from "./components/TopNavbar/TopNavbar";
 
 const App = () => {
-  return <TopNavbar />
-}
+  return <TopNavbar />;
+};
 
-export default App
+export default App;

@@ -1,8 +1,8 @@
-import React from "react"
-import AddProjectPage from "../../pages/AddProjectPage/AddProjectPage"
-import LandingPage from "../../pages/LandingPage/LandingPage"
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
-import { TopNavbarStyle, TopNavbarUlStyle } from "./TopNavbar.style"
+import React from "react";
+import AddProjectPage from "../../pages/AddProjectPage/AddProjectPage";
+import LandingPage from "../../pages/LandingPage/LandingPage";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { TopNavbarStyle, TopNavbarUlStyle } from "./TopNavbar.style";
 
 const TopNavbar = (props) => {
   return (
@@ -27,7 +27,7 @@ const TopNavbar = (props) => {
         </Route>
       </Switch>
     </Router>
-  )
-}
+  );
+};
 
-export default TopNavbar
+export default TopNavbar;

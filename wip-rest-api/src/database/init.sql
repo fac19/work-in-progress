@@ -43,7 +43,7 @@ BEGIN;
         feedback_tag VARCHAR(50)
     );
 
-    CREATE TABLE user_like
+    CREATE TABLE user_link
     (
         user_id INTEGER REFERENCES users(id),
         project_id INTEGER REFERENCES projects(id)

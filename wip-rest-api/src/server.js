@@ -1,25 +1,25 @@
-const express = require("express")
-const logger = require("./middleware/logger")
-const users = require("./handlers/users")
-const checkAuth = require("./middleware/authorise")
-const handleErrors = require("./middleware/error")
-const getUser = require("./middleware/getUser")
+const express = require("express");
+const logger = require("./middleware/logger");
+const users = require("./handlers/users");
+const checkAuth = require("./middleware/authorise");
+const handleErrors = require("./middleware/error");
+const getUser = require("./middleware/getUser");
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3000;
 
-const server = express()
-server.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`))
+const server = express();
+server.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));
 
-server.use(express.urlencoded({ extended: false }))
-server.use(getUser)
-server.use(logger)
-server.use(express.json()) //so that express knows to use JSON
+server.use(express.urlencoded({ extended: false }));
+server.use(getUser);
+server.use(logger);
+server.use(express.json()); //so that express knows to use JSON
 
 //Routes for users
-server.get("/user/:username", checkAuth, users.get)
-server.post("/logIn", users.postLogIn)
-server.post("/signUp", users.postSignUp)
-// server.put('/user/:username', auth, users.put)
+server.get("/user", checkAuth, users.get);
+server.post("/logIn", users.postLogIn);
+server.post("/signUp", users.postSignUp);
+server.put("/user", checkAuth, users.put);
 // server.delete('/user/:username', auth, users.delete)
 
 //Routes for projects
@@ -41,4 +41,4 @@ server.post("/signUp", users.postSignUp)
 // server.delete('/comments/:commentId', auth, comments.delete)
 
 //Error handler
-server.use(handleErrors)
+server.use(handleErrors);

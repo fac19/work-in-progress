@@ -1,16 +1,16 @@
-const model = require("../model/users-model")
-const bcrypt = require("bcryptjs")
-const jwt = require("jsonwebtoken")
-require("dotenv").config()
+const model = require("../model/users-model");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+require("dotenv").config();
 
-const SECRET = process.env.JWT_SECRET
+const SECRET = process.env.JWT_SECRET;
 
 function postSignUp(req, res, next) {
-  const newUsername = req.body.username
-  const newEmail = req.body.email
-  const newBio = req.body.bio
-  const newVocation = req.vocation.bio
-  const newPassword = req.body.password
+  const newUsername = req.body.username;
+  const newEmail = req.body.email;
+  const newBio = req.body.bio;
+  const newVocation = req.vocation.bio;
+  const newPassword = req.body.password;
   bcrypt
     .genSalt(10)
     .then((salt) => bcrypt.hash(newPassword, salt))
@@ -21,50 +21,60 @@ function postSignUp(req, res, next) {
         bio: newBio,
         vocation: newVocation,
         password: hash,
-      }
+      };
       model
         .addUser(newUser)
         .then((result) => {
           const token = jwt.sign({ user: result.id }, SECRET, {
             expiresIn: "24h",
-          })
-          result.token = token
-          res.status(201).send(result)
+          });
+          result.token = token;
+          res.status(201).send(result);
         })
-        .catch(next)
+        .catch(next);
     })
-    .catch(console.error)
+    .catch(console.error);
 }
 
 function postLogIn(req, res, next) {
-  const username = req.body.username
-  const password = req.body.password
+  const username = req.body.username;
+  const password = req.body.password;
   model
     .getUserByName(username)
     .then((loginObject) => {
-      return bcrypt.compare(password, loginObject.password)
+      return bcrypt.compare(password, loginObject.password);
     })
     .then((match) => {
       if (!match) {
-        const error = new Error("Unauthorized access. Please try again.")
-        error.status = 401
-        next(error)
+        const error = new Error("Unauthorized access. Please try again.");
+        error.status = 401;
+        next(error);
       } else {
         const token = jwt.sign({ user: match.id }, SECRET, {
           expiresIn: "24h",
-        })
-        res.status(200).send({ token: token })
+        });
+        res.status(200).send({ token: token });
       }
     })
-    .catch(next)
+    .catch(next);
 }
 
 function get(req, res, next) {
-  const userId = req.user.userId
+  const userId = req.user.userId;
   model
     .getUserById(userId)
     .then((user) => res.status(201).send(user))
-    .catch(next)
+    .catch(next);
 }
 
-module.exports = { postSignUp, postLogIn, get }
+function put(req, res, next) {
+  const userId = req.user.userId;
+  const newUserData = req.body;
+
+  model
+    .updateUser(userId, newUserData)
+    .then((newData) => res.status(200).send(newData))
+    .catch(next);
+}
+
+module.exports = { postSignUp, postLogIn, get, put };

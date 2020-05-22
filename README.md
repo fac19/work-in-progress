@@ -51,10 +51,9 @@ CREATE DATABASE wip_test WITH OWNER user; -- database name is important for test
 3. Ensure the test script in package.json refers to your local test database, i.e.
 
 ```json
-"scripts": {
-    "test": "tape PGDATABASE=wip_test | tap-spec",
-    ...
-    }
+  "scripts": {
+    "test": "PGDATABASE=wip_test jest src/test/*.test.js --watch",
+  }
 ```
 
 4. Run `npm test` to run tests

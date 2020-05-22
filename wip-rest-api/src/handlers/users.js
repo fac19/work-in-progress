@@ -9,7 +9,7 @@ function postSignUp(req, res, next) {
   const newUsername = req.body.username;
   const newEmail = req.body.email;
   const newBio = req.body.bio;
-  const newVocation = req.vocation.bio;
+  const newVocation = req.body.vocation;
   const newPassword = req.body.password;
   bcrypt
     .genSalt(10)

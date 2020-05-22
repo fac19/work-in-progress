@@ -7,6 +7,6 @@ cache:
   directories:
     - node_modules
 script:
-  - npm i && npm test
+  - cd wip-rest-api && npm i && npm test
 after_success:
   - codecov

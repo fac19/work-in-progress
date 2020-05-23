@@ -5,6 +5,8 @@ import TopNavbar from "./components/TopNavbar/TopNavbar";
 import BottomNavbar from "./components/BottomNavbar/BottomNavbar";
 import AddProjectPage from "./pages/AddProjectPage/AddProjectPage";
 import LandingPage from "./pages/LandingPage/LandingPage";
+import LogInForm from "./components/LogInForm/LogInForm";
+import SignUpForm from "./components/SignUpForm/SignUpForm";
 import FeedPage from "./pages/FeedPage/FeedPage";
 import UserPage from "./pages/UserPage/UserPage";
 import ExplorePage from "./pages/ExplorePage/ExplorePage";
@@ -26,6 +28,16 @@ const App = () => {
       {!loggedIn && <LandingPage setLoggedIn={setLoggedIn} />}
 
       <Switch>
+        <Route path="/sign-up">
+          <MainWrapper>
+            <SignUpForm />
+          </MainWrapper>
+        </Route>
+        <Route path="/log-in">
+          <MainWrapper>
+            <LogInForm />
+          </MainWrapper>
+        </Route>
         <Route path="/new-project">
           <MainWrapper>
             <AddProjectPage />

@@ -14,18 +14,18 @@ import NotificationPage from "./pages/NotificationPage/NotificationPage";
 import { MainWrapper } from "./pages/page.style";
 
 const App = () => {
-  const [loggedIn, setLoggedIn] = React.useState(false);
+  // const [loggedIn, setLoggedIn] = React.useState(false);
 
   return (
     <Router>
-      {loggedIn && (
+      {/* {loggedIn && (
         <>
           <TopNavbar setLoggedIn={setLoggedIn} />
           <BottomNavbar />
         </>
       )}
 
-      {!loggedIn && <LandingPage setLoggedIn={setLoggedIn} />}
+      {!loggedIn && <LandingPage setLoggedIn={setLoggedIn} />} */}
 
       <Switch>
         <Route path="/sign-up">
@@ -46,7 +46,9 @@ const App = () => {
         <Route path="/sign-out"></Route>
         <Route path="/feed">
           <MainWrapper>
+            <TopNavbar />
             <FeedPage />
+            <BottomNavbar />
           </MainWrapper>
         </Route>
         <Route path="/profile">
@@ -62,6 +64,11 @@ const App = () => {
         <Route path="/explore">
           <MainWrapper>
             <ExplorePage />
+          </MainWrapper>
+        </Route>
+        <Route path="/">
+          <MainWrapper>
+            <LandingPage />
           </MainWrapper>
         </Route>
       </Switch>

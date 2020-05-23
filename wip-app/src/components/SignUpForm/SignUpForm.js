@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Container, Button, TextField } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -62,13 +63,15 @@ const SignUpForm = (props) => {
           name="password"
           autoComplete="password"
         />
-        <Button
-          className={classes.formElement}
-          variant="contained"
-          color="primary"
-        >
-          Sign Up
-        </Button>
+        <Link to="/feed">
+          <Button
+            className={classes.formElement}
+            variant="contained"
+            color="primary"
+          >
+            Sign Up
+          </Button>
+        </Link>
       </form>
     </Container>
   );

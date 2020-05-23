@@ -40,7 +40,9 @@ const App = () => {
         </Route>
         <Route path="/new-project">
           <MainWrapper>
+            <TopNavbar />
             <AddProjectPage />
+            <BottomNavbar />
           </MainWrapper>
         </Route>
         <Route path="/sign-out"></Route>
@@ -53,17 +55,23 @@ const App = () => {
         </Route>
         <Route path="/profile">
           <MainWrapper>
+            <TopNavbar />
             <UserPage />
+            <BottomNavbar />
           </MainWrapper>
         </Route>
         <Route path="/notifications">
           <MainWrapper>
+            <TopNavbar />
             <NotificationPage />
+            <BottomNavbar />
           </MainWrapper>
         </Route>
         <Route path="/explore">
           <MainWrapper>
+            <TopNavbar />
             <ExplorePage />
+            <BottomNavbar />
           </MainWrapper>
         </Route>
         <Route path="/">

@@ -23,7 +23,7 @@ function postFetch({ endpoint, body, error }) {
   // .catch(console.error('error in fetch.js line 22')) //change this
 }
 
-export default function SignUpPost(signUpFormData) {
+function SignUpPost(signUpFormData) {
   const options = {
     endpoint: "signUp",
     body: {
@@ -38,3 +38,19 @@ export default function SignUpPost(signUpFormData) {
     localStorage.setItem("auth", JSON.stringify(res));
   });
 }
+
+function LogInGet(logInFormData) {
+  const options = {
+    endpoint: "logIn",
+    body: {
+      email: logInFormData.email,
+      password: logInFormData.password,
+    },
+    errorMessage: "Could not log you in",
+  };
+  return postFetch(options).then((res) => {
+    localStorage.setItem("auth", JSON.stringify(res));
+  });
+}
+
+export default { SignUpPost, LogInGet };

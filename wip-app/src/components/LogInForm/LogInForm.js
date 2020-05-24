@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Button, TextField } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import { useHistory } from "react-router-dom";
+import LogInGet from "../../utils/fetch";
 
 const useStyles = makeStyles({
   form: {
@@ -24,6 +26,20 @@ const useStyles = makeStyles({
 
 const LogInForm = (props) => {
   const classes = useStyles();
+  const history = useHistory();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = document.querySelector("form");
+    const logInFormData = new FormData(form);
+
+    logInGet({
+      emai: logInFormData.email,
+      password: logInFormData.password,
+    })
+      .then(() => history.push("/feed"))
+      .catch(console.error("LoginForm.js line 41"));
+  };
 
   return (
     <Container className={classes.formContainer} component="main" maxWidth="xs">
@@ -58,6 +74,7 @@ const LogInForm = (props) => {
             className={classes.formElement}
             variant="contained"
             color="primary"
+            onClick={handleSubmit}
           >
             Log In
           </Button>

@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Button, TextField } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import { useHistory } from "react-router-dom";
+import SignUpPost from "../../utils/fetch";
 
 const useStyles = makeStyles({
   form: {
@@ -24,6 +26,19 @@ const useStyles = makeStyles({
 
 const SignUpForm = (props) => {
   const classes = useStyles();
+  const history = useHistory();
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+    const form = document.querySelector("form");
+    const formData = new FormData(form);
+
+    SignUpPost({
+      username: formData.username,
+      email: formData.email,
+      password: formData.password,
+    }).then(() => history.push("/feed"));
+  };
 
   return (
     <Container className={classes.formContainer} component="main" maxWidth="xs">
@@ -61,6 +76,7 @@ const SignUpForm = (props) => {
           id="password"
           label="Password"
           name="password"
+          type="password"
           autoComplete="password"
         />
         <Link to="/feed">
@@ -68,6 +84,7 @@ const SignUpForm = (props) => {
             className={classes.formElement}
             variant="contained"
             color="primary"
+            onClick={submitHandler}
           >
             Sign Up
           </Button>

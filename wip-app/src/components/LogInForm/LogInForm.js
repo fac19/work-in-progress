@@ -50,6 +50,7 @@ const LogInForm = (props) => {
           id="password"
           label="Password"
           name="password"
+          type="password"
           autoComplete="password"
         />
         <Link to="/feed">

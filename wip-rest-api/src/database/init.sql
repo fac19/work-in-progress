@@ -18,10 +18,10 @@ BEGIN;
     INSERT INTO users
         (username, email, password, user_bio, user_vocation, user_link_1, user_link_2, user_link_3)
     VALUES
-        ('CampbellDocherty', 'CY@123.com', 'password123', 'I am a freelance illustrator trying to make it big', 'freelance illustrator', 'www.twitter.com', 'www.arena.com', 'www.facebook.com'),
-        ('Jacko', 'JO@123.com', 'password123', 'I love colours they are so nice', 'professional animator', 'www.facebook.com', 'www.instagram.com', 'www.twitter.com'),
-        ('Hanhan', 'HN@123.com', 'password123', 'I hope I get a well-paid secure job in the arts', 'student graphic designer', 'www.facebook.com', 'www.twitter.com', 'www.arena.com'),
-        ('KDrizzle', 'KE@123.com', 'password123', 'I animate out and about', 'freelance animator', 'www.instagram.com', 'www.ucas.com', 'www.dribbble.com');
+        ('CampbellDocherty', 'CY@123.com', '$2a$10$bWvVpjSqqysqZarWg38wu.jRzq404fcCWxjOkxUp18M3S8XsWEIse', 'I am a freelance illustrator trying to make it big', 'freelance illustrator', 'www.twitter.com', 'www.arena.com', 'www.facebook.com'),
+        ('Jacko', 'JO@123.com', '$2a$10$bWvVpjSqqysqZarWg38wu.jRzq404fcCWxjOkxUp18M3S8XsWEIse', 'I love colours they are so nice', 'professional animator', 'www.facebook.com', 'www.instagram.com', 'www.twitter.com'),
+        ('Hanhan', 'HN@123.com', '$2a$10$bWvVpjSqqysqZarWg38wu.jRzq404fcCWxjOkxUp18M3S8XsWEIse', 'I hope I get a well-paid secure job in the arts', 'student graphic designer', 'www.facebook.com', 'www.twitter.com', 'www.arena.com'),
+        ('KDrizzle', 'KE@123.com', '$2a$10$bWvVpjSqqysqZarWg38wu.jRzq404fcCWxjOkxUp18M3S8XsWEIse', 'I animate out and about', 'freelance animator', 'www.instagram.com', 'www.ucas.com', 'www.dribbble.com');
 
     CREATE TABLE projects
     (

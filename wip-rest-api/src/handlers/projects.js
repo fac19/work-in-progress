@@ -16,4 +16,12 @@ function getUserProjects(req, res, next) {
     .catch(next);
 }
 
-module.exports = { getWatchedProjects, getUserProjects };
+function addNewProject(req, res, next) {
+  const userId = req.user.id;
+  model
+    .addNewProjectToDb(userId, req.body)
+    .then((result) => res.send(result))
+    .catch(next);
+}
+
+module.exports = { getWatchedProjects, getUserProjects, addNewProject };

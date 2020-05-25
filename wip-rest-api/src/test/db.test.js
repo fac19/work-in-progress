@@ -116,6 +116,16 @@ describe("Database tests for projects", () => {
       expect(projects[0].project_name).toEqual("A moon");
     });
   });
+
+  test("Can add new project", async () => {
+    const newProject = {
+      project_name: "An elephant",
+      project_description: "I think I could make this look more life-like",
+    };
+    await projectmodel.addNewProjectToDb("2", newProject).then((project) => {
+      expect(project.project_name).toEqual("An elephant");
+    });
+  });
 });
 
 describe("Database tests for feedback", () => {

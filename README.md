@@ -65,9 +65,11 @@ CREATE DATABASE wip_test WITH OWNER user; -- database name is important for test
 ## API routes
 
 REST API deployed on [Heroku](https://wip-rest-api.herokuapp.com/)  
-You can make requests to the Heroku App URL, e.g. POST to https://wip-rest-api.herokuapp.com/signup
+You can make requests to the Heroku App URL, e.g. `POST` to `https://wip-rest-api.herokuapp.com/signup`
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/fae4c1f8e60c1e5bf1f1)
+
+## No Access Token required for these routes:
 
 ### Users
 
@@ -96,13 +98,15 @@ Request body example:
 }
 ```
 
+## Send access token as a Bearer Token in the Authorization Header for these routes:
+
+### Users
+
 #### GET /user
-Get your user info when signed in
-Send access token as a Bearer Token in the Authorization Header
+Get your user info when signed in  
 
 #### PUT /user
 Update your user info
-Send access token as a Bearer Token in the Authorization Header
 
 Request body example:
 ```json
@@ -116,15 +120,12 @@ Request body example:
 
 #### GET /followedprojects
 Get your watched (followed) projects
-Send access token as a Bearer Token in the Authorization Header
 
 #### GET /userprojects
 Get your own projects
-Send access token as a Bearer Token in the Authorization Header
 
 #### POST /userprojects
 Add a new project to your account
-Send access token as a Bearer Token in the Authorization Header
 
 Request body example:
 ```json
@@ -138,11 +139,9 @@ Request body example:
 
 #### GET /steps/:projectid
 Get project steps by project id
-Send access token as a Bearer Token in the Authorization Header
 
 #### GET /steps/:projectid
 Add project steps by project id
-Send access token as a Bearer Token in the Authorization Header
 
 Request body example:
 ```json
@@ -157,11 +156,9 @@ Request body example:
 
 #### GET /feedback/:stepid
 Get feedback for step by step id
-Send access token as a Bearer Token in the Authorization Header
 
 #### POST /feedback/:stepid
 Add feedback for step by step id
-Send access token as a Bearer Token in the Authorization Header
 
 Request body example:
 ```json
@@ -173,7 +170,6 @@ Request body example:
 
 #### PUT /feedback/:feedbackid
 Update feedback by feedback id
-Send access token as a Bearer Token in the Authorization Header
 
 Request body example:
 ```json
@@ -187,8 +183,6 @@ Request body example:
 
 #### POST /watching/:projectid
 Start watching (following) a post by project id
-Send access token as a Bearer Token in the Authorization Header
 
 #### DELETE /watching/:projectid
 Stop watching (following) a post by project id
-Send access token as a Bearer Token in the Authorization Header

@@ -16,6 +16,18 @@ function getUserProjects(req, res, next) {
     .catch(next);
 }
 
+function getExploreProjects(req, res, next) {
+  const userId = req.user.id;
+  model
+    .getWatchedProjectsFromDb(userId)
+    .then((watchedProjects) => {
+      model.getAllProjectsFromDb().then((allProjects) => {
+        console.log(watchedProjects, allProjects);
+      });
+    })
+    .catch(next);
+}
+
 function addNewProject(req, res, next) {
   const userId = req.user.id;
   model
@@ -24,4 +36,9 @@ function addNewProject(req, res, next) {
     .catch(next);
 }
 
-module.exports = { getWatchedProjects, getUserProjects, addNewProject };
+module.exports = {
+  getWatchedProjects,
+  getUserProjects,
+  addNewProject,
+  getExploreProjects,
+};

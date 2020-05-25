@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { TopNavbarStyle, TopNavbarUlStyle } from "./TopNavbar.style";
 
-const TopNavbar = ({ setLoggedIn }) => {
+const TopNavbar = () => {
   return (
     <header>
       <TopNavbarStyle>
@@ -12,9 +12,7 @@ const TopNavbar = ({ setLoggedIn }) => {
           </li>
           <li>WIP</li>
           <li>
-            <Link to="/sign-out" onClick={() => setLoggedIn(false)}>
-              Sign Out
-            </Link>
+            <Link to="/">Sign Out</Link>
           </li>
         </TopNavbarUlStyle>
       </TopNavbarStyle>

@@ -6,6 +6,9 @@ require("dotenv").config();
 const SECRET = process.env.JWT_SECRET;
 
 function postSignUp(req, res, next) {
+  if (!req.body.email || !req.body.username || !req.body.password) {
+    return res.status(400).send({ message: "Request body cannot be empty" });
+  }
   const newUsername = req.body.username;
   const newEmail = req.body.email;
   const newBio = req.body.bio;

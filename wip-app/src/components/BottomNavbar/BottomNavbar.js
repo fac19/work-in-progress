@@ -4,7 +4,7 @@ import { BottomNavbarStyle, BottomNavbarUlStyle } from "./BottomNavbar.style";
 
 const BottomNavbar = (props) => {
   return (
-    <header>
+    <footer>
       <BottomNavbarStyle>
         <BottomNavbarUlStyle>
           <li>
@@ -21,7 +21,7 @@ const BottomNavbar = (props) => {
           </li>
         </BottomNavbarUlStyle>
       </BottomNavbarStyle>
-    </header>
+    </footer>
   );
 };
 

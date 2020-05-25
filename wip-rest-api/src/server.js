@@ -5,6 +5,7 @@ const checkAuth = require("./middleware/authorise");
 const handleErrors = require("./middleware/error");
 const users = require("./handlers/users");
 const feedback = require("./handlers/feedback");
+const project = require("./handlers/projects");
 
 const PORT = process.env.PORT || 3000;
 
@@ -24,7 +25,7 @@ server.put("/user", checkAuth, users.put);
 // server.delete("/user/:username", checkAuth, users.delete);
 
 //Routes for projects
-// server.get('/project/:projectId', auth, project.get)
+server.get("/project/:projectId", checkAuth, project.get);
 // server.post('project', auth, project.post)
 // server.put('/project/:projectId', auth, project.put)
 // server.delete('/project/:projectId', auth, project.delete)
@@ -37,7 +38,7 @@ server.put("/user", checkAuth, users.put);
 
 //Routes for feedback
 server.get("/feedback/:stepId", checkAuth, feedback.get);
-// server.post('feedback/:stepId', auth, feedback.post)
+// server.post('feedback/:stepId', checkAuth, feedback.post)
 // server.put('/feedback/:feedbackId', auth, feedback.put)
 // server.delete('/feedback/:feedbackId', auth, feedback.delete)
 

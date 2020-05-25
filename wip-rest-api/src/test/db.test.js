@@ -11,6 +11,11 @@ const {
 
 const { getFeedback } = require("../model/feedback-model");
 
+afterAll(() => {
+  console.log("End of testing for Database");
+  return dbconnection.end();
+});
+
 describe("File tests are running", () => {
   test("1 should equal 1", () => {
     expect(1).toEqual(1);
@@ -71,13 +76,28 @@ describe("Database tests for users", () => {
     });
   });
 
-  // test.only("User can be deleted from the database", async () => {
-  //   await deleteUser("1").then(() => {
-  //     getUserById("1").then((result) => {
-  //       expect(result).toEqual(null);
+  //   COME BACK TO THIS
+  //     test("User can be deleted from the database", async () => {
+  //     await deleteUser("1").then(() => {
+  //       getUserById("1").then((result) => {
+  //         expect(result).toEqual(null);
+  //       });
   //     });
   //   });
-  // });
+});
+
+describe("Database tests for projects", () => {
+  beforeEach(() => {
+    build();
+  });
+
+  test("Get feedback from database using stepId", async () => {
+    await getFeedback("2").then((feedback) => {
+      expect(feedback[0].feedback_text).toEqual(
+        "Hey Han its Cam what a nice dog"
+      );
+    });
+  });
 });
 
 describe("Database tests for feedback", () => {
@@ -86,15 +106,10 @@ describe("Database tests for feedback", () => {
   });
 
   test("Get feedback from database using stepId", async () => {
-    await getFeedback("1").then((feedback) => {
+    await getFeedback("2").then((feedback) => {
       expect(feedback[0].feedback_text).toEqual(
-        "Nice work! Look forward to seeing it in colour!"
+        "Hey Han its Cam what a nice dog"
       );
     });
   });
-});
-
-afterAll(() => {
-  console.log("End of testing for Database");
-  return dbconnection.end();
 });

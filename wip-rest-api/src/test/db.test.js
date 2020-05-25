@@ -11,7 +11,7 @@ const {
 
 const { getWatchedProjects } = require("../model/projects-model");
 
-const { getFeedback } = require("../model/feedback-model");
+const { getFeedback, addFeedback } = require("../model/feedback-model");
 
 afterAll(() => {
   console.log("End of testing for Database");
@@ -101,7 +101,7 @@ describe("Database tests for projects", () => {
 
   test("Get info from watched projects", async () => {
     await getWatchedProjects("2").then((projects) => {
-      expect(projects[2].project_name).toEqual('A friend');
+      expect(projects[2].project_name).toEqual("A friend");
     });
   });
 });
@@ -116,6 +116,12 @@ describe("Database tests for feedback", () => {
       expect(feedback[0].feedback_text).toEqual(
         "Hey Han its Cam what a nice dog"
       );
+    });
+  });
+
+  test("Post feedback using stepID", async () => {
+    await addFeedback(4, 3, "testing testing 123", "test?").then((feedback) => {
+      expect(feedback.feedback_text).toEqual("testing testing 123");
     });
   });
 });

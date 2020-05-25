@@ -39,7 +39,7 @@ server.put("/user", checkAuth, users.put);
 
 //Routes for feedback
 server.get("/feedback/:stepId", checkAuth, feedback.get);
-// server.post('feedback/:stepId', checkAuth, feedback.post)
+server.post("/feedback/:stepId", checkAuth, feedback.post);
 // server.put('/feedback/:feedbackId', auth, feedback.put)
 // server.delete('/feedback/:feedbackId', auth, feedback.delete)
 

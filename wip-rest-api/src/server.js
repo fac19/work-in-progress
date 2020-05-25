@@ -6,6 +6,7 @@ const handleErrors = require("./middleware/error");
 const users = require("./handlers/users");
 const feedback = require("./handlers/feedback");
 const project = require("./handlers/projects");
+const watching = require("./handlers/watching");
 const steps = require("./handlers/steps");
 
 const PORT = process.env.PORT || 3000;
@@ -44,6 +45,10 @@ server.get("/feedback/:stepId", authorise, feedback.get);
 server.post("/feedback/:stepId", authorise, feedback.post);
 server.put("/feedback/:feedbackId", authorise, feedback.put);
 // server.delete('/feedback/:feedbackId', auth, feedback.delete)
+
+//Routes for user watch
+server.post("/watching/:projectId", authorise, watching.post);
+server.delete("/watching/:projectId", authorise, watching.remove);
 
 //Error handler
 server.use(handleErrors);

@@ -19,6 +19,11 @@ const {
   updateFeedback,
 } = require("../model/feedback-model");
 
+const {
+  addToWatching,
+  removeFromWatching,
+} = require("../model/watching-model");
+
 afterAll(() => {
   console.log("End of testing for Database");
   return dbconnection.end();
@@ -171,9 +176,10 @@ describe("Database tests for feedback", () => {
   });
 
   test("Get feedback from database using stepId", async () => {
-    await getFeedback("2").then((feedback) => {
+    const stepId = 8;
+    await getFeedback(stepId).then((feedback) => {
       expect(feedback[0].feedback_text).toEqual(
-        "Hey Han its Cam what a nice dog"
+        "Hey J man its Han have you considered craters"
       );
     });
   });
@@ -198,6 +204,30 @@ describe("Database tests for feedback", () => {
     const feedbackId = 1;
     await updateFeedback(feedbackId, "hey han").then((feedback) => {
       expect(feedback.feedback_text).toEqual("hey han");
+    });
+  });
+});
+
+describe("Database tests for watching", () => {
+  beforeEach(() => {
+    build();
+  });
+
+  test("Add watched project by projectId", async () => {
+    const userId = 1;
+    const projectId = 3;
+    await addToWatching(userId, projectId).then((watched) => {
+      expect(watched.project_id).toEqual(3);
+      expect(watched.user_id).toEqual(1);
+    });
+  });
+
+  test("Remove watched project by userId & projectId", async () => {
+    const userId = 4;
+    const projectId = 4;
+    await removeFromWatching(userId, projectId).then((watched) => {
+      expect(watched.project_id).toEqual(4);
+      expect(watched.user_id).toEqual(4);
     });
   });
 });

@@ -1,4 +1,4 @@
-const dbconnection = require("../database/connection");
+const dbconnection = require("../database/connection.js");
 const build = require("../database/build");
 const {
   // getUsers,
@@ -8,6 +8,8 @@ const {
   updateUser,
   // deleteUser,
 } = require("../model/users-model");
+
+const { getWatchedProjects } = require("../model/projects-model");
 
 const { getFeedback } = require("../model/feedback-model");
 
@@ -91,11 +93,9 @@ describe("Database tests for projects", () => {
     build();
   });
 
-  test("Get feedback from database using stepId", async () => {
-    await getFeedback("2").then((feedback) => {
-      expect(feedback[0].feedback_text).toEqual(
-        "Hey Han its Cam what a nice dog"
-      );
+  test("Get all watched projects", async () => {
+    await getWatchedProjects("2").then((projects) => {
+      expect(projects.length).toEqual(4);
     });
   });
 });

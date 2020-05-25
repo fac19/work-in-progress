@@ -1,5 +1,425 @@
-{"/home/jackherizsmith/Desktop/FAC PROJECTS/10-studentproject/work-in-progress/wip-rest-api/src/database/build.js": {"path":"/home/jackherizsmith/Desktop/FAC PROJECTS/10-studentproject/work-in-progress/wip-rest-api/src/database/build.js","statementMap":{"0":{"start":{"line":1,"column":11},"end":{"line":1,"column":24}},"1":{"start":{"line":2,"column":13},"end":{"line":2,"column":28}},"2":{"start":{"line":3,"column":11},"end":{"line":3,"column":34}},"3":{"start":{"line":5,"column":17},"end":{"line":5,"column":49}},"4":{"start":{"line":6,"column":16},"end":{"line":6,"column":50}},"5":{"start":{"line":9,"column":2},"end":{"line":9,"column":27}},"6":{"start":{"line":12,"column":0},"end":{"line":12,"column":23}}},"fnMap":{"0":{"name":"build","decl":{"start":{"line":8,"column":9},"end":{"line":8,"column":14}},"loc":{"start":{"line":8,"column":17},"end":{"line":10,"column":1}},"line":8}},"branchMap":{},"s":{"0":1,"1":1,"2":1,"3":1,"4":1,"5":5,"6":1},"f":{"0":5},"b":{},"_coverageSchema":"1a1c01bbd47fc00a2c39e90264f33305004495a9","hash":"de0558e80a3641648fa35f3c75b897698898d4d4"}
-,"/home/jackherizsmith/Desktop/FAC PROJECTS/10-studentproject/work-in-progress/wip-rest-api/src/database/connection.js": {"path":"/home/jackherizsmith/Desktop/FAC PROJECTS/10-studentproject/work-in-progress/wip-rest-api/src/database/connection.js","statementMap":{"0":{"start":{"line":1,"column":11},"end":{"line":1,"column":24}},"1":{"start":{"line":2,"column":15},"end":{"line":2,"column":32}},"2":{"start":{"line":4,"column":0},"end":{"line":4,"column":16}},"3":{"start":{"line":6,"column":11},"end":{"line":10,"column":2}},"4":{"start":{"line":12,"column":0},"end":{"line":12,"column":20}}},"fnMap":{},"branchMap":{},"s":{"0":1,"1":1,"2":1,"3":1,"4":1},"f":{},"b":{},"_coverageSchema":"1a1c01bbd47fc00a2c39e90264f33305004495a9","hash":"809077f1323ec3796f08dfe811d620f070b8ab6d"}
-,"/home/jackherizsmith/Desktop/FAC PROJECTS/10-studentproject/work-in-progress/wip-rest-api/src/model/feedback-model.js": {"path":"/home/jackherizsmith/Desktop/FAC PROJECTS/10-studentproject/work-in-progress/wip-rest-api/src/model/feedback-model.js","statementMap":{"0":{"start":{"line":1,"column":11},"end":{"line":1,"column":47}},"1":{"start":{"line":4,"column":2},"end":{"line":6,"column":35}},"2":{"start":{"line":6,"column":22},"end":{"line":6,"column":33}},"3":{"start":{"line":9,"column":0},"end":{"line":11,"column":2}}},"fnMap":{"0":{"name":"getFeedback","decl":{"start":{"line":3,"column":9},"end":{"line":3,"column":20}},"loc":{"start":{"line":3,"column":29},"end":{"line":7,"column":1}},"line":3},"1":{"name":"(anonymous_1)","decl":{"start":{"line":6,"column":10},"end":{"line":6,"column":11}},"loc":{"start":{"line":6,"column":22},"end":{"line":6,"column":33}},"line":6}},"branchMap":{},"s":{"0":1,"1":1,"2":1,"3":1},"f":{"0":1,"1":1},"b":{},"_coverageSchema":"1a1c01bbd47fc00a2c39e90264f33305004495a9","hash":"6b38a838d940be5637d6b1ab4dcd1496643c5e59"}
-,"/home/jackherizsmith/Desktop/FAC PROJECTS/10-studentproject/work-in-progress/wip-rest-api/src/model/users-model.js": {"path":"/home/jackherizsmith/Desktop/FAC PROJECTS/10-studentproject/work-in-progress/wip-rest-api/src/model/users-model.js","statementMap":{"0":{"start":{"line":1,"column":11},"end":{"line":1,"column":47}},"1":{"start":{"line":10,"column":2},"end":{"line":15,"column":38}},"2":{"start":{"line":15,"column":22},"end":{"line":15,"column":36}},"3":{"start":{"line":20,"column":2},"end":{"line":22,"column":38}},"4":{"start":{"line":22,"column":22},"end":{"line":22,"column":36}},"5":{"start":{"line":27,"column":2},"end":{"line":29,"column":38}},"6":{"start":{"line":29,"column":22},"end":{"line":29,"column":36}},"7":{"start":{"line":34,"column":17},"end":{"line":41,"column":3}},"8":{"start":{"line":42,"column":2},"end":{"line":47,"column":38}},"9":{"start":{"line":47,"column":22},"end":{"line":47,"column":36}},"10":{"start":{"line":51,"column":2},"end":{"line":51,"column":63}},"11":{"start":{"line":54,"column":0},"end":{"line":61,"column":2}}},"fnMap":{"0":{"name":"addUser","decl":{"start":{"line":9,"column":9},"end":{"line":9,"column":16}},"loc":{"start":{"line":9,"column":63},"end":{"line":16,"column":1}},"line":9},"1":{"name":"(anonymous_1)","decl":{"start":{"line":15,"column":10},"end":{"line":15,"column":11}},"loc":{"start":{"line":15,"column":22},"end":{"line":15,"column":36}},"line":15},"2":{"name":"getUserByName","decl":{"start":{"line":19,"column":9},"end":{"line":19,"column":22}},"loc":{"start":{"line":19,"column":33},"end":{"line":23,"column":1}},"line":19},"3":{"name":"(anonymous_3)","decl":{"start":{"line":22,"column":10},"end":{"line":22,"column":11}},"loc":{"start":{"line":22,"column":22},"end":{"line":22,"column":36}},"line":22},"4":{"name":"getUserById","decl":{"start":{"line":26,"column":9},"end":{"line":26,"column":20}},"loc":{"start":{"line":26,"column":29},"end":{"line":30,"column":1}},"line":26},"5":{"name":"(anonymous_5)","decl":{"start":{"line":29,"column":10},"end":{"line":29,"column":11}},"loc":{"start":{"line":29,"column":22},"end":{"line":29,"column":36}},"line":29},"6":{"name":"updateUser","decl":{"start":{"line":33,"column":9},"end":{"line":33,"column":19}},"loc":{"start":{"line":33,"column":41},"end":{"line":48,"column":1}},"line":33},"7":{"name":"(anonymous_7)","decl":{"start":{"line":47,"column":10},"end":{"line":47,"column":11}},"loc":{"start":{"line":47,"column":22},"end":{"line":47,"column":36}},"line":47},"8":{"name":"deleteUser","decl":{"start":{"line":50,"column":9},"end":{"line":50,"column":19}},"loc":{"start":{"line":50,"column":28},"end":{"line":52,"column":1}},"line":50}},"branchMap":{},"s":{"0":1,"1":1,"2":1,"3":1,"4":1,"5":1,"6":1,"7":1,"8":1,"9":1,"10":0,"11":1},"f":{"0":1,"1":1,"2":1,"3":1,"4":1,"5":1,"6":1,"7":1,"8":0},"b":{},"_coverageSchema":"1a1c01bbd47fc00a2c39e90264f33305004495a9","hash":"78c4b882c3923342e3a227ef4ffd2752010e8660"}
+{
+  "/home/jackherizsmith/Desktop/code/10-studentproject/work-in-progress/wip-rest-api/src/database/build.js": {
+    "path": "/home/jackherizsmith/Desktop/code/10-studentproject/work-in-progress/wip-rest-api/src/database/build.js",
+    "statementMap": {
+      "0": {
+        "start": { "line": 1, "column": 11 },
+        "end": { "line": 1, "column": 24 }
+      },
+      "1": {
+        "start": { "line": 2, "column": 13 },
+        "end": { "line": 2, "column": 28 }
+      },
+      "2": {
+        "start": { "line": 3, "column": 11 },
+        "end": { "line": 3, "column": 34 }
+      },
+      "3": {
+        "start": { "line": 5, "column": 17 },
+        "end": { "line": 5, "column": 49 }
+      },
+      "4": {
+        "start": { "line": 6, "column": 16 },
+        "end": { "line": 6, "column": 50 }
+      },
+      "5": {
+        "start": { "line": 9, "column": 2 },
+        "end": { "line": 9, "column": 27 }
+      },
+      "6": {
+        "start": { "line": 12, "column": 0 },
+        "end": { "line": 12, "column": 23 }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "build",
+        "decl": {
+          "start": { "line": 8, "column": 9 },
+          "end": { "line": 8, "column": 14 }
+        },
+        "loc": {
+          "start": { "line": 8, "column": 17 },
+          "end": { "line": 10, "column": 1 }
+        },
+        "line": 8
+      }
+    },
+    "branchMap": {},
+    "s": { "0": 1, "1": 1, "2": 1, "3": 1, "4": 1, "5": 6, "6": 1 },
+    "f": { "0": 6 },
+    "b": {},
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "0b7c3d6c9b83b1aeb352477803d41713595a9232"
+  },
+  "/home/jackherizsmith/Desktop/code/10-studentproject/work-in-progress/wip-rest-api/src/database/connection.js": {
+    "path": "/home/jackherizsmith/Desktop/code/10-studentproject/work-in-progress/wip-rest-api/src/database/connection.js",
+    "statementMap": {
+      "0": {
+        "start": { "line": 1, "column": 11 },
+        "end": { "line": 1, "column": 24 }
+      },
+      "1": {
+        "start": { "line": 2, "column": 15 },
+        "end": { "line": 2, "column": 32 }
+      },
+      "2": {
+        "start": { "line": 4, "column": 0 },
+        "end": { "line": 4, "column": 16 }
+      },
+      "3": {
+        "start": { "line": 6, "column": 11 },
+        "end": { "line": 10, "column": 2 }
+      },
+      "4": {
+        "start": { "line": 12, "column": 0 },
+        "end": { "line": 12, "column": 20 }
+      }
+    },
+    "fnMap": {},
+    "branchMap": {},
+    "s": { "0": 1, "1": 1, "2": 1, "3": 1, "4": 1 },
+    "f": {},
+    "b": {},
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "ca748456ca18021640b2462b1cf184055559319a"
+  },
+  "/home/jackherizsmith/Desktop/code/10-studentproject/work-in-progress/wip-rest-api/src/model/feedback-model.js": {
+    "path": "/home/jackherizsmith/Desktop/code/10-studentproject/work-in-progress/wip-rest-api/src/model/feedback-model.js",
+    "statementMap": {
+      "0": {
+        "start": { "line": 1, "column": 11 },
+        "end": { "line": 1, "column": 47 }
+      },
+      "1": {
+        "start": { "line": 4, "column": 2 },
+        "end": { "line": 6, "column": 35 }
+      },
+      "2": {
+        "start": { "line": 6, "column": 22 },
+        "end": { "line": 6, "column": 33 }
+      },
+      "3": {
+        "start": { "line": 9, "column": 0 },
+        "end": { "line": 11, "column": 2 }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "getFeedback",
+        "decl": {
+          "start": { "line": 3, "column": 9 },
+          "end": { "line": 3, "column": 20 }
+        },
+        "loc": {
+          "start": { "line": 3, "column": 29 },
+          "end": { "line": 7, "column": 1 }
+        },
+        "line": 3
+      },
+      "1": {
+        "name": "(anonymous_1)",
+        "decl": {
+          "start": { "line": 6, "column": 10 },
+          "end": { "line": 6, "column": 11 }
+        },
+        "loc": {
+          "start": { "line": 6, "column": 22 },
+          "end": { "line": 6, "column": 33 }
+        },
+        "line": 6
+      }
+    },
+    "branchMap": {},
+    "s": { "0": 1, "1": 1, "2": 1, "3": 1 },
+    "f": { "0": 1, "1": 1 },
+    "b": {},
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "5f2bfca9370933aa2877c82e5f05fa805f65e864"
+  },
+  "/home/jackherizsmith/Desktop/code/10-studentproject/work-in-progress/wip-rest-api/src/model/projects-model.js": {
+    "path": "/home/jackherizsmith/Desktop/code/10-studentproject/work-in-progress/wip-rest-api/src/model/projects-model.js",
+    "statementMap": {
+      "0": {
+        "start": { "line": 1, "column": 11 },
+        "end": { "line": 1, "column": 47 }
+      },
+      "1": {
+        "start": { "line": 16, "column": 2 },
+        "end": { "line": 22, "column": 37 }
+      },
+      "2": {
+        "start": { "line": 19, "column": 29 },
+        "end": { "line": 19, "column": 102 }
+      },
+      "3": {
+        "start": { "line": 19, "column": 68 },
+        "end": { "line": 19, "column": 101 }
+      },
+      "4": {
+        "start": { "line": 20, "column": 10 },
+        "end": { "line": 20, "column": 33 }
+      },
+      "5": {
+        "start": { "line": 21, "column": 10 },
+        "end": { "line": 21, "column": 92 }
+      },
+      "6": {
+        "start": { "line": 22, "column": 24 },
+        "end": { "line": 22, "column": 35 }
+      },
+      "7": {
+        "start": { "line": 25, "column": 0 },
+        "end": { "line": 27, "column": 2 }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "getWatchedProjects",
+        "decl": {
+          "start": { "line": 15, "column": 9 },
+          "end": { "line": 15, "column": 27 }
+        },
+        "loc": {
+          "start": { "line": 15, "column": 36 },
+          "end": { "line": 23, "column": 1 }
+        },
+        "line": 15
+      },
+      "1": {
+        "name": "(anonymous_1)",
+        "decl": {
+          "start": { "line": 18, "column": 12 },
+          "end": { "line": 18, "column": 13 }
+        },
+        "loc": {
+          "start": { "line": 18, "column": 31 },
+          "end": { "line": 22, "column": 7 }
+        },
+        "line": 18
+      },
+      "2": {
+        "name": "(anonymous_2)",
+        "decl": {
+          "start": { "line": 19, "column": 52 },
+          "end": { "line": 19, "column": 53 }
+        },
+        "loc": {
+          "start": { "line": 19, "column": 68 },
+          "end": { "line": 19, "column": 101 }
+        },
+        "line": 19
+      },
+      "3": {
+        "name": "(anonymous_3)",
+        "decl": {
+          "start": { "line": 22, "column": 14 },
+          "end": { "line": 22, "column": 15 }
+        },
+        "loc": {
+          "start": { "line": 22, "column": 24 },
+          "end": { "line": 22, "column": 35 }
+        },
+        "line": 22
+      }
+    },
+    "branchMap": {},
+    "s": { "0": 1, "1": 1, "2": 1, "3": 4, "4": 1, "5": 1, "6": 1, "7": 1 },
+    "f": { "0": 1, "1": 1, "2": 4, "3": 1 },
+    "b": {},
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "51e3a621bdd4a2809ecc3dbc96981aae8ac7346e"
+  },
+  "/home/jackherizsmith/Desktop/code/10-studentproject/work-in-progress/wip-rest-api/src/model/users-model.js": {
+    "path": "/home/jackherizsmith/Desktop/code/10-studentproject/work-in-progress/wip-rest-api/src/model/users-model.js",
+    "statementMap": {
+      "0": {
+        "start": { "line": 1, "column": 11 },
+        "end": { "line": 1, "column": 47 }
+      },
+      "1": {
+        "start": { "line": 10, "column": 2 },
+        "end": { "line": 15, "column": 38 }
+      },
+      "2": {
+        "start": { "line": 15, "column": 22 },
+        "end": { "line": 15, "column": 36 }
+      },
+      "3": {
+        "start": { "line": 20, "column": 2 },
+        "end": { "line": 22, "column": 38 }
+      },
+      "4": {
+        "start": { "line": 22, "column": 22 },
+        "end": { "line": 22, "column": 36 }
+      },
+      "5": {
+        "start": { "line": 27, "column": 2 },
+        "end": { "line": 29, "column": 38 }
+      },
+      "6": {
+        "start": { "line": 29, "column": 22 },
+        "end": { "line": 29, "column": 36 }
+      },
+      "7": {
+        "start": { "line": 34, "column": 17 },
+        "end": { "line": 41, "column": 3 }
+      },
+      "8": {
+        "start": { "line": 42, "column": 2 },
+        "end": { "line": 47, "column": 38 }
+      },
+      "9": {
+        "start": { "line": 47, "column": 22 },
+        "end": { "line": 47, "column": 36 }
+      },
+      "10": {
+        "start": { "line": 51, "column": 2 },
+        "end": { "line": 51, "column": 63 }
+      },
+      "11": {
+        "start": { "line": 54, "column": 0 },
+        "end": { "line": 61, "column": 2 }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "addUser",
+        "decl": {
+          "start": { "line": 9, "column": 9 },
+          "end": { "line": 9, "column": 16 }
+        },
+        "loc": {
+          "start": { "line": 9, "column": 63 },
+          "end": { "line": 16, "column": 1 }
+        },
+        "line": 9
+      },
+      "1": {
+        "name": "(anonymous_1)",
+        "decl": {
+          "start": { "line": 15, "column": 10 },
+          "end": { "line": 15, "column": 11 }
+        },
+        "loc": {
+          "start": { "line": 15, "column": 22 },
+          "end": { "line": 15, "column": 36 }
+        },
+        "line": 15
+      },
+      "2": {
+        "name": "getUserByName",
+        "decl": {
+          "start": { "line": 19, "column": 9 },
+          "end": { "line": 19, "column": 22 }
+        },
+        "loc": {
+          "start": { "line": 19, "column": 33 },
+          "end": { "line": 23, "column": 1 }
+        },
+        "line": 19
+      },
+      "3": {
+        "name": "(anonymous_3)",
+        "decl": {
+          "start": { "line": 22, "column": 10 },
+          "end": { "line": 22, "column": 11 }
+        },
+        "loc": {
+          "start": { "line": 22, "column": 22 },
+          "end": { "line": 22, "column": 36 }
+        },
+        "line": 22
+      },
+      "4": {
+        "name": "getUserById",
+        "decl": {
+          "start": { "line": 26, "column": 9 },
+          "end": { "line": 26, "column": 20 }
+        },
+        "loc": {
+          "start": { "line": 26, "column": 29 },
+          "end": { "line": 30, "column": 1 }
+        },
+        "line": 26
+      },
+      "5": {
+        "name": "(anonymous_5)",
+        "decl": {
+          "start": { "line": 29, "column": 10 },
+          "end": { "line": 29, "column": 11 }
+        },
+        "loc": {
+          "start": { "line": 29, "column": 22 },
+          "end": { "line": 29, "column": 36 }
+        },
+        "line": 29
+      },
+      "6": {
+        "name": "updateUser",
+        "decl": {
+          "start": { "line": 33, "column": 9 },
+          "end": { "line": 33, "column": 19 }
+        },
+        "loc": {
+          "start": { "line": 33, "column": 41 },
+          "end": { "line": 48, "column": 1 }
+        },
+        "line": 33
+      },
+      "7": {
+        "name": "(anonymous_7)",
+        "decl": {
+          "start": { "line": 47, "column": 10 },
+          "end": { "line": 47, "column": 11 }
+        },
+        "loc": {
+          "start": { "line": 47, "column": 22 },
+          "end": { "line": 47, "column": 36 }
+        },
+        "line": 47
+      },
+      "8": {
+        "name": "deleteUser",
+        "decl": {
+          "start": { "line": 50, "column": 9 },
+          "end": { "line": 50, "column": 19 }
+        },
+        "loc": {
+          "start": { "line": 50, "column": 28 },
+          "end": { "line": 52, "column": 1 }
+        },
+        "line": 50
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 1,
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1,
+      "8": 1,
+      "9": 1,
+      "10": 0,
+      "11": 1
+    },
+    "f": {
+      "0": 1,
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1,
+      "8": 0
+    },
+    "b": {},
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "21864568a55a6250042f97b6f6d92d32a8e31263"
+  }
 }

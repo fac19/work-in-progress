@@ -45,25 +45,24 @@ function postLogIn(req, res, next) {
   model
     .getUserByName(username)
     .then((loginObject) => {
-      return bcrypt.compare(password, loginObject.password);
-    })
-    .then((match) => {
-      if (!match) {
-        const error = new Error("Unauthorized access. Please try again.");
-        error.status = 401;
-        next(error);
-      } else {
-        const token = jwt.sign({ user: match.id }, SECRET, {
-          expiresIn: "24h",
-        });
-        res.status(200).send({ token: token });
-      }
+      return bcrypt.compare(password, loginObject.password).then((match) => {
+        if (!match) {
+          const error = new Error("Unauthorized access. Please try again.");
+          error.status = 401;
+          next(error);
+        } else {
+          const token = jwt.sign({ user: loginObject.id }, SECRET, {
+            expiresIn: "24h",
+          });
+          res.status(200).send({ token: token });
+        }
+      });
     })
     .catch(next);
 }
 
 function get(req, res, next) {
-  const userId = req.user.userId;
+  const userId = req.user.id;
   model
     .getUserById(userId)
     .then((user) => res.status(201).send(user))
@@ -71,8 +70,10 @@ function get(req, res, next) {
 }
 
 function put(req, res, next) {
-  const userId = req.user.userId;
+  const userId = req.user.id;
+  console.log("put -> userId", userId);
   const newUserData = req.body;
+  console.log("line 76", req.body);
 
   model
     .updateUser(userId, newUserData)
@@ -81,7 +82,7 @@ function put(req, res, next) {
 }
 
 function deleteUser(req, res, next) {
-  const userId = req.user.userId;
+  const userId = req.user.id;
   model
     .deleteUser(userId)
     .then(() => {

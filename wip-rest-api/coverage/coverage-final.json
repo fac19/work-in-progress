@@ -1,5 +1,305 @@
-{"/home/jackherizsmith/Desktop/FAC PROJECTS/10-studentproject/work-in-progress/wip-rest-api/src/database/build.js": {"path":"/home/jackherizsmith/Desktop/FAC PROJECTS/10-studentproject/work-in-progress/wip-rest-api/src/database/build.js","statementMap":{"0":{"start":{"line":1,"column":11},"end":{"line":1,"column":24}},"1":{"start":{"line":2,"column":13},"end":{"line":2,"column":28}},"2":{"start":{"line":3,"column":11},"end":{"line":3,"column":34}},"3":{"start":{"line":5,"column":17},"end":{"line":5,"column":49}},"4":{"start":{"line":6,"column":16},"end":{"line":6,"column":50}},"5":{"start":{"line":9,"column":2},"end":{"line":9,"column":27}},"6":{"start":{"line":12,"column":0},"end":{"line":12,"column":23}}},"fnMap":{"0":{"name":"build","decl":{"start":{"line":8,"column":9},"end":{"line":8,"column":14}},"loc":{"start":{"line":8,"column":17},"end":{"line":10,"column":1}},"line":8}},"branchMap":{},"s":{"0":1,"1":1,"2":1,"3":1,"4":1,"5":5,"6":1},"f":{"0":5},"b":{},"_coverageSchema":"1a1c01bbd47fc00a2c39e90264f33305004495a9","hash":"de0558e80a3641648fa35f3c75b897698898d4d4"}
-,"/home/jackherizsmith/Desktop/FAC PROJECTS/10-studentproject/work-in-progress/wip-rest-api/src/database/connection.js": {"path":"/home/jackherizsmith/Desktop/FAC PROJECTS/10-studentproject/work-in-progress/wip-rest-api/src/database/connection.js","statementMap":{"0":{"start":{"line":1,"column":11},"end":{"line":1,"column":24}},"1":{"start":{"line":2,"column":15},"end":{"line":2,"column":32}},"2":{"start":{"line":4,"column":0},"end":{"line":4,"column":16}},"3":{"start":{"line":6,"column":11},"end":{"line":10,"column":2}},"4":{"start":{"line":12,"column":0},"end":{"line":12,"column":20}}},"fnMap":{},"branchMap":{},"s":{"0":1,"1":1,"2":1,"3":1,"4":1},"f":{},"b":{},"_coverageSchema":"1a1c01bbd47fc00a2c39e90264f33305004495a9","hash":"809077f1323ec3796f08dfe811d620f070b8ab6d"}
-,"/home/jackherizsmith/Desktop/FAC PROJECTS/10-studentproject/work-in-progress/wip-rest-api/src/model/feedback-model.js": {"path":"/home/jackherizsmith/Desktop/FAC PROJECTS/10-studentproject/work-in-progress/wip-rest-api/src/model/feedback-model.js","statementMap":{"0":{"start":{"line":1,"column":11},"end":{"line":1,"column":47}},"1":{"start":{"line":4,"column":2},"end":{"line":6,"column":35}},"2":{"start":{"line":6,"column":22},"end":{"line":6,"column":33}},"3":{"start":{"line":9,"column":0},"end":{"line":11,"column":2}}},"fnMap":{"0":{"name":"getFeedback","decl":{"start":{"line":3,"column":9},"end":{"line":3,"column":20}},"loc":{"start":{"line":3,"column":29},"end":{"line":7,"column":1}},"line":3},"1":{"name":"(anonymous_1)","decl":{"start":{"line":6,"column":10},"end":{"line":6,"column":11}},"loc":{"start":{"line":6,"column":22},"end":{"line":6,"column":33}},"line":6}},"branchMap":{},"s":{"0":1,"1":1,"2":1,"3":1},"f":{"0":1,"1":1},"b":{},"_coverageSchema":"1a1c01bbd47fc00a2c39e90264f33305004495a9","hash":"6b38a838d940be5637d6b1ab4dcd1496643c5e59"}
-,"/home/jackherizsmith/Desktop/FAC PROJECTS/10-studentproject/work-in-progress/wip-rest-api/src/model/users-model.js": {"path":"/home/jackherizsmith/Desktop/FAC PROJECTS/10-studentproject/work-in-progress/wip-rest-api/src/model/users-model.js","statementMap":{"0":{"start":{"line":1,"column":11},"end":{"line":1,"column":47}},"1":{"start":{"line":10,"column":2},"end":{"line":15,"column":38}},"2":{"start":{"line":15,"column":22},"end":{"line":15,"column":36}},"3":{"start":{"line":20,"column":2},"end":{"line":22,"column":38}},"4":{"start":{"line":22,"column":22},"end":{"line":22,"column":36}},"5":{"start":{"line":27,"column":2},"end":{"line":29,"column":38}},"6":{"start":{"line":29,"column":22},"end":{"line":29,"column":36}},"7":{"start":{"line":34,"column":17},"end":{"line":41,"column":3}},"8":{"start":{"line":42,"column":2},"end":{"line":47,"column":38}},"9":{"start":{"line":47,"column":22},"end":{"line":47,"column":36}},"10":{"start":{"line":51,"column":2},"end":{"line":51,"column":63}},"11":{"start":{"line":54,"column":0},"end":{"line":61,"column":2}}},"fnMap":{"0":{"name":"addUser","decl":{"start":{"line":9,"column":9},"end":{"line":9,"column":16}},"loc":{"start":{"line":9,"column":63},"end":{"line":16,"column":1}},"line":9},"1":{"name":"(anonymous_1)","decl":{"start":{"line":15,"column":10},"end":{"line":15,"column":11}},"loc":{"start":{"line":15,"column":22},"end":{"line":15,"column":36}},"line":15},"2":{"name":"getUserByName","decl":{"start":{"line":19,"column":9},"end":{"line":19,"column":22}},"loc":{"start":{"line":19,"column":33},"end":{"line":23,"column":1}},"line":19},"3":{"name":"(anonymous_3)","decl":{"start":{"line":22,"column":10},"end":{"line":22,"column":11}},"loc":{"start":{"line":22,"column":22},"end":{"line":22,"column":36}},"line":22},"4":{"name":"getUserById","decl":{"start":{"line":26,"column":9},"end":{"line":26,"column":20}},"loc":{"start":{"line":26,"column":29},"end":{"line":30,"column":1}},"line":26},"5":{"name":"(anonymous_5)","decl":{"start":{"line":29,"column":10},"end":{"line":29,"column":11}},"loc":{"start":{"line":29,"column":22},"end":{"line":29,"column":36}},"line":29},"6":{"name":"updateUser","decl":{"start":{"line":33,"column":9},"end":{"line":33,"column":19}},"loc":{"start":{"line":33,"column":41},"end":{"line":48,"column":1}},"line":33},"7":{"name":"(anonymous_7)","decl":{"start":{"line":47,"column":10},"end":{"line":47,"column":11}},"loc":{"start":{"line":47,"column":22},"end":{"line":47,"column":36}},"line":47},"8":{"name":"deleteUser","decl":{"start":{"line":50,"column":9},"end":{"line":50,"column":19}},"loc":{"start":{"line":50,"column":28},"end":{"line":52,"column":1}},"line":50}},"branchMap":{},"s":{"0":1,"1":1,"2":1,"3":1,"4":1,"5":1,"6":1,"7":1,"8":1,"9":1,"10":0,"11":1},"f":{"0":1,"1":1,"2":1,"3":1,"4":1,"5":1,"6":1,"7":1,"8":0},"b":{},"_coverageSchema":"1a1c01bbd47fc00a2c39e90264f33305004495a9","hash":"78c4b882c3923342e3a227ef4ffd2752010e8660"}
+{
+  "/home/campbell/Documents/coding/work-in-progress/wip-rest-api/src/database/build.js": {
+    "path": "/home/campbell/Documents/coding/work-in-progress/wip-rest-api/src/database/build.js",
+    "statementMap": {
+      "0": {
+        "start": { "line": 1, "column": 11 },
+        "end": { "line": 1, "column": 24 }
+      },
+      "1": {
+        "start": { "line": 2, "column": 13 },
+        "end": { "line": 2, "column": 28 }
+      },
+      "2": {
+        "start": { "line": 3, "column": 11 },
+        "end": { "line": 3, "column": 34 }
+      },
+      "3": {
+        "start": { "line": 5, "column": 17 },
+        "end": { "line": 5, "column": 49 }
+      },
+      "4": {
+        "start": { "line": 6, "column": 16 },
+        "end": { "line": 6, "column": 50 }
+      },
+      "5": {
+        "start": { "line": 9, "column": 2 },
+        "end": { "line": 9, "column": 27 }
+      },
+      "6": {
+        "start": { "line": 12, "column": 0 },
+        "end": { "line": 12, "column": 23 }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "build",
+        "decl": {
+          "start": { "line": 8, "column": 9 },
+          "end": { "line": 8, "column": 14 }
+        },
+        "loc": {
+          "start": { "line": 8, "column": 17 },
+          "end": { "line": 10, "column": 1 }
+        },
+        "line": 8
+      }
+    },
+    "branchMap": {},
+    "s": { "0": 1, "1": 1, "2": 1, "3": 1, "4": 1, "5": 6, "6": 1 },
+    "f": { "0": 6 },
+    "b": {},
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "82170a1eb873e5bc81300143c12628d655fb3576"
+  },
+  "/home/campbell/Documents/coding/work-in-progress/wip-rest-api/src/database/connection.js": {
+    "path": "/home/campbell/Documents/coding/work-in-progress/wip-rest-api/src/database/connection.js",
+    "statementMap": {
+      "0": {
+        "start": { "line": 1, "column": 11 },
+        "end": { "line": 1, "column": 24 }
+      },
+      "1": {
+        "start": { "line": 2, "column": 15 },
+        "end": { "line": 2, "column": 32 }
+      },
+      "2": {
+        "start": { "line": 4, "column": 0 },
+        "end": { "line": 4, "column": 16 }
+      },
+      "3": {
+        "start": { "line": 6, "column": 11 },
+        "end": { "line": 10, "column": 2 }
+      },
+      "4": {
+        "start": { "line": 12, "column": 0 },
+        "end": { "line": 12, "column": 20 }
+      }
+    },
+    "fnMap": {},
+    "branchMap": {},
+    "s": { "0": 1, "1": 1, "2": 1, "3": 1, "4": 1 },
+    "f": {},
+    "b": {},
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "1bed2f81da2ef5470b8fd02a1f12efcbbcb74338"
+  },
+  "/home/campbell/Documents/coding/work-in-progress/wip-rest-api/src/model/feedback-model.js": {
+    "path": "/home/campbell/Documents/coding/work-in-progress/wip-rest-api/src/model/feedback-model.js",
+    "statementMap": {
+      "0": {
+        "start": { "line": 1, "column": 11 },
+        "end": { "line": 1, "column": 47 }
+      },
+      "1": {
+        "start": { "line": 4, "column": 2 },
+        "end": { "line": 6, "column": 35 }
+      },
+      "2": {
+        "start": { "line": 6, "column": 22 },
+        "end": { "line": 6, "column": 33 }
+      },
+      "3": {
+        "start": { "line": 9, "column": 0 },
+        "end": { "line": 11, "column": 2 }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "getFeedback",
+        "decl": {
+          "start": { "line": 3, "column": 9 },
+          "end": { "line": 3, "column": 20 }
+        },
+        "loc": {
+          "start": { "line": 3, "column": 29 },
+          "end": { "line": 7, "column": 1 }
+        },
+        "line": 3
+      },
+      "1": {
+        "name": "(anonymous_1)",
+        "decl": {
+          "start": { "line": 6, "column": 10 },
+          "end": { "line": 6, "column": 11 }
+        },
+        "loc": {
+          "start": { "line": 6, "column": 22 },
+          "end": { "line": 6, "column": 33 }
+        },
+        "line": 6
+      }
+    },
+    "branchMap": {},
+    "s": { "0": 1, "1": 2, "2": 2, "3": 1 },
+    "f": { "0": 2, "1": 2 },
+    "b": {},
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "b2d5343edda3b550bbe2ddee79d9aeba9d05fcf3"
+  },
+  "/home/campbell/Documents/coding/work-in-progress/wip-rest-api/src/model/users-model.js": {
+    "path": "/home/campbell/Documents/coding/work-in-progress/wip-rest-api/src/model/users-model.js",
+    "statementMap": {
+      "0": {
+        "start": { "line": 1, "column": 11 },
+        "end": { "line": 1, "column": 47 }
+      },
+      "1": {
+        "start": { "line": 10, "column": 2 },
+        "end": { "line": 15, "column": 38 }
+      },
+      "2": {
+        "start": { "line": 15, "column": 22 },
+        "end": { "line": 15, "column": 36 }
+      },
+      "3": {
+        "start": { "line": 20, "column": 2 },
+        "end": { "line": 22, "column": 38 }
+      },
+      "4": {
+        "start": { "line": 22, "column": 22 },
+        "end": { "line": 22, "column": 36 }
+      },
+      "5": {
+        "start": { "line": 27, "column": 2 },
+        "end": { "line": 29, "column": 38 }
+      },
+      "6": {
+        "start": { "line": 29, "column": 22 },
+        "end": { "line": 29, "column": 36 }
+      },
+      "7": {
+        "start": { "line": 34, "column": 17 },
+        "end": { "line": 41, "column": 3 }
+      },
+      "8": {
+        "start": { "line": 42, "column": 2 },
+        "end": { "line": 47, "column": 38 }
+      },
+      "9": {
+        "start": { "line": 47, "column": 22 },
+        "end": { "line": 47, "column": 36 }
+      },
+      "10": {
+        "start": { "line": 54, "column": 0 },
+        "end": { "line": 61, "column": 2 }
+      }
+    },
+    "fnMap": {
+      "0": {
+        "name": "addUser",
+        "decl": {
+          "start": { "line": 9, "column": 9 },
+          "end": { "line": 9, "column": 16 }
+        },
+        "loc": {
+          "start": { "line": 9, "column": 63 },
+          "end": { "line": 16, "column": 1 }
+        },
+        "line": 9
+      },
+      "1": {
+        "name": "(anonymous_1)",
+        "decl": {
+          "start": { "line": 15, "column": 10 },
+          "end": { "line": 15, "column": 11 }
+        },
+        "loc": {
+          "start": { "line": 15, "column": 22 },
+          "end": { "line": 15, "column": 36 }
+        },
+        "line": 15
+      },
+      "2": {
+        "name": "getUserByName",
+        "decl": {
+          "start": { "line": 19, "column": 9 },
+          "end": { "line": 19, "column": 22 }
+        },
+        "loc": {
+          "start": { "line": 19, "column": 33 },
+          "end": { "line": 23, "column": 1 }
+        },
+        "line": 19
+      },
+      "3": {
+        "name": "(anonymous_3)",
+        "decl": {
+          "start": { "line": 22, "column": 10 },
+          "end": { "line": 22, "column": 11 }
+        },
+        "loc": {
+          "start": { "line": 22, "column": 22 },
+          "end": { "line": 22, "column": 36 }
+        },
+        "line": 22
+      },
+      "4": {
+        "name": "getUserById",
+        "decl": {
+          "start": { "line": 26, "column": 9 },
+          "end": { "line": 26, "column": 20 }
+        },
+        "loc": {
+          "start": { "line": 26, "column": 29 },
+          "end": { "line": 30, "column": 1 }
+        },
+        "line": 26
+      },
+      "5": {
+        "name": "(anonymous_5)",
+        "decl": {
+          "start": { "line": 29, "column": 10 },
+          "end": { "line": 29, "column": 11 }
+        },
+        "loc": {
+          "start": { "line": 29, "column": 22 },
+          "end": { "line": 29, "column": 36 }
+        },
+        "line": 29
+      },
+      "6": {
+        "name": "updateUser",
+        "decl": {
+          "start": { "line": 33, "column": 9 },
+          "end": { "line": 33, "column": 19 }
+        },
+        "loc": {
+          "start": { "line": 33, "column": 41 },
+          "end": { "line": 48, "column": 1 }
+        },
+        "line": 33
+      },
+      "7": {
+        "name": "(anonymous_7)",
+        "decl": {
+          "start": { "line": 47, "column": 10 },
+          "end": { "line": 47, "column": 11 }
+        },
+        "loc": {
+          "start": { "line": 47, "column": 22 },
+          "end": { "line": 47, "column": 36 }
+        },
+        "line": 47
+      }
+    },
+    "branchMap": {},
+    "s": {
+      "0": 1,
+      "1": 1,
+      "2": 1,
+      "3": 1,
+      "4": 1,
+      "5": 1,
+      "6": 1,
+      "7": 1,
+      "8": 1,
+      "9": 1,
+      "10": 1
+    },
+    "f": { "0": 1, "1": 1, "2": 1, "3": 1, "4": 1, "5": 1, "6": 1, "7": 1 },
+    "b": {},
+    "_coverageSchema": "1a1c01bbd47fc00a2c39e90264f33305004495a9",
+    "hash": "d8ddefbf80a51f573c13ae6769bba27d5ca92e74"
+  }
 }

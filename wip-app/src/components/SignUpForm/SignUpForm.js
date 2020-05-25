@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Container, Button, TextField } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
-import signUpPost from "../../utils/fetch";
+import { signUpPost } from "../../utils/fetch";
 
 const useStyles = makeStyles({
   form: {
@@ -34,9 +34,9 @@ const SignUpForm = (props) => {
     const formData = new FormData(form);
 
     signUpPost({
-      username: formData.username,
-      email: formData.email,
-      password: formData.password,
+      username: formData.get("username"),
+      email: formData.get("email"),
+      password: formData.get("password"),
     }).then(() => history.push("/feed"));
   };
 
@@ -79,16 +79,16 @@ const SignUpForm = (props) => {
           type="password"
           autoComplete="password"
         />
-        <Link to="/feed">
-          <Button
-            className={classes.formElement}
-            variant="contained"
-            color="primary"
-            onClick={submitHandler}
-          >
-            Sign Up
-          </Button>
-        </Link>
+        {/* <Link to="/feed"> */}
+        <Button
+          className={classes.formElement}
+          variant="contained"
+          color="primary"
+          onClick={submitHandler}
+        >
+          Sign Up
+        </Button>
+        {/* </Link> */}
       </form>
     </Container>
   );

@@ -26,7 +26,7 @@ BEGIN;
     CREATE TABLE projects
     (
         id SERIAL PRIMARY KEY,
-        user_id INTEGER REFERENCES users(id),
+        user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
         project_name VARCHAR(255),
         project_description VARCHAR(255),
         project_status BOOLEAN
@@ -44,7 +44,7 @@ BEGIN;
     CREATE TABLE steps
     (
         id SERIAL PRIMARY KEY,
-        project_id INTEGER REFERENCES projects(id),
+        project_id INTEGER REFERENCES projects(id) ON DELETE CASCADE,
         step_name VARCHAR(255),
         step_description VARCHAR(255),
         step_link VARCHAR(255)
@@ -67,8 +67,8 @@ BEGIN;
     CREATE TABLE feedback
     (
         id SERIAL PRIMARY KEY,
-        user_id INTEGER REFERENCES users(id),
-        step_id INTEGER REFERENCES steps(id),
+        user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+        step_id INTEGER REFERENCES steps(id) ON DELETE CASCADE,
         feedback_text VARCHAR(255),
         feedback_tag VARCHAR(50)
     );
@@ -83,8 +83,8 @@ BEGIN;
 
     CREATE TABLE user_watch
     (
-        user_id INTEGER REFERENCES users(id),
-        project_id INTEGER REFERENCES projects(id)
+        user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+        project_id INTEGER REFERENCES projects(id) ON DELETE CASCADE
     );
 
     INSERT INTO user_watch

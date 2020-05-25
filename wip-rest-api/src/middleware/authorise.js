@@ -27,7 +27,6 @@ function checkAuth(req, res, next) {
     try {
       // if verification fails JWT throws an error, hence the try/catch
       const tokenData = jwt.verify(token, SECRET);
-      console.log("30", tokenData.user);
       model
         .getUserById(tokenData.user)
         .then((user) => {

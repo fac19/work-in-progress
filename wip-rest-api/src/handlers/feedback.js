@@ -27,8 +27,21 @@ function put(req, res, next) {
   const feedback_tag = req.body.tag;
 
   model
-    .updateFeedback(userId, feedbackId, feedback_text, feedback_tag)
-    .then((feedback) => res.status(201).send(feedback))
+    .getUserIdByFeedbackId(feedbackId)
+    .then((feedback) => {
+      if (feedback.user_id === userId) {
+        model
+          .updateFeedback(userId, feedbackId, feedback_text, feedback_tag)
+          .then((feedback) => res.status(201).send(feedback));
+        // .catch(next);
+      } else {
+        res
+          .status(404)
+          .send(
+            "Unauthorised: you do not have permission to edit this comment"
+          );
+      }
+    })
     .catch(next);
 }
 

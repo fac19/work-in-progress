@@ -13,6 +13,7 @@ const { getWatchedProjects } = require("../model/projects-model");
 
 const {
   getFeedback,
+  getUserIdByFeedbackId,
   addFeedback,
   updateFeedback,
 } = require("../model/feedback-model");
@@ -123,14 +124,25 @@ describe("Database tests for feedback", () => {
     });
   });
 
-  test("Post feedback using stepID", async () => {
-    await addFeedback(4, 3, "testing testing 123", "test?").then((feedback) => {
-      expect(feedback.feedback_text).toEqual("testing testing 123");
+  test("Get userId by FeedbackId", async () => {
+    await getUserIdByFeedbackId("2").then((feedback) => {
+      expect(feedback.user_id).toEqual(4);
     });
   });
 
+  test("Post feedback using stepID", async () => {
+    const userId = 4;
+    const stepId = 3;
+    await addFeedback(userId, stepId, "testing testing 123", "test?").then(
+      (feedback) => {
+        expect(feedback.feedback_text).toEqual("testing testing 123");
+      }
+    );
+  });
+
   test("Put feedback using feedbackID", async () => {
-    await updateFeedback(1, 1, "hey han").then((feedback) => {
+    const feedbackId = 1;
+    await updateFeedback(feedbackId, "hey han").then((feedback) => {
       expect(feedback.feedback_text).toEqual("hey han");
     });
   });

@@ -25,6 +25,7 @@ server.put("/user", checkAuth, users.put);
 // server.delete("/user/:username", checkAuth, users.delete);
 
 //Routes for projects
+server.get("/feed/:userId", checkAuth, project.get);
 // server.get("/project/:projectId", checkAuth, project.get);
 // server.post('project', auth, project.post)
 // server.put('/project/:projectId', auth, project.put)

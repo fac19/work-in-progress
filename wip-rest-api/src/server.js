@@ -41,9 +41,9 @@ server.get("/steps/:projectId", authorise, steps.getProjectSteps);
 
 //Routes for feedback
 server.get("/feedback/:stepId", authorise, feedback.get);
-// server.post('feedback/:stepId', authorise, feedback.post)
-// server.put('/feedback/:feedbackId', authorise, feedback.put)
-// server.delete('/feedback/:feedbackId', authorise, feedback.delete)
+server.post("/feedback/:stepId", authorise, feedback.post);
+server.put("/feedback/:feedbackId", authorise, feedback.put);
+// server.delete('/feedback/:feedbackId', auth, feedback.delete)
 
 //Error handler
 server.use(handleErrors);

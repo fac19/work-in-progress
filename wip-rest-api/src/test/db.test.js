@@ -12,7 +12,12 @@ const {
 const projectsmodel = require("../model/projects-model");
 const stepsmodel = require("../model/steps-model");
 
-const { getFeedback } = require("../model/feedback-model");
+const {
+  getFeedback,
+  getUserIdByFeedbackId,
+  addFeedback,
+  updateFeedback,
+} = require("../model/feedback-model");
 
 afterAll(() => {
   console.log("End of testing for Database");
@@ -157,6 +162,29 @@ describe("Database tests for feedback", () => {
       expect(feedback[0].feedback_text).toEqual(
         "Hey Han its Cam what a nice dog"
       );
+    });
+  });
+
+  test("Get userId by FeedbackId", async () => {
+    await getUserIdByFeedbackId("2").then((feedback) => {
+      expect(feedback.user_id).toEqual(4);
+    });
+  });
+
+  test("Post feedback using stepID", async () => {
+    const userId = 4;
+    const stepId = 3;
+    await addFeedback(userId, stepId, "testing testing 123", "test?").then(
+      (feedback) => {
+        expect(feedback.feedback_text).toEqual("testing testing 123");
+      }
+    );
+  });
+
+  test("Put feedback using feedbackID", async () => {
+    const feedbackId = 1;
+    await updateFeedback(feedbackId, "hey han").then((feedback) => {
+      expect(feedback.feedback_text).toEqual("hey han");
     });
   });
 });

@@ -9,7 +9,7 @@ const {
   // deleteUser,
 } = require("../model/users-model");
 
-const { getWatchedProjects } = require("../model/projects-model");
+const { getWatchedProjectsFromDb } = require("../model/projects-model");
 
 const { getFeedback } = require("../model/feedback-model");
 
@@ -94,14 +94,14 @@ describe("Database tests for projects", () => {
   });
 
   test("Get all watched projects returns array of correct length", async () => {
-    await getWatchedProjects("2").then((projects) => {
+    await getWatchedProjectsFromDb("2").then((projects) => {
       expect(projects.length).toEqual(4);
     });
   });
 
   test("Get info from watched projects", async () => {
-    await getWatchedProjects("2").then((projects) => {
-      expect(projects[2].project_name).toEqual('A friend');
+    await getWatchedProjectsFromDb("2").then((projects) => {
+      expect(projects[2].project_name).toEqual("A friend");
     });
   });
 });

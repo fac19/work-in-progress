@@ -1,5 +1,4 @@
 const model = require("../model/feedback-model");
-require("dotenv").config();
 
 function get(req, res, next) {
   const stepId = req.params.stepId;

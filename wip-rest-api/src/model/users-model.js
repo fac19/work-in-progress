@@ -25,7 +25,10 @@ function getUserByName(username) {
 // Gets a user by their id
 function getUserById(userId) {
   return db
-    .query("SELECT * FROM users WHERE id = ($1)", [userId])
+    .query(
+      "SELECT id, username, email, user_bio, user_vocation, user_link_1, user_link_2, user_link_3 FROM users WHERE id = ($1)",
+      [userId]
+    )
     .then((result) => result.rows[0]);
 }
 

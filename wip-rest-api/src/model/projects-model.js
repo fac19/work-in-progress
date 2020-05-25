@@ -9,6 +9,13 @@ function getWatchedProjectsFromDb(userId) {
     .then((result) => result.rows);
 }
 
+function getUserProjectsFromDb(userId) {
+  return db
+    .query("SELECT * FROM projects where user_id=($1);", [userId])
+    .then((result) => result.rows);
+}
+
 module.exports = {
   getWatchedProjectsFromDb,
+  getUserProjectsFromDb,
 };

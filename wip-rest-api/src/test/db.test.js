@@ -11,7 +11,11 @@ const {
 
 const { getWatchedProjects } = require("../model/projects-model");
 
-const { getFeedback, addFeedback } = require("../model/feedback-model");
+const {
+  getFeedback,
+  addFeedback,
+  updateFeedback,
+} = require("../model/feedback-model");
 
 afterAll(() => {
   console.log("End of testing for Database");
@@ -122,6 +126,12 @@ describe("Database tests for feedback", () => {
   test("Post feedback using stepID", async () => {
     await addFeedback(4, 3, "testing testing 123", "test?").then((feedback) => {
       expect(feedback.feedback_text).toEqual("testing testing 123");
+    });
+  });
+
+  test("Put feedback using feedbackID", async () => {
+    await updateFeedback(1, 1, "hey han").then((feedback) => {
+      expect(feedback.feedback_text).toEqual("hey han");
     });
   });
 });

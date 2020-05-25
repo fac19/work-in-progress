@@ -17,7 +17,17 @@ function addFeedback(userId, stepId, feedback_text, feedback_tag) {
     });
 }
 
+function updateFeedback(userId, feedbackId, feedback_text, feedback_tag) {
+  return db
+    .query(
+      "UPDATE feedback SET feedback_text = COALESCE($1, feedback_text), feedback_tag = COALESCE($2, feedback_tag) WHERE id=($3) RETURNING *",
+      [feedback_text, feedback_tag, feedbackId]
+    )
+    .then((result) => result.rows[0]);
+}
+
 module.exports = {
   getFeedback,
   addFeedback,
+  updateFeedback,
 };

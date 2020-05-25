@@ -93,9 +93,15 @@ describe("Database tests for projects", () => {
     build();
   });
 
-  test("Get all watched projects", async () => {
+  test("Get all watched projects returns array of correct length", async () => {
     await getWatchedProjects("2").then((projects) => {
       expect(projects.length).toEqual(4);
+    });
+  });
+
+  test("Get info from watched projects", async () => {
+    await getWatchedProjects("2").then((projects) => {
+      expect(projects[2].project_name).toEqual('A friend');
     });
   });
 });

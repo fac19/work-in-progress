@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1590408741083" clover="3.2.0">
-  <project timestamp="1590408741083" name="All files">
-    <metrics statements="35" coveredstatements="34" conditionals="0" coveredconditionals="0" methods="16" coveredmethods="15" elements="51" coveredelements="49" complexity="0" loc="35" ncloc="35" packages="2" files="5" classes="5"/>
+<coverage generated="1590411946974" clover="3.2.0">
+  <project timestamp="1590411946974" name="All files">
+    <metrics statements="32" coveredstatements="31" conditionals="0" coveredconditionals="0" methods="14" coveredmethods="13" elements="46" coveredelements="44" complexity="0" loc="32" ncloc="32" packages="2" files="5" classes="5"/>
     <package name="database">
       <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="build.js" path="/home/jackherizsmith/Desktop/code/10-studentproject/work-in-progress/wip-rest-api/src/database/build.js">
@@ -11,7 +11,7 @@
         <line num="3" count="1" type="stmt"/>
         <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
-        <line num="9" count="6" type="stmt"/>
+        <line num="9" count="7" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
       </file>
       <file name="connection.js" path="/home/jackherizsmith/Desktop/code/10-studentproject/work-in-progress/wip-rest-api/src/database/connection.js">
@@ -24,7 +24,7 @@
       </file>
     </package>
     <package name="model">
-      <metrics statements="23" coveredstatements="22" conditionals="0" coveredconditionals="0" methods="15" coveredmethods="14"/>
+      <metrics statements="20" coveredstatements="19" conditionals="0" coveredconditionals="0" methods="13" coveredmethods="12"/>
       <file name="feedback-model.js" path="/home/jackherizsmith/Desktop/code/10-studentproject/work-in-progress/wip-rest-api/src/model/feedback-model.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
@@ -33,14 +33,11 @@
         <line num="9" count="1" type="stmt"/>
       </file>
       <file name="projects-model.js" path="/home/jackherizsmith/Desktop/code/10-studentproject/work-in-progress/wip-rest-api/src/model/projects-model.js">
-        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
-        <line num="16" count="1" type="stmt"/>
-        <line num="19" count="4" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
       </file>
       <file name="users-model.js" path="/home/jackherizsmith/Desktop/code/10-studentproject/work-in-progress/wip-rest-api/src/model/users-model.js">
         <metrics statements="12" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="8"/>

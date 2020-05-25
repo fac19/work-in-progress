@@ -69,11 +69,11 @@ You can make requests to the Heroku App URL, e.g. `POST` to `https://wip-rest-ap
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/fae4c1f8e60c1e5bf1f1)
 
-## No Access Token required for these routes:
+### No Access Token required for these routes:
 
-### Users
+#### Users
 
-#### POST /signup
+##### POST /signup
 Creates access token
 
 Request body example:
@@ -87,7 +87,7 @@ Request body example:
 }
 ```
 
-#### POST /login
+##### POST /login
 Receive access token
 
 Request body example:
@@ -98,14 +98,14 @@ Request body example:
 }
 ```
 
-## Send access token as a Bearer Token in the Authorization Header for these routes:
+### Send access token as a Bearer Token in the Authorization Header for these routes:
 
-### Users
+#### Users
 
-#### GET /user
+##### GET /user
 Get your user info when signed in  
 
-#### PUT /user
+##### PUT /user
 Update your user info
 
 Request body example:
@@ -116,15 +116,15 @@ Request body example:
 }
 ```
 
-### Projects
+#### Projects
 
-#### GET /followedprojects
+##### GET /followedprojects
 Get your watched (followed) projects
 
-#### GET /userprojects
+##### GET /userprojects
 Get your own projects
 
-#### POST /userprojects
+##### POST /userprojects
 Add a new project to your account
 
 Request body example:
@@ -135,12 +135,12 @@ Request body example:
 }
 ```
 
-### Steps
+#### Steps
 
-#### GET /steps/:projectid
+##### GET /steps/:projectid
 Get project steps by project id
 
-#### GET /steps/:projectid
+##### GET /steps/:projectid
 Add project steps by project id
 
 Request body example:
@@ -152,12 +152,12 @@ Request body example:
 }
 ```
 
-### Feedback
+#### Feedback
 
-#### GET /feedback/:stepid
+##### GET /feedback/:stepid
 Get feedback for step by step id
 
-#### POST /feedback/:stepid
+##### POST /feedback/:stepid
 Add feedback for step by step id
 
 Request body example:
@@ -168,7 +168,7 @@ Request body example:
 }
 ```
 
-#### PUT /feedback/:feedbackid
+##### PUT /feedback/:feedbackid
 Update feedback by feedback id
 
 Request body example:
@@ -179,10 +179,10 @@ Request body example:
 }
 ```
 
-### Watching
+#### Watching
 
-#### POST /watching/:projectid
+##### POST /watching/:projectid
 Start watching (following) a post by project id
 
-#### DELETE /watching/:projectid
+##### DELETE /watching/:projectid
 Stop watching (following) a post by project id

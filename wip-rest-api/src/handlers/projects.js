@@ -20,7 +20,7 @@ function addNewProject(req, res, next) {
   const userId = req.user.id;
   model
     .addNewProjectToDb(userId, req.body)
-    .then((result) => res.send(result))
+    .then((result) => res.status(201).send(result))
     .catch(next);
 }
 

@@ -1,11 +1,11 @@
 const express = require("express");
-const getUser = require("./middleware/getUser");
+// const getUser = require("./middleware/getUser");
 const logger = require("./middleware/logger");
 const checkAuth = require("./middleware/authorise");
 const handleErrors = require("./middleware/error");
 const users = require("./handlers/users");
 const feedback = require("./handlers/feedback");
-const project = require("./handlers/projects");
+// const project = require("./handlers/projects");
 
 const PORT = process.env.PORT || 3000;
 
@@ -13,7 +13,7 @@ const server = express();
 server.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));
 
 server.use(express.urlencoded({ extended: false }));
-server.use(getUser);
+// server.use(getUser);
 server.use(logger);
 server.use(express.json()); //so that express knows to use JSON
 
@@ -25,7 +25,7 @@ server.put("/user", checkAuth, users.put);
 // server.delete("/user/:username", checkAuth, users.delete);
 
 //Routes for projects
-server.get("/project/:projectId", checkAuth, project.get);
+// server.get("/project/:projectId", checkAuth, project.get);
 // server.post('project', auth, project.post)
 // server.put('/project/:projectId', auth, project.put)
 // server.delete('/project/:projectId', auth, project.delete)

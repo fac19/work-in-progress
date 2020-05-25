@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Container, Button, TextField } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
-import SignUpPost from "../../utils/fetch";
+import signUpPost from "../../utils/fetch";
 
 const useStyles = makeStyles({
   form: {
@@ -33,7 +33,7 @@ const SignUpForm = (props) => {
     const form = document.querySelector("form");
     const formData = new FormData(form);
 
-    SignUpPost({
+    signUpPost({
       username: formData.username,
       email: formData.email,
       password: formData.password,

@@ -23,7 +23,7 @@ function postFetch({ endpoint, body, error }) {
   // .catch(console.error('error in fetch.js line 22')) //change this
 }
 
-function SignUpPost(signUpFormData) {
+function signUpPost(signUpFormData) {
   const options = {
     endpoint: "signUp",
     body: {
@@ -39,7 +39,7 @@ function SignUpPost(signUpFormData) {
   });
 }
 
-function LogInGet(logInFormData) {
+function logInGet(logInFormData) {
   const options = {
     endpoint: "logIn",
     body: {
@@ -53,4 +53,4 @@ function LogInGet(logInFormData) {
   });
 }
 
-export default { SignUpPost, LogInGet };
+export default { signUpPost, logInGet };

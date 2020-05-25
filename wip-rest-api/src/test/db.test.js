@@ -9,7 +9,8 @@ const {
   // deleteUser,
 } = require("../model/users-model");
 
-const projectmodel = require("../model/projects-model");
+const projectsmodel = require("../model/projects-model");
+const stepsmodel = require("../model/steps-model");
 
 const { getFeedback } = require("../model/feedback-model");
 
@@ -94,25 +95,25 @@ describe("Database tests for projects", () => {
   });
 
   test("Get all watched projects returns array of correct length", async () => {
-    await projectmodel.getWatchedProjectsFromDb("2").then((projects) => {
+    await projectsmodel.getWatchedProjectsFromDb("2").then((projects) => {
       expect(projects.length).toEqual(4);
     });
   });
 
   test("Get info from watched projects", async () => {
-    await projectmodel.getWatchedProjectsFromDb("2").then((projects) => {
+    await projectsmodel.getWatchedProjectsFromDb("2").then((projects) => {
       expect(projects[2].project_name).toEqual("A friend");
     });
   });
 
   test("Get user projects returns correct length", async () => {
-    await projectmodel.getUserProjectsFromDb("2").then((projects) => {
+    await projectsmodel.getUserProjectsFromDb("2").then((projects) => {
       expect(projects.length).toEqual(1);
     });
   });
 
   test("Get info from user project", async () => {
-    await projectmodel.getUserProjectsFromDb("2").then((projects) => {
+    await projectsmodel.getUserProjectsFromDb("2").then((projects) => {
       expect(projects[0].project_name).toEqual("A moon");
     });
   });
@@ -122,8 +123,26 @@ describe("Database tests for projects", () => {
       project_name: "An elephant",
       project_description: "I think I could make this look more life-like",
     };
-    await projectmodel.addNewProjectToDb("2", newProject).then((project) => {
+    await projectsmodel.addNewProjectToDb("2", newProject).then((project) => {
       expect(project.project_name).toEqual("An elephant");
+    });
+  });
+});
+
+describe("Database tests for steps", () => {
+  beforeEach(() => {
+    build();
+  });
+
+  test("Get steps with project id", async () => {
+    await stepsmodel.getStepsWithProjectId("1").then((steps) => {
+      expect(steps.length).toEqual(4);
+    });
+  });
+
+  test("Get steps with project id", async () => {
+    await stepsmodel.getStepsWithProjectId("1").then((steps) => {
+      expect(steps[2]).toEqual("1 Some roots");
     });
   });
 });

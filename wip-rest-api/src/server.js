@@ -26,8 +26,9 @@ server.put("/user", authorise, users.put);
 
 //Routes for projects
 server.get("/followedProjects", authorise, project.getWatchedProjects);
+server.get("/userProjects", authorise, project.getUserProjects);
 // server.get("/project/:projectId", authorise, project.get);
-// server.post('project', authorise, project.post)
+server.post("/newProject", authorise, project.addNewProject);
 // server.put('/project/:projectId', authorise, project.put)
 // server.delete('/project/:projectId', authorise, project.delete)
 

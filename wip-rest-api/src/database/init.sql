@@ -27,7 +27,7 @@ BEGIN;
     (
         id SERIAL PRIMARY KEY,
         user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-        project_name VARCHAR(255),
+        project_name VARCHAR(255) NOT NULL,
         project_description VARCHAR(255),
         project_status BOOLEAN
     );

@@ -32,7 +32,7 @@ function checkAuth(req, res, next) {
         .then((user) => {
           // attach the authenticated user to the request object
           // so other handlers can access it without doing all this nonsense
-          // console.log(user)
+          // console.log(user
           req.user = user;
           next();
         })

@@ -47,7 +47,9 @@ BEGIN;
         project_id INTEGER REFERENCES projects(id) ON DELETE CASCADE,
         step_name VARCHAR(255),
         step_description VARCHAR(255),
-        step_link VARCHAR(255)
+        step_link VARCHAR(255),
+        date TIMESTAMP
+        WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
     );
 
     INSERT INTO steps
@@ -69,8 +71,10 @@ BEGIN;
         id SERIAL PRIMARY KEY,
         user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
         step_id INTEGER REFERENCES steps(id) ON DELETE CASCADE,
-        feedback_text VARCHAR(255),
-        feedback_tag VARCHAR(50)
+        feedback_text VARCHAR(255) NOT NULL,
+        feedback_tag VARCHAR(50),
+        date TIMESTAMP
+        WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
     );
 
     INSERT INTO feedback
@@ -98,4 +102,4 @@ BEGIN;
         ('3', '3'),
         ('4', '4');
 
-END;
+END;t

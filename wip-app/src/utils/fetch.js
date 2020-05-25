@@ -1,4 +1,4 @@
-function postFetch({ endpoint, body, error }) {
+async function postFetch({ endpoint, body, error }) {
   // const headers = {
   //     'content-type': 'application/JSON'
   // };
@@ -14,7 +14,8 @@ function postFetch({ endpoint, body, error }) {
 
   const fetchURL = `https://wip-rest-api.herokuapp.com/${endpoint}`;
 
-  fetch(fetchURL, fetchObject).then((res) => {
+  return await fetch(fetchURL, fetchObject).then((res) => {
+    console.log(res);
     if (!res.ok) {
       throw new Error(`${error}, status: ${res.status}`);
     }
@@ -27,14 +28,14 @@ function signUpPost(signUpFormData) {
   const options = {
     endpoint: "signUp",
     body: {
-      name: signUpFormData.name,
+      username: signUpFormData.username,
       email: signUpFormData.email,
       password: signUpFormData.password,
     },
     error: "Sorry, there was a problem signing you up",
   };
-  console.log(options);
   return postFetch(options).then((res) => {
+    console.log("postFetch-> res", res);
     localStorage.setItem("auth", JSON.stringify(res));
   });
 }
@@ -53,4 +54,4 @@ function logInGet(logInFormData) {
   });
 }
 
-export default { signUpPost, logInGet };
+export { signUpPost, logInGet };

@@ -6,6 +6,7 @@ const handleErrors = require("./middleware/error");
 const users = require("./handlers/users");
 const feedback = require("./handlers/feedback");
 const project = require("./handlers/projects");
+const steps = require("./handlers/steps");
 
 const PORT = process.env.PORT || 3000;
 
@@ -33,8 +34,8 @@ server.post("/newProject", authorise, project.addNewProject);
 // server.delete('/project/:projectId', authorise, project.delete)
 
 //Routes for steps
-// server.get('/step/:projectId/:stepId', authorise, step.get)
-// server.post('step/:projectId', step.post)
+server.get("/steps/:projectId", authorise, steps.getProjectSteps);
+server.post("/steps/:projectId", authorise, steps.addNewStep);
 // server.put('/step/:projectId/:stepId', authorise, step.put)
 // server.delete('/step/:projectId/:stepId', authorise, step.delete)
 

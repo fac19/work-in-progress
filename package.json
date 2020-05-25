@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "app": "cd wip-app && npm start",
-    "api": "cd wip-rest-api && npm start",
+    "api": "cd wip-rest-api && npm run dev",
     "prettier": "./node_modules/.bin/prettier . --write",
     "backeslint": "./wip-rest-api/node_modules/.bin/eslint wip-rest-api --fix"
   },

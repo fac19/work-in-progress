@@ -66,30 +66,65 @@ CREATE DATABASE wip_test WITH OWNER user; -- database name is important for test
 
 ### Users
 
-post("/signUp") : sign up specifying your:
+#### POST /signup
+Creates access token
 
-- username
-- email
-- bio
-- vocation
-- password
+Request body example:
+```json
+{
+	"username": "username",
+	"email": "user@example.com",
+	"bio": "graphic design is my passion",
+	"vocation": "graphic designer",
+	"password": "password"
+}
+```
 
-post("/logIn") : log in specifying your:
+#### POST /login
+Receive access token
 
-- username
-- password
+Request body example:
+```json
+{
+	"username": "username",
+	"email": "user@example.com",
+}
+```
 
-get "/user" : get your user info when signed in
+#### GET /user
+Get your user info when signed in
+Send access token as a Bearer Token in the Authorization Header
+
+#### PUT /user
+Update your user info
+Send access token as a Bearer Token in the Authorization Header
+
+Request body example:
+```json
+{
+	"bio": "I love Comic Sans",
+	"vocation": "graphic designer",
+}
+```
 
 ### Projects
 
-get("/followedProjects") View watched projects
-get("/userProjects")
-post('/newProject') to add new project, you need to send
+#### GET /followedprojects
+Get your followed (watched) projects
+Send access token as a Bearer Token in the Authorization Header
 
-- project_name
-- project_info
+#### GET /userprojects
+Get your own projects
+Send access token as a Bearer Token in the Authorization Header
 
-### Feedback
+#### POST /userprojects
+Add a new project to your account
+Send access token as a Bearer Token in the Authorization Header
 
-get("/feedback/:stepId") gets feedback on a given step
+Request body example:
+```json
+{
+	"project_name": "new project",
+	"project_description": "first sketch, feedback welcome"
+}
+```

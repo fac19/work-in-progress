@@ -139,15 +139,28 @@ describe("Database tests for steps", () => {
     build();
   });
 
-  test("Get steps with project id", async () => {
+  test("Get all steps with project id", async () => {
     await stepsmodel.getStepsWithProjectId("1").then((steps) => {
       expect(steps.length).toEqual(4);
     });
   });
 
-  test("Get steps with project id", async () => {
+  test("Get detail of steps with project id", async () => {
     await stepsmodel.getStepsWithProjectId("1").then((steps) => {
-      expect(steps[2]).toEqual("1 Some roots");
+      expect(steps[2].step_description).toEqual("1 Some roots");
+    });
+  });
+
+  test("Add step with project id", async () => {
+    const step = {
+      step_name: "1 5th sketch",
+      step_description: "1 Someone chopping down the tree",
+      step_link: "/images/11.jpg",
+    };
+    await stepsmodel.addStepWithProjectId("1", step).then((newStep) => {
+      expect(newStep.step_description).toEqual(
+        "1 Someone chopping down the tree"
+      );
     });
   });
 });

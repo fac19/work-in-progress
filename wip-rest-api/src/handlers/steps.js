@@ -8,8 +8,18 @@ function getProjectSteps(req, res, next) {
     .catch(next);
 }
 
+function addNewStep(req, res, next) {
+  const projectId = req.params.projectId;
+  const step = req.body;
+  // check user is owner of project!
+  model
+    .addStepWithProjectId(projectId, step)
+    .then((stepInfo) => res.status(201).send(stepInfo))
+    .catch(next);
+}
+
 // function post(req, res, next) {
 
 // }
 
-module.exports = { getProjectSteps };
+module.exports = { getProjectSteps, addNewStep };

@@ -35,7 +35,7 @@ server.post("/newProject", authorise, project.addNewProject);
 
 //Routes for steps
 server.get("/steps/:projectId", authorise, steps.getProjectSteps);
-// server.post('step/:projectId', step.post)
+server.post("/steps/:projectId", authorise, steps.addNewStep);
 // server.put('/step/:projectId/:stepId', authorise, step.put)
 // server.delete('/step/:projectId/:stepId', authorise, step.delete)
 

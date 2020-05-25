@@ -61,3 +61,35 @@ CREATE DATABASE wip_test WITH OWNER user; -- database name is important for test
 6. If you are having issues with anything related to accessing the databases you have created, you may need to grant privileges:
    - `GRANT ALL PRIVILEGES ON DATABASE wip_db TO user;`
    - `GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO user;`
+
+## API routes
+
+### Users
+
+post("/signUp") : sign up specifying your:
+
+- username
+- email
+- bio
+- vocation
+- password
+
+post("/logIn") : log in specifying your:
+
+- username
+- password
+
+get "/user" : get your user info when signed in
+
+### Projects
+
+get("/followedProjects") View watched projects
+get("/userProjects")
+post('/newProject') to add new project, you need to send
+
+- project_name
+- project_info
+
+### Feedback
+
+get("/feedback/:stepId") gets feedback on a given step

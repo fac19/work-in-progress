@@ -1,7 +1,6 @@
 async function postFetch({ endpoint, body, error }) {
   const headers = {
     "content-type": "application/JSON",
-    "Access-Control-Allow-Origin": "http://localhost:3000",
   };
 
   const fetchObject = {

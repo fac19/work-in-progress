@@ -128,6 +128,38 @@ describe("Database tests for projects", () => {
     });
   });
 
+  test("Get all explore projects", async () => {
+    await projectsmodel
+      .getWatchedProjectsFromDb("3")
+      .then((watchedProjects) => {
+        projectsmodel.getAllProjectsFromDb().then((allProjects) => {
+          const watchedIds = watchedProjects.map(
+            (watchedProject) => watchedProject.id
+          );
+          const exploreProjects = allProjects.filter(
+            (project) => watchedIds.indexOf(project.id) === -1
+          );
+          expect(exploreProjects.length).toEqual(4);
+        });
+      });
+  });
+
+  test("Get info from explore projects", async () => {
+    await projectsmodel
+      .getWatchedProjectsFromDb("3")
+      .then((watchedProjects) => {
+        projectsmodel.getAllProjectsFromDb().then((allProjects) => {
+          const watchedIds = watchedProjects.map(
+            (watchedProject) => watchedProject.id
+          );
+          const exploreProjects = allProjects.filter(
+            (project) => watchedIds.indexOf(project.id) === -1
+          );
+          expect(exploreProjects[2].project_name).toEqual("A friend");
+        });
+      });
+  });
+
   test("Can add new project", async () => {
     const newProject = {
       project_name: "An elephant",

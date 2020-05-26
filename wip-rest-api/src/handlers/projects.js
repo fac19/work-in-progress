@@ -16,6 +16,25 @@ function getUserProjects(req, res, next) {
     .catch(next);
 }
 
+function getExploreProjects(req, res, next) {
+  const userId = req.user.id;
+  model
+    .getWatchedProjectsFromDb(userId)
+    .then((watchedProjects) => {
+      model.getAllProjectsFromDb().then((allProjects) => {
+        const watchedIds = watchedProjects.map(
+          (watchedProject) => watchedProject.id
+        );
+        const exploreProjects = allProjects.filter(
+          (project) =>
+            watchedIds.indexOf(project.id) === -1 && userId != project.user_id
+        );
+        res.send(exploreProjects);
+      });
+    })
+    .catch(next);
+}
+
 function addNewProject(req, res, next) {
   const userId = req.user.id;
   model
@@ -24,4 +43,9 @@ function addNewProject(req, res, next) {
     .catch(next);
 }
 
-module.exports = { getWatchedProjects, getUserProjects, addNewProject };
+module.exports = {
+  getWatchedProjects,
+  getUserProjects,
+  addNewProject,
+  getExploreProjects,
+};

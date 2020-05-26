@@ -70,15 +70,17 @@ CREATE DATABASE wip_test WITH OWNER user; -- database name is important for test
 
 ## Scripts
 
-npm run i-all => installs everything you need
+You can set up everything you need in your terminal.
 
-npm run app => runs the front end on localhost:3000
+`npm run i-all` => installs everything you need
 
-npm run app-test => test the front end
+`npm run app` => runs the front end on localhost:3000
 
-npm run api => runs the back end on localhost:3000 (once you've set up your database)
+`npm run app-test` => test the front end
 
-npm run api-test => test the back end
+`npm run api` => runs the back end on localhost:3000 (once you've set up your database)
+
+`npm run api-test` => test the back end
 
 ## API routes
 

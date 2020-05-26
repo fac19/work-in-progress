@@ -34,11 +34,14 @@ JWT_SECRET=jwtsecret
 
 ### Set up instructions
 
-1. Type in psql in terminal and hit enter.
-   CREATE USER user WITH PASSWORD 'password';
-   ALTER USER user WITH SUPERUSER;
-2. Initialise the dev and test databases:
-
+1. `git clone` this repo
+2. cd into wip-app directory and `npm install`
+3. Type in psql in terminal and hit enter.
+```sql
+CREATE USER user WITH PASSWORD 'password';
+ALTER USER user WITH SUPERUSER; 
+```
+Initialise the dev and test databases:
 ```sql
 CREATE DATABASE wip_db WITH OWNER user;
 CREATE DATABASE wip_test WITH OWNER user; -- database name is important for tests to run
@@ -47,18 +50,17 @@ CREATE DATABASE wip_test WITH OWNER user; -- database name is important for test
 \c wip_test;
 \i database/init.sql;
 ```
-
-3. Ensure the test script in package.json refers to your local test database, i.e.
+4. Ensure the test script in package.json refers to your local test database, i.e.
 
 ```json
   "scripts": {
-    "test": "PGDATABASE=wip_test jest src/test/*.test.js --watch",
+    "test": "PGDATABASE=wip_test jest src/test/*.test.js --watch"
   }
 ```
 
-4. Run `npm test` to run tests
-5. Run `npm run dev` to start development server
-6. If you are having issues with anything related to accessing the databases you have created, you may need to grant privileges:
+5. Run `npm test` to run tests inside wip-rest-api directory
+6. Run `npm run dev` to start development server
+7. If you are having issues with anything related to accessing the databases you have created, you may need to grant privileges:
    - `GRANT ALL PRIVILEGES ON DATABASE wip_db TO user;`
    - `GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO user;`
 
@@ -177,8 +179,8 @@ Update feedback by feedback id
 Request body example:
 ```json
 {
-  "feedback_text": "wow, that's really amazing - keep up the good work!",
-  "feedback_tag": "compliment"
+  "feedback": "wow, that's really amazing - keep up the good work!",
+  "tag": "compliment"
 }
 ```
 

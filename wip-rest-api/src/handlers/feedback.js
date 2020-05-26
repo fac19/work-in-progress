@@ -31,7 +31,7 @@ function put(req, res, next) {
     .then((feedback) => {
       if (feedback.user_id === userId) {
         model
-          .updateFeedback(userId, feedbackId, feedback_text, feedback_tag)
+          .updateFeedback(feedbackId, feedback_text, feedback_tag)
           .then((feedback) => res.status(201).send(feedback));
         // .catch(next);
       } else {

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Container, Button, TextField } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
-import logInGet from "../../utils/fetch";
+import { logInGet } from "../../utils/fetch";
 
 const useStyles = makeStyles({
   form: {
@@ -44,7 +44,12 @@ const LogInForm = (props) => {
   return (
     <Container className={classes.formContainer} component="main" maxWidth="xs">
       <h1>Log In</h1>
-      <form className={classes.form} noValidate autoComplete="off">
+      <form
+        className={classes.form}
+        noValidate
+        autoComplete="off"
+        onSubmit={handleSubmit}
+      >
         <TextField
           className={classes.formElement}
           variant="outlined"
@@ -69,16 +74,16 @@ const LogInForm = (props) => {
           type="password"
           autoComplete="password"
         />
-        <Link to="/feed">
-          <Button
-            className={classes.formElement}
-            variant="contained"
-            color="primary"
-            onClick={handleSubmit}
-          >
-            Log In
-          </Button>
-        </Link>
+        {/* <Link to="/feed"> */}
+        <Button
+          className={classes.formElement}
+          variant="contained"
+          color="primary"
+          // onClick={handleSubmit}
+        >
+          Log In
+        </Button>
+        {/* </Link> */}
       </form>
     </Container>
   );

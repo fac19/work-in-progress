@@ -67,7 +67,7 @@ CREATE DATABASE wip_test WITH OWNER user; -- database name is important for test
 REST API deployed on [Heroku](https://wip-rest-api.herokuapp.com/)  
 You can make requests to the Heroku App URL, e.g. `POST` to `https://wip-rest-api.herokuapp.com/signup`
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/fae4c1f8e60c1e5bf1f1)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/1cc197403ff5a2181a1a)
 
 ### No Access Token required for these routes:
 

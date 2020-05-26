@@ -21,9 +21,9 @@ server.use(express.json()); //so that express knows to use JSON
 
 //Routes for users
 server.get("/user", authorise, users.get);
-server.post("/logIn", users.postLogIn);
-server.post("/signUp", users.postSignUp);
-server.put("/user", authorise, users.put);
+server.post("/logIn", users.logIn);
+server.post("/signUp", users.signUp);
+server.put("/user", authorise, users.update);
 // server.delete("/user/:username", authorise, users.delete);
 
 //Routes for projects
@@ -42,13 +42,13 @@ server.post("/steps/:projectId", authorise, steps.addNewStep);
 
 //Routes for feedback
 server.get("/feedback/:stepId", authorise, feedback.get);
-server.post("/feedback/:stepId", authorise, feedback.post);
-server.put("/feedback/:feedbackId", authorise, feedback.put);
+server.post("/feedback/:stepId", authorise, feedback.add);
+server.put("/feedback/:feedbackId", authorise, feedback.update);
 // server.delete('/feedback/:feedbackId', auth, feedback.delete)
 
 //Routes for user watch
-server.post("/watching/:projectId", authorise, watching.post);
-server.delete("/watching/:projectId", authorise, watching.remove);
+server.post("/watching/:projectId", authorise, watching.addRelation);
+server.delete("/watching/:projectId", authorise, watching.removeRelation);
 
 //Error handler
 server.use(handleErrors);

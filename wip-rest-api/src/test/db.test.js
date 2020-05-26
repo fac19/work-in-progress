@@ -56,14 +56,16 @@ describe("Database tests for users", () => {
     };
     await addUser(testUser).then((data) => {
       expect(data.username).toEqual("Kat");
-      expect(data.password).toEqual("hellohello");
+      expect(data.id).toEqual(5);
     });
     // .catch(console.error)
   });
 
   test("Can get a user using the username", async () => {
     await getUserByName("CampbellDocherty").then((data) => {
-      expect(data.username).toEqual("CampbellDocherty");
+      expect(data.password).toEqual(
+        "$2a$10$bWvVpjSqqysqZarWg38wu.jRzq404fcCWxjOkxUp18M3S8XsWEIse"
+      );
     });
   });
 

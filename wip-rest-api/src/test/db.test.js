@@ -56,7 +56,7 @@ describe("Database tests for users", () => {
     };
     await addUser(testUser).then((data) => {
       expect(data.username).toEqual("Kat");
-      expect(data.password).toEqual("hellohello");
+      expect(data.id).toEqual(5);
     });
     // .catch(console.error)
   });

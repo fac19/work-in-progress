@@ -9,7 +9,7 @@ const db = require("../database/connection.js");
 function addUser({ username, email, bio, vocation, password }) {
   return db
     .query(
-      "INSERT INTO users(username, email, password, user_bio, user_vocation) VALUES (($1), ($2), ($3), ($4), ($5)) RETURNING *",
+      "INSERT INTO users(username, email, password, user_bio, user_vocation) VALUES (($1), ($2), ($3), ($4), ($5)) RETURNING id, username",
       [username, email, password, bio, vocation]
     )
     .then((result) => result.rows[0]);

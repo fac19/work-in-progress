@@ -1,7 +1,6 @@
 const authToken = localStorage.getItem("auth");
-console.log("authToken", authToken);
 
-async function getFetch({ endpoint, body, error }) {
+async function getFetch({ endpoint, error }) {
   const fetchObject = {
     method: "GET",
     headers: {
@@ -9,6 +8,8 @@ async function getFetch({ endpoint, body, error }) {
       Authorization: authToken,
     },
   };
+
+  console.log(fetchObject);
 
   const fetchURL = `https://wip-rest-api.herokuapp.com/${endpoint}`;
 
@@ -29,4 +30,15 @@ function feedPage() {
   return getFetch(options);
 }
 
-export { feedPage };
+function getUser(token) {
+  const options = {
+    endpoint: "user",
+    error: "Unable to get this page",
+  };
+  return getFetch(options).then((res) => {
+    console.log("38", res);
+    return res;
+  });
+}
+
+export { feedPage, getUser };

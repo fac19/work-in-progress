@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
-import { logInPost } from "../../utils/fetch";
+import { logInPost } from "../../utils/post-fetch";
 
 const useStyles = makeStyles({
   form: {

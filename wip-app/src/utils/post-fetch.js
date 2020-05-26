@@ -41,7 +41,7 @@ function logInPost(logInFormData) {
       username: logInFormData.username,
       password: logInFormData.password,
     },
-    errorMessage: "Could not log you in",
+    error: "Could not log you in",
   };
   return postFetch(options).then((res) => {
     localStorage.setItem("auth", JSON.stringify(res.token));

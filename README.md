@@ -37,11 +37,14 @@ JWT_SECRET=jwtsecret
 1. `git clone` this repo
 2. cd into wip-app directory and `npm install`
 3. Type in psql in terminal and hit enter.
+
 ```sql
 CREATE USER user WITH PASSWORD 'password';
-ALTER USER user WITH SUPERUSER; 
+ALTER USER user WITH SUPERUSER;
 ```
+
 Initialise the dev and test databases:
+
 ```sql
 CREATE DATABASE wip_db WITH OWNER user;
 CREATE DATABASE wip_test WITH OWNER user; -- database name is important for tests to run
@@ -50,6 +53,7 @@ CREATE DATABASE wip_test WITH OWNER user; -- database name is important for test
 \c wip_test;
 \i database/init.sql;
 ```
+
 4. Ensure the test script in package.json refers to your local test database, i.e.
 
 ```json
@@ -76,9 +80,11 @@ You can make requests to the Heroku App URL, e.g. `POST` to `https://wip-rest-ap
 #### Users
 
 ##### POST /signup
+
 Creates access token
 
 Request body example:
+
 ```json
 {
   "username": "username",
@@ -90,9 +96,11 @@ Request body example:
 ```
 
 ##### POST /login
+
 Receive access token
 
 Request body example:
+
 ```json
 {
   "username": "username",
@@ -105,12 +113,15 @@ Request body example:
 #### Users
 
 ##### GET /user
-Get your user info when signed in  
+
+Get your user info when signed in
 
 ##### PUT /user
+
 Update your user info
 
 Request body example:
+
 ```json
 {
   "bio": "I love Comic Sans",
@@ -121,18 +132,23 @@ Request body example:
 #### Projects
 
 ##### GET /followedprojects
+
 Get your watched (followed) projects
 
 ##### GET /userprojects
+
 Get your own projects
 
 ##### GET /exploreprojects
+
 Get your unwatched (unfollowed) projects
 
 ##### POST /userprojects
+
 Add a new project to your account
 
 Request body example:
+
 ```json
 {
   "project_name": "new project",
@@ -143,12 +159,15 @@ Request body example:
 #### Steps
 
 ##### GET /steps/:projectid
+
 Get project steps by project id
 
 ##### GET /steps/:projectid
+
 Add project steps by project id
 
 Request body example:
+
 ```json
 {
   "step_name": "Sketch in pen",
@@ -160,12 +179,15 @@ Request body example:
 #### Feedback
 
 ##### GET /feedback/:stepid
+
 Get feedback for step by step id
 
 ##### POST /feedback/:stepid
+
 Add feedback for step by step id
 
 Request body example:
+
 ```json
 {
   "feedback": "wow, that's amazing!",
@@ -174,9 +196,11 @@ Request body example:
 ```
 
 ##### PUT /feedback/:feedbackid
+
 Update feedback by feedback id
 
 Request body example:
+
 ```json
 {
   "feedback": "wow, that's really amazing - keep up the good work!",
@@ -187,7 +211,13 @@ Request body example:
 #### Watching
 
 ##### POST /watching/:projectid
+
 Start watching (following) a post by project id
 
 ##### DELETE /watching/:projectid
+
 Stop watching (following) a post by project id
+
+## Scrips
+
+npm run i-all => runs npm i in the root, wip-app, wip-rest-api

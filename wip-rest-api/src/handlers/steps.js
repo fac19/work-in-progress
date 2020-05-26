@@ -18,8 +18,4 @@ function addNewStep(req, res, next) {
     .catch(next);
 }
 
-// function post(req, res, next) {
-
-// }
-
 module.exports = { getProjectSteps, addNewStep };

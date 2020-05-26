@@ -36,8 +36,8 @@ describe("File tests are running", () => {
 });
 
 describe("Database tests for users", () => {
-  beforeEach(() => {
-    build();
+  beforeEach(async () => {
+    await build();
   });
   // test("information can be retrieved", async () => {
   //   await getUsers().then((data) => {
@@ -102,8 +102,8 @@ describe("Database tests for users", () => {
 });
 
 describe("Database tests for projects", () => {
-  beforeEach(() => {
-    build();
+  beforeEach(async () => {
+    await build();
   });
 
   test("Get all watched projects returns array of correct length", async () => {
@@ -174,8 +174,8 @@ describe("Database tests for projects", () => {
 });
 
 describe("Database tests for steps", () => {
-  beforeEach(() => {
-    build();
+  beforeEach(async () => {
+    await build();
   });
 
   test("Get all steps with project id", async () => {
@@ -205,8 +205,8 @@ describe("Database tests for steps", () => {
 });
 
 describe("Database tests for feedback", () => {
-  beforeEach(() => {
-    build();
+  beforeEach(async () => {
+    await build();
   });
 
   test("Get feedback from database using stepId", async () => {
@@ -243,8 +243,8 @@ describe("Database tests for feedback", () => {
 });
 
 describe("Database tests for watching", () => {
-  beforeEach(() => {
-    build();
+  beforeEach(async () => {
+    await build();
   });
 
   test("Add watched project by projectId", async () => {

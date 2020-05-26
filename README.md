@@ -124,6 +124,9 @@ Get your watched (followed) projects
 ##### GET /userprojects
 Get your own projects
 
+##### GET /exploreprojects
+Get your unwatched (unfollowed) projects
+
 ##### POST /userprojects
 Add a new project to your account
 
@@ -163,8 +166,8 @@ Add feedback for step by step id
 Request body example:
 ```json
 {
-  "feedback_text": "wow, that's amazing!",
-  "feedback_tag": "compliment"
+  "feedback": "wow, that's amazing!",
+  "tag": "compliment"
 }
 ```
 

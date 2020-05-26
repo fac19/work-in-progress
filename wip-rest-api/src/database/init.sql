@@ -18,16 +18,16 @@ BEGIN;
     INSERT INTO users
         (username, email, password, user_bio, user_vocation, user_link_1, user_link_2, user_link_3)
     VALUES
-        ('CampbellDocherty', 'CY@123.com', 'password123', 'I am a freelance illustrator trying to make it big', 'freelance illustrator', 'www.twitter.com', 'www.arena.com', 'www.facebook.com'),
-        ('Jacko', 'JO@123.com', 'password123', 'I love colours they are so nice', 'professional animator', 'www.facebook.com', 'www.instagram.com', 'www.twitter.com'),
-        ('Hanhan', 'HN@123.com', 'password123', 'I hope I get a well-paid secure job in the arts', 'student graphic designer', 'www.facebook.com', 'www.twitter.com', 'www.arena.com'),
-        ('KDrizzle', 'KE@123.com', 'password123', 'I animate out and about', 'freelance animator', 'www.instagram.com', 'www.ucas.com', 'www.dribbble.com');
+        ('CampbellDocherty', 'CY@123.com', '$2a$10$bWvVpjSqqysqZarWg38wu.jRzq404fcCWxjOkxUp18M3S8XsWEIse', 'I am a freelance illustrator trying to make it big', 'freelance illustrator', 'www.twitter.com', 'www.arena.com', 'www.facebook.com'),
+        ('Jacko', 'JO@123.com', '$2a$10$bWvVpjSqqysqZarWg38wu.jRzq404fcCWxjOkxUp18M3S8XsWEIse', 'I love colours they are so nice', 'professional animator', 'www.facebook.com', 'www.instagram.com', 'www.twitter.com'),
+        ('Hanhan', 'HN@123.com', '$2a$10$bWvVpjSqqysqZarWg38wu.jRzq404fcCWxjOkxUp18M3S8XsWEIse', 'I hope I get a well-paid secure job in the arts', 'student graphic designer', 'www.facebook.com', 'www.twitter.com', 'www.arena.com'),
+        ('KDrizzle', 'KE@123.com', '$2a$10$bWvVpjSqqysqZarWg38wu.jRzq404fcCWxjOkxUp18M3S8XsWEIse', 'I animate out and about', 'freelance animator', 'www.instagram.com', 'www.ucas.com', 'www.dribbble.com');
 
     CREATE TABLE projects
     (
         id SERIAL PRIMARY KEY,
         user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-        project_name VARCHAR(255),
+        project_name VARCHAR(255) NOT NULL,
         project_description VARCHAR(255),
         project_status BOOLEAN
     );
@@ -47,7 +47,9 @@ BEGIN;
         project_id INTEGER REFERENCES projects(id) ON DELETE CASCADE,
         step_name VARCHAR(255),
         step_description VARCHAR(255),
-        step_link VARCHAR(255)
+        step_link VARCHAR(255),
+        date TIMESTAMP
+        WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
     );
 
     INSERT INTO steps
@@ -69,8 +71,10 @@ BEGIN;
         id SERIAL PRIMARY KEY,
         user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
         step_id INTEGER REFERENCES steps(id) ON DELETE CASCADE,
-        feedback_text VARCHAR(255),
-        feedback_tag VARCHAR(50)
+        feedback_text VARCHAR(255) NOT NULL,
+        feedback_tag VARCHAR(50),
+        date TIMESTAMP
+        WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
     );
 
     INSERT INTO feedback

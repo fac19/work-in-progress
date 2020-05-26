@@ -4,7 +4,7 @@ function handleErrors(error, req, res, next) {
   const status = error.status || 500;
   const message = error.message || "Something went wrong";
   const name = error.name || "Error";
-  const errorObj = { name, message };
+  const errorObj = { name: name, message: message };
   res.status(status).send(errorObj);
 }
 

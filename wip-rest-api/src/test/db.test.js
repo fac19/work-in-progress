@@ -9,7 +9,8 @@ const {
   // deleteUser,
 } = require("../model/users-model");
 
-const projectmodel = require("../model/projects-model");
+const projectsmodel = require("../model/projects-model");
+const stepsmodel = require("../model/steps-model");
 
 const {
   getFeedback,
@@ -17,6 +18,11 @@ const {
   addFeedback,
   updateFeedback,
 } = require("../model/feedback-model");
+
+const {
+  addToWatching,
+  removeFromWatching,
+} = require("../model/watching-model");
 
 afterAll(() => {
   console.log("End of testing for Database");
@@ -99,27 +105,59 @@ describe("Database tests for projects", () => {
   });
 
   test("Get all watched projects returns array of correct length", async () => {
-    await projectmodel.getWatchedProjectsFromDb("2").then((projects) => {
+    await projectsmodel.getWatchedProjectsFromDb("2").then((projects) => {
       expect(projects.length).toEqual(4);
     });
   });
 
   test("Get info from watched projects", async () => {
-    await projectmodel.getWatchedProjectsFromDb("2").then((projects) => {
+    await projectsmodel.getWatchedProjectsFromDb("2").then((projects) => {
       expect(projects[2].project_name).toEqual("A friend");
     });
   });
 
   test("Get user projects returns correct length", async () => {
-    await projectmodel.getUserProjectsFromDb("2").then((projects) => {
+    await projectsmodel.getUserProjectsFromDb("2").then((projects) => {
       expect(projects.length).toEqual(1);
     });
   });
 
   test("Get info from user project", async () => {
-    await projectmodel.getUserProjectsFromDb("2").then((projects) => {
+    await projectsmodel.getUserProjectsFromDb("2").then((projects) => {
       expect(projects[0].project_name).toEqual("A moon");
     });
+  });
+
+  test("Get all explore projects", async () => {
+    await projectsmodel
+      .getWatchedProjectsFromDb("3")
+      .then((watchedProjects) => {
+        projectsmodel.getAllProjectsFromDb().then((allProjects) => {
+          const watchedIds = watchedProjects.map(
+            (watchedProject) => watchedProject.id
+          );
+          const exploreProjects = allProjects.filter(
+            (project) => watchedIds.indexOf(project.id) === -1
+          );
+          expect(exploreProjects.length).toEqual(4);
+        });
+      });
+  });
+
+  test("Get info from explore projects", async () => {
+    await projectsmodel
+      .getWatchedProjectsFromDb("3")
+      .then((watchedProjects) => {
+        projectsmodel.getAllProjectsFromDb().then((allProjects) => {
+          const watchedIds = watchedProjects.map(
+            (watchedProject) => watchedProject.id
+          );
+          const exploreProjects = allProjects.filter(
+            (project) => watchedIds.indexOf(project.id) === -1
+          );
+          expect(exploreProjects[2].project_name).toEqual("A friend");
+        });
+      });
   });
 
   test("Can add new project", async () => {
@@ -127,8 +165,39 @@ describe("Database tests for projects", () => {
       project_name: "An elephant",
       project_description: "I think I could make this look more life-like",
     };
-    await projectmodel.addNewProjectToDb("2", newProject).then((project) => {
+    await projectsmodel.addNewProjectToDb("2", newProject).then((project) => {
       expect(project.project_name).toEqual("An elephant");
+    });
+  });
+});
+
+describe("Database tests for steps", () => {
+  beforeEach(() => {
+    build();
+  });
+
+  test("Get all steps with project id", async () => {
+    await stepsmodel.getStepsWithProjectId("1").then((steps) => {
+      expect(steps.length).toEqual(4);
+    });
+  });
+
+  test("Get detail of steps with project id", async () => {
+    await stepsmodel.getStepsWithProjectId("1").then((steps) => {
+      expect(steps[2].step_description).toEqual("1 Some roots");
+    });
+  });
+
+  test("Add step with project id", async () => {
+    const step = {
+      step_name: "1 5th sketch",
+      step_description: "1 Someone chopping down the tree",
+      step_link: "/images/11.jpg",
+    };
+    await stepsmodel.addStepWithProjectId("1", step).then((newStep) => {
+      expect(newStep.step_description).toEqual(
+        "1 Someone chopping down the tree"
+      );
     });
   });
 });
@@ -139,9 +208,10 @@ describe("Database tests for feedback", () => {
   });
 
   test("Get feedback from database using stepId", async () => {
-    await getFeedback("2").then((feedback) => {
+    const stepId = 8;
+    await getFeedback(stepId).then((feedback) => {
       expect(feedback[0].feedback_text).toEqual(
-        "Hey Han its Cam what a nice dog"
+        "Hey J man its Han have you considered craters"
       );
     });
   });
@@ -166,6 +236,30 @@ describe("Database tests for feedback", () => {
     const feedbackId = 1;
     await updateFeedback(feedbackId, "hey han").then((feedback) => {
       expect(feedback.feedback_text).toEqual("hey han");
+    });
+  });
+});
+
+describe("Database tests for watching", () => {
+  beforeEach(() => {
+    build();
+  });
+
+  test("Add watched project by projectId", async () => {
+    const userId = 1;
+    const projectId = 3;
+    await addToWatching(userId, projectId).then((watched) => {
+      expect(watched.project_id).toEqual(3);
+      expect(watched.user_id).toEqual(1);
+    });
+  });
+
+  test("Remove watched project by userId & projectId", async () => {
+    const userId = 4;
+    const projectId = 4;
+    await removeFromWatching(userId, projectId).then((watched) => {
+      expect(watched.project_id).toEqual(4);
+      expect(watched.user_id).toEqual(4);
     });
   });
 });

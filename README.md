@@ -64,32 +64,128 @@ CREATE DATABASE wip_test WITH OWNER user; -- database name is important for test
 
 ## API routes
 
-### Users
+REST API deployed on [Heroku](https://wip-rest-api.herokuapp.com/)  
+You can make requests to the Heroku App URL, e.g. `POST` to `https://wip-rest-api.herokuapp.com/signup`
 
-post("/signUp") : sign up specifying your:
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/fae4c1f8e60c1e5bf1f1)
 
-- username
-- email
-- bio
-- vocation
-- password
+### No Access Token required for these routes:
 
-post("/logIn") : log in specifying your:
+#### Users
 
-- username
-- password
+##### POST /signup
+Creates access token
 
-get "/user" : get your user info when signed in
+Request body example:
+```json
+{
+  "username": "username",
+  "email": "user@example.com",
+  "bio": "graphic design is my passion",
+  "vocation": "graphic designer",
+  "password": "password"
+}
+```
 
-### Projects
+##### POST /login
+Receive access token
 
-get("/followedProjects") View watched projects
-get("/userProjects")
-post('/newProject') to add new project, you need to send
+Request body example:
+```json
+{
+  "username": "username",
+  "email": "user@example.com"
+}
+```
 
-- project_name
-- project_info
+### Send access token as a Bearer Token in the Authorization Header for these routes:
 
-### Feedback
+#### Users
 
-get("/feedback/:stepId") gets feedback on a given step
+##### GET /user
+Get your user info when signed in  
+
+##### PUT /user
+Update your user info
+
+Request body example:
+```json
+{
+  "bio": "I love Comic Sans",
+  "vocation": "graphic designer"
+}
+```
+
+#### Projects
+
+##### GET /followedprojects
+Get your watched (followed) projects
+
+##### GET /userprojects
+Get your own projects
+
+##### GET /exploreprojects
+Get your unwatched (unfollowed) projects
+
+##### POST /userprojects
+Add a new project to your account
+
+Request body example:
+```json
+{
+  "project_name": "new project",
+  "project_description": "first sketch, feedback welcome"
+}
+```
+
+#### Steps
+
+##### GET /steps/:projectid
+Get project steps by project id
+
+##### GET /steps/:projectid
+Add project steps by project id
+
+Request body example:
+```json
+{
+  "step_name": "Sketch in pen",
+  "step_description": "Adding more details",
+  "step_link": "image.jpg"
+}
+```
+
+#### Feedback
+
+##### GET /feedback/:stepid
+Get feedback for step by step id
+
+##### POST /feedback/:stepid
+Add feedback for step by step id
+
+Request body example:
+```json
+{
+  "feedback": "wow, that's amazing!",
+  "tag": "compliment"
+}
+```
+
+##### PUT /feedback/:feedbackid
+Update feedback by feedback id
+
+Request body example:
+```json
+{
+  "feedback_text": "wow, that's really amazing - keep up the good work!",
+  "feedback_tag": "compliment"
+}
+```
+
+#### Watching
+
+##### POST /watching/:projectid
+Start watching (following) a post by project id
+
+##### DELETE /watching/:projectid
+Stop watching (following) a post by project id

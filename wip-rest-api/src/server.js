@@ -10,7 +10,7 @@ const project = require("./handlers/projects");
 const watching = require("./handlers/watching");
 const steps = require("./handlers/steps");
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 const server = express();
 server.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));

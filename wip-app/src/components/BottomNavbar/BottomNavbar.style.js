@@ -4,6 +4,7 @@ const BottomNavbarStyle = styled.nav`
   height: 4rem;
   border: 1px solid black;
   position: fixed;
+  background-color: white;
   width: 100%;
   bottom: 0;
 `;

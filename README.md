@@ -68,6 +68,12 @@ CREATE DATABASE wip_test WITH OWNER user; -- database name is important for test
    - `GRANT ALL PRIVILEGES ON DATABASE wip_db TO user;`
    - `GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO user;`
 
+
+## Scripts
+
+npm run i-all => runs npm i in the root, wip-app, wip-rest-api
+
+
 ## API routes
 
 REST API deployed on [Heroku](https://wip-rest-api.herokuapp.com/)  
@@ -217,7 +223,3 @@ Start watching (following) a post by project id
 ##### DELETE /watching/:projectid
 
 Stop watching (following) a post by project id
-
-## Scrips
-
-npm run i-all => runs npm i in the root, wip-app, wip-rest-api

@@ -4,7 +4,6 @@ console.log("authToken", authToken);
 async function getFetch({ endpoint, body, error }) {
   const fetchObject = {
     method: "GET",
-    mode: "no-cors",
     headers: {
       "content-type": "application/JSON",
       Authorization: authToken,
@@ -27,9 +26,7 @@ function feedPage() {
     endpoint: "followedprojects",
     errorMessage: "Feed error",
   };
-  return getFetch(options).then((res) => {
-    console.log(res);
-  });
+  return getFetch(options);
 }
 
 export { feedPage };

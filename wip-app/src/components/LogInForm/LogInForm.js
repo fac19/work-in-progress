@@ -34,7 +34,7 @@ const LogInForm = (props) => {
     const logInFormData = new FormData(form);
 
     logInPost({
-      emai: logInFormData.email,
+      email: logInFormData.email,
       password: logInFormData.password,
     })
       .then(() => history.push("/feed"))

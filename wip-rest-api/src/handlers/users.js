@@ -32,10 +32,7 @@ function signUp(req, res, next) {
             expiresIn: "24h",
           });
           userInfo.token = token;
-          res
-            .header("Access-Control-Allow-Origin", "http://localhost:3000")
-            .status(201)
-            .send(userInfo);
+          res.status(201).send(userInfo);
         })
         .catch(next);
     })

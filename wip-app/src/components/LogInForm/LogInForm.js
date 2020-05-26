@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Container, Button, TextField } from "@material-ui/core";
+import { Container, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
 import { logInPost } from "../../utils/fetch";
@@ -25,6 +24,8 @@ const useStyles = makeStyles({
 });
 
 const LogInForm = (props) => {
+  // const [errorMessage, setErrorMessage] = React.useState('')
+
   const classes = useStyles();
   const history = useHistory();
 
@@ -34,56 +35,42 @@ const LogInForm = (props) => {
     const logInFormData = new FormData(form);
 
     logInPost({
-      emai: logInFormData.email,
-      password: logInFormData.password,
+      username: logInFormData.get("username"),
+      password: logInFormData.get("password"),
     })
       .then(() => history.push("/feed"))
-      .catch(console.error("LoginForm.js line 41"));
+      .catch((error) => console.error(error));
   };
 
   return (
     <Container className={classes.formContainer} component="main" maxWidth="xs">
       <h1>Log In</h1>
-      <form
-        className={classes.form}
-        noValidate
-        autoComplete="off"
-        onSubmit={handleSubmit}
-      >
-        <TextField
-          className={classes.formElement}
-          variant="outlined"
-          margin="normal"
+      <form className={classes.form} onSubmit={handleSubmit}>
+        <label htmlFor="username">Username *</label>
+        <input
+          type="text"
+          id="username"
+          placeholder="username"
+          name="username"
           required
-          fullWidth
-          id="email"
-          label="Email Address"
-          name="email"
-          autoComplete="email"
           autoFocus
-        />
-        <TextField
-          className={classes.formElement}
-          variant="outlined"
-          margin="normal"
-          required
-          fullWidth
-          id="password"
-          label="Password"
-          name="password"
+        ></input>
+        <label htmlFor="password">Password *</label>
+        <input
           type="password"
-          autoComplete="password"
-        />
-        {/* <Link to="/feed"> */}
+          id="password"
+          name="password"
+          placeholder="Password"
+          required
+        ></input>
         <Button
           className={classes.formElement}
           variant="contained"
           color="primary"
-          // onClick={handleSubmit}
+          type="submit"
         >
           Log In
         </Button>
-        {/* </Link> */}
       </form>
     </Container>
   );

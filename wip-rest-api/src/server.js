@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 // const getUser = require("./middleware/getUser");
 const logger = require("./middleware/logger");
 const authorise = require("./middleware/authorise");
@@ -16,6 +17,7 @@ server.listen(PORT, () => console.log(`Listening on http://localhost:${PORT}`));
 
 server.use(express.urlencoded({ extended: false }));
 // server.use(getUser);
+server.use(cors());
 server.use(logger);
 server.use(express.json()); //so that express knows to use JSON
 

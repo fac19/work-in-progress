@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Container, Button, TextField } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
-import { logInGet } from "../../utils/fetch";
+import { logInPost } from "../../utils/fetch";
 
 const useStyles = makeStyles({
   form: {
@@ -33,7 +33,7 @@ const LogInForm = (props) => {
     const form = document.querySelector("form");
     const logInFormData = new FormData(form);
 
-    logInGet({
+    logInPost({
       emai: logInFormData.email,
       password: logInFormData.password,
     })

@@ -94,7 +94,7 @@ Request body example:
 ```json
 {
   "username": "username",
-  "email": "user@example.com",
+  "email": "user@example.com"
 }
 ```
 
@@ -112,7 +112,7 @@ Request body example:
 ```json
 {
   "bio": "I love Comic Sans",
-  "vocation": "graphic designer",
+  "vocation": "graphic designer"
 }
 ```
 

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
 import { feedPage } from "../../utils/get-fetch";
+import { ProjectGrid } from "./FeedPage.style";
 
 const FeedPage = (props) => {
   const [projects, setProjects] = React.useState([]);
@@ -9,17 +10,30 @@ const FeedPage = (props) => {
     feedPage().then(setProjects);
   }, []);
 
+  const renderProjects = (projects) => {
+    return projects.map(
+      ({ id, user_id, project_name, project_description, project_status }) => {
+        // console.log(project);
+        return (
+          <ProjectCard
+            project_name={project_name}
+            project_status={project_status}
+            key={id}
+          />
+        );
+      }
+    );
+  };
+
   return (
-    <div>
+    <>
       <h1>Feed Page</h1>
       {projects === [] ? (
         <h2>Loading...</h2>
       ) : (
-        projects.map((project) => {
-          return <ProjectCard props={project} key={project.id} />;
-        })
+        <ProjectGrid>{renderProjects(projects)}</ProjectGrid>
       )}
-    </div>
+    </>
   );
 };
 

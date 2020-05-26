@@ -1,6 +1,5 @@
 import React from "react";
-// import { Link } from "react-router-dom";
-import { Container, Button, TextField } from "@material-ui/core";
+import { Container, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
 import { logInPost } from "../../utils/fetch";
@@ -25,6 +24,8 @@ const useStyles = makeStyles({
 });
 
 const LogInForm = (props) => {
+  // const [errorMessage, setErrorMessage] = React.useState('')
+
   const classes = useStyles();
   const history = useHistory();
 
@@ -38,52 +39,38 @@ const LogInForm = (props) => {
       password: logInFormData.get("password"),
     })
       .then(() => history.push("/feed"))
-      .catch(console.error("Could not log in!"));
+      .catch((error) => console.error(error));
   };
 
   return (
     <Container className={classes.formContainer} component="main" maxWidth="xs">
       <h1>Log In</h1>
-      <form
-        className={classes.form}
-        noValidate
-        autoComplete="off"
-        // onSubmit={handleSubmit}
-      >
-        <TextField
-          className={classes.formElement}
-          variant="outlined"
-          margin="normal"
-          required
-          fullWidth
+      <form className={classes.form} onSubmit={handleSubmit}>
+        <label htmlFor="username">Username *</label>
+        <input
+          type="text"
           id="username"
-          label="Username"
+          placeholder="username"
           name="username"
-          autoComplete="username"
-          autoFocus
-        />
-        <TextField
-          className={classes.formElement}
-          variant="outlined"
-          margin="normal"
           required
-          fullWidth
-          id="password"
-          label="Password"
-          name="password"
+          autoFocus
+        ></input>
+        <label htmlFor="password">Password *</label>
+        <input
           type="password"
-          autoComplete="password"
-        />
-        {/* <Link to="/feed"> */}
+          id="password"
+          name="password"
+          placeholder="Password"
+          required
+        ></input>
         <Button
           className={classes.formElement}
           variant="contained"
           color="primary"
-          onClick={handleSubmit}
+          type="submit"
         >
           Log In
         </Button>
-        {/* </Link> */}
       </form>
     </Container>
   );

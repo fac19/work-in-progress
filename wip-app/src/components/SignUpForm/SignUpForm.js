@@ -1,6 +1,5 @@
 import React from "react";
-// import { Link } from "react-router-dom";
-import { Container, Button, TextField } from "@material-ui/core";
+import { Container, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
 import { signUpPost } from "../../utils/fetch";
@@ -28,7 +27,7 @@ const SignUpForm = (props) => {
   const classes = useStyles();
   const history = useHistory();
 
-  const submitHandler = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     const form = document.querySelector("form");
     const formData = new FormData(form);
@@ -37,58 +36,48 @@ const SignUpForm = (props) => {
       username: formData.get("username"),
       email: formData.get("email"),
       password: formData.get("password"),
-    }).then(() => history.push("/feed"));
+    })
+      .then(() => history.push("/feed"))
+      .catch((error) => console.error(error));
   };
 
   return (
     <Container className={classes.formContainer} component="main" maxWidth="xs">
       <h1>Sign Up</h1>
-      <form className={classes.form} noValidate autoComplete="off">
-        <TextField
-          className={classes.formElement}
-          variant="outlined"
-          margin="normal"
-          required
-          fullWidth
+      <form className={classes.form} onSubmit={handleSubmit}>
+        <label htmlFor="username">Username *</label>
+        <input
+          type="text"
           id="username"
-          label="Username"
+          placeholder="username"
           name="username"
-          autoComplete="username"
+          required
           autoFocus
-        />
-        <TextField
-          className={classes.formElement}
-          variant="outlined"
-          margin="normal"
-          required
-          fullWidth
+        ></input>
+        <label htmlFor="email">Email *</label>
+        <input
+          type="email"
           id="email"
-          label="Email Address"
+          placeholder="email"
           name="email"
-          autoComplete="email"
-        />
-        <TextField
-          className={classes.formElement}
-          variant="outlined"
-          margin="normal"
           required
-          fullWidth
-          id="password"
-          label="Password"
-          name="password"
+        ></input>
+        <label htmlFor="password">Password *</label>
+        <input
           type="password"
-          autoComplete="password"
-        />
-        {/* <Link to="/feed"> */}
+          id="password"
+          name="password"
+          placeholder="Password"
+          required
+        ></input>
         <Button
           className={classes.formElement}
           variant="contained"
           color="primary"
-          onClick={submitHandler}
+          type="submit"
         >
           Sign Up
         </Button>
-        {/* </Link> */}
       </form>
     </Container>
   );

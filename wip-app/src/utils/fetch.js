@@ -7,8 +7,6 @@ async function postFetch({ endpoint, body, error }) {
     body: JSON.stringify(body),
   };
 
-  console.log(fetchObject);
-
   const fetchURL = `https://wip-rest-api.herokuapp.com/${endpoint}`;
 
   return await fetch(fetchURL, fetchObject).then((res) => {
@@ -32,7 +30,6 @@ function signUpPost(signUpFormData) {
     error: "Sorry, there was a problem signing you up",
   };
   return postFetch(options).then((res) => {
-    console.log("postFetch-> res", res);
     localStorage.setItem("auth", JSON.stringify(res.token));
   });
 }
@@ -46,7 +43,6 @@ function logInPost(logInFormData) {
     },
     errorMessage: "Could not log you in",
   };
-  console.log("hello", options);
   return postFetch(options).then((res) => {
     localStorage.setItem("auth", JSON.stringify(res.token));
   });

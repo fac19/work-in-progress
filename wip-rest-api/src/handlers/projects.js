@@ -22,7 +22,14 @@ function getExploreProjects(req, res, next) {
     .getWatchedProjectsFromDb(userId)
     .then((watchedProjects) => {
       model.getAllProjectsFromDb().then((allProjects) => {
-        console.log(watchedProjects, allProjects);
+        const watchedIds = watchedProjects.map(
+          (watchedProject) => watchedProject.id
+        );
+        const exploreProjects = allProjects.filter(
+          (project) =>
+            watchedIds.indexOf(project.id) === -1 && userId != project.user_id
+        );
+        res.send(exploreProjects);
       });
     })
     .catch(next);

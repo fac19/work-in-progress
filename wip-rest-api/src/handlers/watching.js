@@ -1,6 +1,6 @@
 const model = require("../model/watching-model");
 
-function post(req, res, next) {
+function addRelation(req, res, next) {
   const userId = req.user.id;
   const projectId = req.params.projectId;
 
@@ -10,17 +10,16 @@ function post(req, res, next) {
     .catch(next);
 }
 
-function remove(req, res, next) {
+function removeRelation(req, res, next) {
   const userId = req.user.id;
   const projectId = req.params.projectId;
 
   model
     .removeFromWatching(userId, projectId)
     .then((project) => {
-      console.log("HEY", project);
       res.status(200).send(project);
     })
     .catch(next);
 }
 
-module.exports = { post, remove };
+module.exports = { addRelation, removeRelation };

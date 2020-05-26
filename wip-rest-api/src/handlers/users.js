@@ -5,7 +5,7 @@ require("dotenv").config();
 
 const SECRET = process.env.JWT_SECRET;
 
-function postSignUp(req, res, next) {
+function signUp(req, res, next) {
   if (!req.body.email || !req.body.username || !req.body.password) {
     return res.status(400).send({ message: "Request body cannot be empty" });
   }
@@ -27,19 +27,19 @@ function postSignUp(req, res, next) {
       };
       model
         .addUser(newUser)
-        .then((result) => {
-          const token = jwt.sign({ user: result.id }, SECRET, {
+        .then((userInfo) => {
+          const token = jwt.sign({ user: userInfo.id }, SECRET, {
             expiresIn: "24h",
           });
-          result.token = token;
-          res.status(201).send(result);
+          userInfo.token = token;
+          res.status(201).send(userInfo);
         })
         .catch(next);
     })
     .catch(console.error);
 }
 
-function postLogIn(req, res, next) {
+function logIn(req, res, next) {
   const username = req.body.username;
   const password = req.body.password;
   model
@@ -69,12 +69,9 @@ function get(req, res, next) {
     .catch(next);
 }
 
-function put(req, res, next) {
+function update(req, res, next) {
   const userId = req.user.id;
-  console.log("put -> userId", userId);
   const newUserData = req.body;
-  console.log("line 76", req.body);
-
   model
     .updateUser(userId, newUserData)
     .then((newData) => res.status(200).send(newData))
@@ -91,4 +88,4 @@ function deleteUser(req, res, next) {
     .catch(next);
 }
 
-module.exports = { postSignUp, postLogIn, get, put, deleteUser };
+module.exports = { signUp, logIn, get, update, deleteUser };

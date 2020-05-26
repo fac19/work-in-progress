@@ -8,7 +8,7 @@ function get(req, res, next) {
     .catch(next);
 }
 
-function post(req, res, next) {
+function add(req, res, next) {
   const userId = req.user.id;
   const stepId = req.params.stepId;
   const feedback_text = req.body.feedback;
@@ -20,7 +20,7 @@ function post(req, res, next) {
     .catch(next);
 }
 
-function put(req, res, next) {
+function update(req, res, next) {
   const userId = req.user.id;
   const feedbackId = req.params.feedbackId;
   const feedback_text = req.body.feedback;
@@ -45,4 +45,4 @@ function put(req, res, next) {
     .catch(next);
 }
 
-module.exports = { get, post, put };
+module.exports = { get, add, update };

@@ -68,7 +68,7 @@ function get(req, res, next) {
   const userId = req.user.id;
   model
     .getUserById(userId)
-    .then((user) => res.status(201).send(user))
+    .then((user) => res.status(200).send(user))
     .catch(next);
 }
 
@@ -77,7 +77,7 @@ function update(req, res, next) {
   const newUserData = req.body;
   model
     .updateUser(userId, newUserData)
-    .then((newData) => res.status(200).send(newData))
+    .then((newData) => res.status(201).send(newData))
     .catch(next);
 }
 

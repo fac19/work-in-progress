@@ -68,11 +68,9 @@ CREATE DATABASE wip_test WITH OWNER user; -- database name is important for test
    - `GRANT ALL PRIVILEGES ON DATABASE wip_db TO user;`
    - `GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO user;`
 
-
 ## Scripts
 
 npm run i-all => runs npm i in the root, wip-app, wip-rest-api
-
 
 ## API routes
 

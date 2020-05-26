@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Container, Button, TextField } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
@@ -34,11 +34,11 @@ const LogInForm = (props) => {
     const logInFormData = new FormData(form);
 
     logInPost({
-      emai: logInFormData.email,
-      password: logInFormData.password,
+      username: logInFormData.get("username"),
+      password: logInFormData.get("password"),
     })
       .then(() => history.push("/feed"))
-      .catch(console.error("LoginForm.js line 41"));
+      .catch(console.error("Could not log in!"));
   };
 
   return (
@@ -48,7 +48,7 @@ const LogInForm = (props) => {
         className={classes.form}
         noValidate
         autoComplete="off"
-        onSubmit={handleSubmit}
+        // onSubmit={handleSubmit}
       >
         <TextField
           className={classes.formElement}
@@ -56,10 +56,10 @@ const LogInForm = (props) => {
           margin="normal"
           required
           fullWidth
-          id="email"
-          label="Email Address"
-          name="email"
-          autoComplete="email"
+          id="username"
+          label="Username"
+          name="username"
+          autoComplete="username"
           autoFocus
         />
         <TextField
@@ -79,7 +79,7 @@ const LogInForm = (props) => {
           className={classes.formElement}
           variant="contained"
           color="primary"
-          // onClick={handleSubmit}
+          onClick={handleSubmit}
         >
           Log In
         </Button>

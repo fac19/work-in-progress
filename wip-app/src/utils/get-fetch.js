@@ -29,4 +29,12 @@ function feedPage() {
   return getFetch(options);
 }
 
-export { feedPage };
+function explorePage() {
+  const options = {
+    endpoint: "exploreprojects",
+    errorMessage: "Feed error",
+  };
+  return getFetch(options);
+}
+
+export { feedPage, explorePage };

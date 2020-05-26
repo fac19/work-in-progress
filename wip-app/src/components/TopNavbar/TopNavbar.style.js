@@ -3,6 +3,7 @@ import styled from "styled-components";
 const TopNavbarStyle = styled.nav`
   height: 4rem;
   border: 1px solid black;
+  background-color: white;
   position: fixed;
   width: 100%;
   top: 0;

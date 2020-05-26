@@ -21,17 +21,20 @@ function getExploreProjects(req, res, next) {
   model
     .getWatchedProjectsFromDb(userId)
     .then((watchedProjects) => {
-      model.getAllProjectsFromDb().then((allProjects) => {
-        const watchedIds = watchedProjects.map(
-          (watchedProject) => watchedProject.id
-        );
-        // filter all the projects where the project IDs are not watched or belonging to a user
-        const exploreProjects = allProjects.filter(
-          (project) =>
-            watchedIds.indexOf(project.id) === -1 && userId != project.user_id
-        );
-        res.send(exploreProjects);
-      });
+      model
+        .getAllProjectsFromDb()
+        .then((allProjects) => {
+          const watchedIds = watchedProjects.map(
+            (watchedProject) => watchedProject.id
+          );
+          // filter all the projects where the project IDs are not watched or belonging to a user
+          const exploreProjects = allProjects.filter(
+            (project) =>
+              watchedIds.indexOf(project.id) === -1 && userId != project.user_id
+          );
+          res.send(exploreProjects);
+        })
+        .catch(next);
     })
     .catch(next);
 }

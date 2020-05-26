@@ -4,7 +4,7 @@ function get(req, res, next) {
   const stepId = req.params.stepId;
   model
     .getFeedback(stepId)
-    .then((feedback) => res.status(201).send(feedback))
+    .then((feedback) => res.status(200).send(feedback))
     .catch(next);
 }
 
@@ -32,8 +32,8 @@ function update(req, res, next) {
       if (feedback.user_id === userId) {
         model
           .updateFeedback(feedbackId, feedback_text, feedback_tag)
-          .then((feedback) => res.status(201).send(feedback));
-        // .catch(next);
+          .then((feedback) => res.status(201).send(feedback))
+          .catch(next);
       } else {
         res
           .status(404)

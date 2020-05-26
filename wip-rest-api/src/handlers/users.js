@@ -6,6 +6,7 @@ require("dotenv").config();
 const SECRET = process.env.JWT_SECRET;
 
 function postSignUp(req, res, next) {
+  console.log("Testing fetch - your request made it through");
   if (!req.body.email || !req.body.username || !req.body.password) {
     return res.status(400).send({ message: "Request body cannot be empty" });
   }

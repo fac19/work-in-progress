@@ -1,32 +1,33 @@
 async function postFetch({ endpoint, body, error }) {
-  // const headers = {
-  //     'content-type': 'application/JSON'
-  // };
+  const headers = {
+    "content-type": "application/JSON",
+    "Access-Control-Allow-Origin": "http://localhost:3000",
+  };
 
   const fetchObject = {
     method: "POST",
     mode: "no-cors",
-    headers: {
-      "content-type": "application/JSON",
-    },
+    headers,
     body: JSON.stringify(body),
   };
+
+  console.log(fetchObject);
 
   const fetchURL = `https://wip-rest-api.herokuapp.com/${endpoint}`;
 
   return await fetch(fetchURL, fetchObject).then((res) => {
-    console.log(res);
     if (!res.ok) {
       throw new Error(`${error}, status: ${res.status}`);
+    } else {
+      return res.json();
     }
-    return res.json();
   });
   // .catch(console.error('error in fetch.js line 22')) //change this
 }
 
 function signUpPost(signUpFormData) {
   const options = {
-    endpoint: "signUp",
+    endpoint: "signup",
     body: {
       username: signUpFormData.username,
       email: signUpFormData.email,
@@ -40,7 +41,29 @@ function signUpPost(signUpFormData) {
   });
 }
 
-function logInGet(logInFormData) {
+// function signUpPost(signUpFormData) {
+//    const formObject = {
+//       username: signUpFormData.username,
+//       email: signUpFormData.email,
+//       password: signUpFormData.password
+//    }
+
+//   return fetch(`https://wip-rest-api.herokuapp.com/signup`, {
+//     method: "POST",
+//     mode: "no-cors",
+//     headers: {
+//       "content-type": "application/json"
+//     },
+//     body: JSON.stringify(formObject)
+//   }).then((res) => {
+//     if (res.status !== 201) {
+//       throw new Error(`Error, status: ${res.status}`);
+//     }
+//     return res.json();
+//   })
+// }
+
+function logInPost(logInFormData) {
   const options = {
     endpoint: "logIn",
     body: {
@@ -54,4 +77,4 @@ function logInGet(logInFormData) {
   });
 }
 
-export { signUpPost, logInGet };
+export { signUpPost, logInPost };

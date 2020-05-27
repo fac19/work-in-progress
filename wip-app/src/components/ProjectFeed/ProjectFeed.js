@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
 import { ProjectGrid } from "./ProjectFeed.style";
 

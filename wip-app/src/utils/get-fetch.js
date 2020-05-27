@@ -9,13 +9,10 @@ async function getFetch({ endpoint, error }) {
     },
   };
 
-  console.log(fetchObject);
-
   const fetchURL = `https://wip-rest-api.herokuapp.com/${endpoint}`;
 
   return await fetch(fetchURL, fetchObject)
     .then((res) => {
-      console.log(res);
       if (!res.ok) {
         throw new Error(`${error}, status: ${res.status}`);
       }
@@ -38,7 +35,6 @@ function getUser(token) {
     error: "Unable to get this page",
   };
   return getFetch(options).then((res) => {
-    console.log("38", res);
     return res;
   });
 }
@@ -51,4 +47,12 @@ function explorePage() {
   return getFetch(options);
 }
 
-export { feedPage, getUser, explorePage };
+function getUserPageProjects() {
+  const options = {
+    endpoint: "userprojects",
+    errorMessage: "Project feed error",
+  };
+  return getFetch(options);
+}
+
+export { feedPage, getUser, explorePage, getUserPageProjects };

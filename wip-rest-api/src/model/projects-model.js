@@ -11,7 +11,10 @@ function getWatchedProjectsFromDb(userId) {
 
 function getUserProjectsFromDb(userId) {
   return db
-    .query("SELECT * FROM projects where user_id=($1);", [userId])
+    .query(
+      "SELECT (SELECT username FROM users WHERE users.id=projects.user_id), projects.id, project_name, steps.date, step_link FROM projects JOIN steps ON projects.id=steps.project_id WHERE projects.user_id=($1);",
+      [userId]
+    )
     .then((projects) => projects.rows);
 }
 

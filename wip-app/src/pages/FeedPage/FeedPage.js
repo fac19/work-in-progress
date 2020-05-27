@@ -13,7 +13,6 @@ const FeedPage = (props) => {
   const renderProjects = (projects) => {
     return projects.map(
       ({ id, user_id, project_name, project_description, project_status }) => {
-        // console.log(project);
         return (
           <ProjectCard
             project_name={project_name}

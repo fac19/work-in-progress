@@ -41,4 +41,12 @@ function getUser(token) {
   });
 }
 
-export { feedPage, getUser };
+function explorePage() {
+  const options = {
+    endpoint: "exploreprojects",
+    errorMessage: "Feed error",
+  };
+  return getFetch(options);
+}
+
+export { feedPage, getUser, explorePage };

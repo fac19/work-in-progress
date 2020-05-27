@@ -6,30 +6,45 @@ const UserPage = (props) => {
 
   React.useEffect(() => {
     getUser().then((userInfo) => {
-      console.log(userInfo);
       setUserInfo(userInfo);
     });
   }, []);
 
-  // const renderProjects = (projects) => {
-  //   return projects.map(
-  //     ({ id, user_id, project_name, project_description, project_status }) => {
-  //       // console.log(project);
-  //       return (
-  //         <ProjectCard
-  //           project_name={project_name}
-  //           project_status={project_status}
-  //           key={id}
-  //         />
-  //       );
-  //     }
-  //   );
-  // };
+  // email: "JO@123.com"
+  // id: 2
+  // user_bio: "I love colours they are so nice"
+  // user_link_1: "www.facebook.com"
+  // user_link_2: "www.instagram.com"
+  // user_link_3: "www.twitter.com"
+  // user_vocation: "professional animator"
+  // username: "Jacko"
+
+  const {
+    username,
+    email,
+    user_bio,
+    user_vocation,
+    user_link_1,
+    user_link_2,
+    user_link_3,
+  } = userInfo;
 
   return (
-    <div>
-      <h1>Profile Page</h1>
-    </div>
+    <>
+      {userInfo !== [] ? (
+        <>
+          <h1>{username}'s Profile</h1>
+          <p>{email}</p>
+          <a href={user_link_1}>Link 1</a>
+          <a href={user_link_2}>Link 2</a>
+          <a href={user_link_3}>Link 3</a>
+          <p>{user_bio}</p>
+          <p>{user_vocation}</p>
+        </>
+      ) : (
+        <h1>Loading...</h1>
+      )}
+    </>
   );
 };
 

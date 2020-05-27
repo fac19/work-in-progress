@@ -108,13 +108,13 @@ describe("Database tests for projects", () => {
 
   test("Get all watched projects returns array of correct length", async () => {
     await projectsmodel.getWatchedProjectsFromDb("2").then((projects) => {
-      expect(projects.length).toEqual(4);
+      expect(projects.length).toEqual(9);
     });
   });
 
   test("Get info from watched projects", async () => {
     await projectsmodel.getWatchedProjectsFromDb("2").then((projects) => {
-      expect(projects[2].project_name).toEqual("A friend");
+      expect(projects[2].project_name).toEqual("A tree");
     });
   });
 

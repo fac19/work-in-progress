@@ -29,14 +29,11 @@ const UserPage = (props) => {
     user_link_3,
   } = userInfo;
 
-  console.log("userlink", user_link_1);
-
   return (
     <>
-      {userInfo === [] || userProjects === [] ? (
-        <h1>Loading...</h1>
+      {userInfo.length === 0 || userProjects.length === 0 ? (
+        <h1>Loading your profile...</h1>
       ) : (
-        // this is not rendering
         <>
           <ProfileCard>
             <h1>{username}'s Profile</h1>

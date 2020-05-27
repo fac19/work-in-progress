@@ -18,6 +18,7 @@ const AddProjectPage = (props) => {
       project_description: projectData.get("project_description"),
     })
       .then(() => history.push("/profile"))
+      // when project page is built redirect to that page
       .catch((error) => console.error(error));
   };
   return (

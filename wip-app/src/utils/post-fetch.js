@@ -66,9 +66,7 @@ function postAddProject(projectData) {
     },
     error: "Could not add project",
   };
-  return postFetch(options).then((res) => {
-    console.log("postFetch", res);
-  });
+  return postFetch(options);
 }
 
 // {

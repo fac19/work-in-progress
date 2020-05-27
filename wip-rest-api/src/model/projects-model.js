@@ -16,7 +16,11 @@ function getUserProjectsFromDb(userId) {
 }
 
 function getAllProjectsFromDb() {
-  return db.query("SELECT * FROM projects").then((projects) => projects.rows);
+  return db
+    .query(
+      "SELECT (SELECT username FROM users WHERE users.id=projects.user_id), steps.step_link, projects.id, projects.user_id, projects.project_name, steps.date FROM projects JOIN steps ON projects.id=steps.project_id;"
+    )
+    .then((projects) => projects.rows);
 }
 
 function addNewProjectToDb(user_id, { project_name, project_description }) {

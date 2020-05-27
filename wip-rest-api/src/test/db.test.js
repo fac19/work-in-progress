@@ -141,7 +141,7 @@ describe("Database tests for projects", () => {
           const exploreProjects = allProjects.filter(
             (project) => watchedIds.indexOf(project.id) === -1
           );
-          expect(exploreProjects.length).toEqual(4);
+          expect(exploreProjects.length).toEqual(9);
         });
       });
   });
@@ -157,7 +157,7 @@ describe("Database tests for projects", () => {
           const exploreProjects = allProjects.filter(
             (project) => watchedIds.indexOf(project.id) === -1
           );
-          expect(exploreProjects[2].project_name).toEqual("A friend");
+          expect(exploreProjects[2].project_name).toEqual("A tree");
         });
       });
   });

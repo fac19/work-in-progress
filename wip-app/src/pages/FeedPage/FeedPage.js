@@ -11,6 +11,7 @@ const FeedPage = (props) => {
   }, []);
 
   const renderProjects = (projects) => {
+    console.log(projects);
     return projects.map(
       ({ id, user_id, project_name, project_description, project_status }) => {
         return (

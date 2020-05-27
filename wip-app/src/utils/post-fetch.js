@@ -9,14 +9,15 @@ async function postFetch({ endpoint, body, error }) {
 
   const fetchURL = `https://wip-rest-api.herokuapp.com/${endpoint}`;
 
-  return await fetch(fetchURL, fetchObject).then((res) => {
-    if (!res.ok) {
-      throw new Error(`${error}, status: ${res.status}`);
-    } else {
-      return res.json();
-    }
-  });
-  // .catch(console.error('error in fetch.js line 22')) //change this
+  return await fetch(fetchURL, fetchObject)
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error(`${error}, status: ${res.status}`);
+      } else {
+        return res.json();
+      }
+    })
+    .catch(console.error);
 }
 
 function signUpPost(signUpFormData) {
@@ -30,7 +31,7 @@ function signUpPost(signUpFormData) {
     error: "Sorry, there was a problem signing you up",
   };
   return postFetch(options).then((res) => {
-    localStorage.setItem("auth", JSON.stringify(res.token));
+    localStorage.setItem("auth", res.token);
   });
 }
 
@@ -44,7 +45,7 @@ function logInPost(logInFormData) {
     error: "Could not log you in",
   };
   return postFetch(options).then((res) => {
-    localStorage.setItem("auth", JSON.stringify(res.token));
+    localStorage.setItem("auth", res.token);
   });
 }
 

@@ -47,4 +47,12 @@ function explorePage() {
   return getFetch(options);
 }
 
-export { feedPage, getUser, explorePage };
+function getUserPageProjects() {
+  const options = {
+    endpoint: "userprojects",
+    errorMessage: "Project feed error",
+  };
+  return getFetch(options);
+}
+
+export { feedPage, getUser, explorePage, getUserPageProjects };

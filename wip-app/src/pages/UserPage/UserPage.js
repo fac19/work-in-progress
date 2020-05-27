@@ -1,8 +1,11 @@
 import React from "react";
-import { getUser } from "../../utils/get-fetch";
+import { getUser, getUserPageProjects } from "../../utils/get-fetch";
+import { ProfileCard } from "./UserPage.style";
+import ProjectFeed from "../../components/ProjectFeed/ProjectFeed";
 
 const UserPage = (props) => {
   const [userInfo, setUserInfo] = React.useState([]);
+  const [userProjects, setUserProjects] = React.useState([]);
 
   React.useEffect(() => {
     getUser().then((userInfo) => {
@@ -10,14 +13,11 @@ const UserPage = (props) => {
     });
   }, []);
 
-  // email: "JO@123.com"
-  // id: 2
-  // user_bio: "I love colours they are so nice"
-  // user_link_1: "www.facebook.com"
-  // user_link_2: "www.instagram.com"
-  // user_link_3: "www.twitter.com"
-  // user_vocation: "professional animator"
-  // username: "Jacko"
+  React.useEffect(() => {
+    getUserPageProjects().then((userProjects) => {
+      setUserProjects(userProjects);
+    });
+  }, []);
 
   const {
     username,
@@ -29,20 +29,44 @@ const UserPage = (props) => {
     user_link_3,
   } = userInfo;
 
+  console.log("userlink", user_link_1);
+
   return (
     <>
-      {userInfo !== [] ? (
-        <>
-          <h1>{username}'s Profile</h1>
-          <p>{email}</p>
-          <a href={user_link_1}>Link 1</a>
-          <a href={user_link_2}>Link 2</a>
-          <a href={user_link_3}>Link 3</a>
-          <p>{user_bio}</p>
-          <p>{user_vocation}</p>
-        </>
-      ) : (
+      {userInfo === [] || userProjects === [] ? (
         <h1>Loading...</h1>
+      ) : (
+        // this is not rendering
+        <>
+          <ProfileCard>
+            <h1>{username}'s Profile</h1>
+            <p>{email}</p>
+            <a
+              href={"https://" + user_link_1}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Link 1
+            </a>
+            <a
+              href={"https://" + user_link_2}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Link 2
+            </a>
+            <a
+              href={"https://" + user_link_3}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Link 3
+            </a>
+            <p>{user_bio}</p>
+            <p>{user_vocation}</p>
+          </ProfileCard>
+          <ProjectFeed projects={userProjects} />
+        </>
       )}
     </>
   );

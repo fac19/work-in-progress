@@ -176,7 +176,7 @@ Request body example:
 
 Get project steps by project id
 
-##### GET /steps/:projectid
+##### POST /steps/:projectid
 
 Add project steps by project id
 

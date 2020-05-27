@@ -6,7 +6,29 @@ const FeedPage = (props) => {
   const [projects, setProjects] = React.useState([]);
 
   useEffect(() => {
-    feedPage().then(setProjects);
+    const projectArray = [];
+    feedPage().then((projectResponse) => {
+      console.log(projectResponse);
+      // projectResponse.reverse();
+      // projectArray.push(projectResponse[0])
+      let projectId = 1;
+      for (let i = 0; i < projectResponse.length; i++) {
+        if (projectResponse[i].id === projectId) {
+          projectArray.push(projectResponse[i]);
+          projectId++;
+        }
+        // for (let j = 0; j < projectArray.length; j++) {
+        //   if (projectResponse[i].id != projectArray[j].id){
+        //     projectArray.push(projectResponse[i]);
+        //   }
+        // }
+      }
+      console.log(projectArray);
+      setProjects(projectArray);
+    });
+    // new Date(Math.max.apply(null, a.map(function(e) {
+    //   return new Date(e.MeasureDate);
+    // })));
   }, []);
 
   return (

@@ -1,7 +1,6 @@
-const authToken = localStorage.getItem("auth");
-console.log("authToken", authToken);
+async function getFetch({ endpoint, error }) {
+  const authToken = localStorage.getItem("auth");
 
-async function getFetch({ endpoint, body, error }) {
   const fetchObject = {
     method: "GET",
     headers: {
@@ -10,15 +9,19 @@ async function getFetch({ endpoint, body, error }) {
     },
   };
 
+  console.log(fetchObject);
+
   const fetchURL = `https://wip-rest-api.herokuapp.com/${endpoint}`;
 
-  return await fetch(fetchURL, fetchObject).then((res) => {
-    console.log(res);
-    if (!res.ok) {
-      throw new Error(`${error}, status: ${res.status}`);
-    }
-    return res.json();
-  });
+  return await fetch(fetchURL, fetchObject)
+    .then((res) => {
+      console.log(res);
+      if (!res.ok) {
+        throw new Error(`${error}, status: ${res.status}`);
+      }
+      return res.json();
+    })
+    .catch(console.error);
 }
 
 function feedPage() {
@@ -29,4 +32,23 @@ function feedPage() {
   return getFetch(options);
 }
 
-export { feedPage };
+function getUser(token) {
+  const options = {
+    endpoint: "user",
+    error: "Unable to get this page",
+  };
+  return getFetch(options).then((res) => {
+    console.log("38", res);
+    return res;
+  });
+}
+
+function explorePage() {
+  const options = {
+    endpoint: "exploreprojects",
+    errorMessage: "Feed error",
+  };
+  return getFetch(options);
+}
+
+export { feedPage, getUser, explorePage };

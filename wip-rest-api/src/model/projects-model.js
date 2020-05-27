@@ -3,7 +3,7 @@ const db = require("../database/connection.js");
 function getWatchedProjectsFromDb(userId) {
   return db
     .query(
-      "SELECT * FROM projects JOIN user_watch ON projects.id=user_watch.project_id WHERE user_watch.user_id=($1);",
+      "SELECT username, projects.id, project_name, steps.date, step_link FROM projects JOIN user_watch ON project_id=projects.id JOIN users ON user_watch.user_id=users.id JOIN steps ON projects.id=steps.project_id WHERE user_watch.user_id=($1);",
       [userId]
     )
     .then((projects) => projects.rows);

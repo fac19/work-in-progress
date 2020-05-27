@@ -1,9 +1,17 @@
 async function postFetch({ endpoint, body, error }) {
+  const authToken = localStorage.getItem("auth");
+  let headersObject = authToken
+    ? {
+        "content-type": "application/json",
+        Authorization: authToken,
+      }
+    : {
+        "content-type": "application/json",
+      };
+
   const fetchObject = {
     method: "POST",
-    headers: {
-      "content-type": "application/json",
-    },
+    headers: headersObject,
     body: JSON.stringify(body),
   };
 
@@ -49,4 +57,33 @@ function logInPost(logInFormData) {
   });
 }
 
-export { signUpPost, logInPost };
+function postAddProject(projectData) {
+  const options = {
+    endpoint: "newproject",
+    body: {
+      project_name: projectData.project_name,
+      project_description: projectData.project_description,
+    },
+    error: "Could not add project",
+  };
+  return postFetch(options).then((res) => {
+    console.log("postFetch", res);
+  });
+}
+
+// {
+//   "step_name": "Sketch in pen",
+//   "step_description": "Adding more details",
+//   "step_link": "image.jpg"
+// }
+
+// POST /steps/:projectid
+
+// function postAddStep() {
+//   const options = {
+//     endpoint:`/steps/:${projection}`,
+//   }
+
+// }
+
+export { signUpPost, logInPost, postAddProject };

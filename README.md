@@ -157,7 +157,7 @@ Get your own projects
 
 Get your unwatched (unfollowed) projects
 
-##### POST /userprojects
+##### POST /newproject
 
 Add a new project to your account
 

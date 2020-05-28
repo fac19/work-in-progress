@@ -47,59 +47,59 @@ BEGIN;
         project_id INTEGER REFERENCES projects(id) ON DELETE CASCADE,
         step_name VARCHAR(255),
         step_description VARCHAR(255),
-        step_link VARCHAR(255),
+        step_link VARCHAR(8000),
         date TIMESTAMP
         WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
     );
 
-    INSERT INTO steps
-        (project_id, step_name, step_description, step_link)
-    VALUES
-        ('1', '1 1st sketch', '1 The trunk', 'https://i.imgur.com/rk5C1fQ.jpg'),
-        ('2', '2 1st sketch', '2 The tail', 'https://media.giphy.com/media/NkJEXWDr7KsG4/giphy.gif'),
-        ('1', '1 2nd sketch', '1 The leaves', 'https://i.imgur.com/TCpcGRJ.jpg'),
-        ('4', '4 1st sketch', '4 Their nose', 'https://i.imgur.com/UBLi3O3.jpg'),
-        ('1', '1 3rd sketch', '1 Some roots', 'https://i.imgur.com/d23lKC6.jpg'),
-        ('5', '5 1st sketch', '5 Viruses', 'https://media.giphy.com/media/JRsY1oIVA7IetTkKVO/giphy.gif'),
-        ('4', '4 2nd sketch', '4 Their feet', 'https://media.giphy.com/media/11FH5Vq7WPglmE/giphy.gif'),
-        ('3', '3 1st sketch', '3 round and bright', 'https://media.giphy.com/media/XgtJCYMbPvMe4/giphy.gif'),
-        ('2', '2 2nd sketch', '2 A cute nose', 'https://media.giphy.com/media/1DMfMOWF8Piec/giphy.gif'),
-        ('1', '1 4th sketch', '1 someone hugging it', 'https://i.imgur.com/Xu5BUft.jpg');
+        INSERT INTO steps
+            (project_id, step_name, step_description, step_link)
+        VALUES
+            ('1', '1 1st sketch', '1 The trunk', 'https://i.imgur.com/rk5C1fQ.jpg'),
+            ('2', '2 1st sketch', '2 The tail', 'https://media.giphy.com/media/NkJEXWDr7KsG4/giphy.gif'),
+            ('1', '1 2nd sketch', '1 The leaves', 'https://i.imgur.com/TCpcGRJ.jpg'),
+            ('4', '4 1st sketch', '4 Their nose', 'https://i.imgur.com/UBLi3O3.jpg'),
+            ('1', '1 3rd sketch', '1 Some roots', 'https://i.imgur.com/d23lKC6.jpg'),
+            ('5', '5 1st sketch', '5 Viruses', 'https://media.giphy.com/media/JRsY1oIVA7IetTkKVO/giphy.gif'),
+            ('4', '4 2nd sketch', '4 Their feet', 'https://media.giphy.com/media/11FH5Vq7WPglmE/giphy.gif'),
+            ('3', '3 1st sketch', '3 round and bright', 'https://media.giphy.com/media/XgtJCYMbPvMe4/giphy.gif'),
+            ('2', '2 2nd sketch', '2 A cute nose', 'https://media.giphy.com/media/1DMfMOWF8Piec/giphy.gif'),
+            ('1', '1 4th sketch', '1 someone hugging it', 'https://i.imgur.com/Xu5BUft.jpg');
 
-    CREATE TABLE feedback
-    (
-        id SERIAL PRIMARY KEY,
-        user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-        step_id INTEGER REFERENCES steps(id) ON DELETE CASCADE,
-        feedback_text VARCHAR(255) NOT NULL,
-        feedback_tag VARCHAR(50),
-        date TIMESTAMP
-        WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+        CREATE TABLE feedback
+        (
+            id SERIAL PRIMARY KEY,
+            user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+            step_id INTEGER REFERENCES steps(id) ON DELETE CASCADE,
+            feedback_text VARCHAR(255) NOT NULL,
+            feedback_tag VARCHAR(50),
+            date TIMESTAMP
+            WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
     );
 
-    INSERT INTO feedback
-        (user_id, step_id, feedback_text, feedback_tag)
-    VALUES
-        ('1', '2', 'Hey Han its Cam what a nice dog', 'compliment'),
-        ('4', '7', 'Hey Cammy its Kat I think this needs 5 toes', 'feedback'),
-        ('3', '8', 'Hey J man its Han have you considered craters', 'feedback'),
-        ('2', '6', 'Hey Katkat its Jack I love your interpretation', 'compliment');
+            INSERT INTO feedback
+                (user_id, step_id, feedback_text, feedback_tag)
+            VALUES
+                ('1', '2', 'Hey Han its Cam what a nice dog', 'compliment'),
+                ('4', '7', 'Hey Cammy its Kat I think this needs 5 toes', 'feedback'),
+                ('3', '8', 'Hey J man its Han have you considered craters', 'feedback'),
+                ('2', '6', 'Hey Katkat its Jack I love your interpretation', 'compliment');
 
-    CREATE TABLE user_watch
-    (
-        user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-        project_id INTEGER REFERENCES projects(id) ON DELETE CASCADE
-    );
+            CREATE TABLE user_watch
+            (
+                user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+                project_id INTEGER REFERENCES projects(id) ON DELETE CASCADE
+            );
 
-    INSERT INTO user_watch
-        (user_id, project_id)
-    VALUES
-        ('1', '2'),
-        ('2', '1'),
-        ('2', '2'),
-        ('2', '4'),
-        ('2', '5'),
-        ('3', '3'),
-        ('4', '4');
+            INSERT INTO user_watch
+                (user_id, project_id)
+            VALUES
+                ('1', '2'),
+                ('2', '1'),
+                ('2', '2'),
+                ('2', '4'),
+                ('2', '5'),
+                ('3', '3'),
+                ('4', '4');
 
-END;
+        END;

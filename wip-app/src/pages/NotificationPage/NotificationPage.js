@@ -1,9 +1,10 @@
 import React from "react";
+import AddNewStepForm from "../../components/AddNewStepForm/AddNewStepForm";
 
 const NotificationPage = (props) => {
   return (
     <div>
-      <h1>Notification Page</h1>
+      <AddNewStepForm />
     </div>
   );
 };

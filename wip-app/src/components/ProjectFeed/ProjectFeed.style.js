@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 const ProjectGrid = styled.section`
-  margin: 2rem 5rem;
+  margin: 0 5%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(15em, 30em));
   grid-gap: 32px;
 `;
 

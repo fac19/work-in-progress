@@ -147,7 +147,12 @@ Request body example:
 
 ##### GET /project/:projectid
 
+<<<<<<< HEAD
 Get a project by its id
+=======
+Get a project by project id
+
+> > > > > > > master
 
 ##### GET /followedprojects
 

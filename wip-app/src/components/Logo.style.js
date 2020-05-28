@@ -5,7 +5,7 @@ const HeaderLogoStyle = styled.img`
   width: 50%;
 `;
 
-const NavbarLogoStyle = styled.svg`
+const NavbarLogoStyle = styled.img`
   height: 2rem;
 `;
 

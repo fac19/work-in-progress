@@ -10,6 +10,10 @@ Deployed on [Netlify](https://wip-app.netlify.app/)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/fdfedb67-dd70-4820-9e62-1c24f12fa5ab/deploy-status)](https://app.netlify.com/sites/wip-app/deploys)
 
+## Credits
+
+Logo designed by Jessica Gooding
+
 ## Co-authoring credits
 
 Co-authored-by: Jack Heriz-Smith <jackherizsmith@gmail.com>
@@ -87,7 +91,7 @@ You can set up everything you need in your terminal.
 REST API deployed on [Heroku](https://wip-rest-api.herokuapp.com/)  
 You can make requests to the Heroku App URL, e.g. `POST` to `https://wip-rest-api.herokuapp.com/signup`
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/1cc197403ff5a2181a1a)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/b12cad151e94635d9f95)
 
 ### No Access Token required for these routes:
 

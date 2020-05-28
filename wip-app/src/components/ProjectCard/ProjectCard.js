@@ -1,6 +1,11 @@
 import React from "react";
-import { ProjectCardArticle, ProjectCardImage } from "./ProjectCard.style";
 import { useHistory } from "react-router-dom";
+import {
+  ProjectCardArticle,
+  ProjectCardTitle,
+  ProjectCardImage,
+  ProjectCardUsername,
+} from "./ProjectCard.style";
 
 const ProjectCard = ({
   project_name,
@@ -17,13 +22,13 @@ const ProjectCard = ({
 
   return (
     <ProjectCardArticle onClick={handleProjectClick}>
-      <h3>{project_name}</h3>
-      <p>{username}</p>
-      {/* {project_status ? <p>Work in progress</p> : <p>Finished</p>} */}
       <ProjectCardImage
         src={step_link}
         alt={`${username}'s project: ${project_name}`}
       />
+      <ProjectCardTitle>{project_name}</ProjectCardTitle>
+      <ProjectCardUsername>By {username}</ProjectCardUsername>
+      {/* {project_status ? <p>Work in progress</p> : <p>Finished</p>} */}
     </ProjectCardArticle>
   );
 };

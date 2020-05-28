@@ -47,8 +47,7 @@ BEGIN;
         project_id INTEGER REFERENCES projects(id) ON DELETE CASCADE,
         step_name VARCHAR(255),
         step_description VARCHAR(255),
-        step_link VARCHAR(255),
-        step_b64 VARCHAR(max) DEFAULT 'none',
+        step_link VARCHAR(8000),
         date TIMESTAMP
         WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
     );

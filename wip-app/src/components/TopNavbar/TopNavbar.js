@@ -14,7 +14,6 @@ const TopNavbar = () => {
           <li>
             <Link to="/new-project">Add new project</Link>
           </li>
-          <li>WIP</li>
           <li onClick={signOutClick}>
             <Link to="/">Sign Out</Link>
           </li>

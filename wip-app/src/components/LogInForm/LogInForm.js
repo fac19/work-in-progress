@@ -24,8 +24,6 @@ const useStyles = makeStyles({
 });
 
 const LogInForm = (props) => {
-  // const [errorMessage, setErrorMessage] = React.useState('')
-
   const classes = useStyles();
   const history = useHistory();
 

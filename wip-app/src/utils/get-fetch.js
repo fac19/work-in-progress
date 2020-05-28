@@ -63,4 +63,19 @@ function getProjectPage(projectid) {
   return getFetch(options);
 }
 
-export { feedPage, getUser, explorePage, getUserPageProjects, getProjectPage };
+function getSteps(projectid) {
+  const options = {
+    endpoint: `steps/${projectid}`,
+    errorMessage: "Project steps error",
+  };
+  return getFetch(options);
+}
+
+export {
+  feedPage,
+  getUser,
+  explorePage,
+  getUserPageProjects,
+  getProjectPage,
+  getSteps,
+};

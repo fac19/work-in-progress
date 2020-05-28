@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const BottomNavbarStyle = styled.nav`
   height: 4rem;
-  border: 1px solid black;
+  border-top: 0.5px solid black;
   position: fixed;
   background-color: white;
   width: 100%;
@@ -17,4 +17,10 @@ const BottomNavbarUlStyle = styled.ul`
   padding: 0;
 `;
 
-export { BottomNavbarStyle, BottomNavbarUlStyle };
+const BottomNavbarLiStyle = styled.li`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+export { BottomNavbarStyle, BottomNavbarUlStyle, BottomNavbarLiStyle };

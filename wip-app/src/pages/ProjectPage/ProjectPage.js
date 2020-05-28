@@ -1,47 +1,53 @@
 import React from "react";
-import { getProjectPage } from "../../utils/get-fetch";
+import { getProjectPage, getSteps } from "../../utils/get-fetch";
+import StepCard from "../../components/StepCard/StepCard";
 
 const ProjectPage = () => {
   const [projectData, setProjectData] = React.useState([]);
-  const [stepId, setStepId] = React.useState(null);
-  const [feedbackObject, setFeedbackObject] = React.useState([]);
+  const [stepsObject, setStepsObject] = React.useState([]);
+  // const [feedbackObject, setFeedbackObject] = React.useState([]);
 
-  const projectId = 3;
+  const projectId = window.location.pathname.replace("/project/", "");
 
   React.useEffect(() => {
-    getProjectPage(projectId).then((projectData) => {
-      setProjectData(projectData);
-      console.log(projectData);
-      setStepId(projectData.id);
-    });
-  }, []);
+    getProjectPage(projectId).then(setProjectData);
+  }, [projectId]);
 
-  // React.useEffect(() => {
-  //   getFeedback().then(setFeedbackObject)
-  // }, [stepId])
+  React.useEffect(() => {
+    getSteps(projectId).then((steps) => {
+      setStepsObject(steps);
+    });
+  }, [projectId]);
 
   const {
-    id,
     username,
-    step_link,
-    step_name,
     project_name,
     project_description,
     project_status,
   } = projectData;
 
+  const makeStepCards = (stepsObject) => {
+    return stepsObject
+      .map((step) => {
+        return <StepCard key={step.id} {...step} />;
+      })
+      .reverse();
+  };
+
   return (
-    <section>
-      <h2>{project_name}</h2>
-      <h3>By {username}</h3>
-      <p>Project status: {project_status ? "Finished" : "In Progress"}</p>
-      <p>{project_description}</p>
-      <h2>Project Steps</h2>
-      <article>
-        <h3>{step_name}</h3>
-        <img src={step_link} alt="" />
-      </article>
-    </section>
+    <>
+      <section>
+        <h2>{project_name}</h2>
+        <h3>By {username}</h3>
+        <p>Project status: {project_status ? "Finished" : "In Progress"}</p>
+        <p>{project_description}</p>
+      </section>
+      <section>
+        <h2>Project Steps</h2>
+        <a href="">Add a new step</a>
+        {makeStepCards(stepsObject)}
+      </section>
+    </>
   );
 };
 

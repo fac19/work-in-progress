@@ -1,6 +1,7 @@
 import React from "react";
 import { Button } from "@material-ui/core";
 import { NewStepSection, NewStepForm } from "./AddNewStepForm.style";
+import Upload from "../Upload/Upload";
 
 const AddNewStepForm = (props) => {
   return (
@@ -22,6 +23,7 @@ const AddNewStepForm = (props) => {
           Save Step To Project
         </Button>
       </NewStepForm>
+      <Upload />
     </NewStepSection>
   );
 };

@@ -17,4 +17,27 @@ const TopNavbarUlStyle = styled.ul`
   padding: 0;
 `;
 
-export { TopNavbarStyle, TopNavbarUlStyle };
+const TopNavbarLogoStyle = styled.svg`
+  height: 2rem;
+  .cls-1,
+  .cls-3,
+  .cls-4,
+  .cls-5 {
+    fill: none;
+    stroke: #231f20;
+  }
+  .cls-1 {
+    stroke-width: 2px;
+  }
+  .cls-2 {
+    fill: #231f20;
+  }
+  .cls-4 {
+    stroke-width: 0.25px;
+  }
+  .cls-5 {
+    stroke-width: 0.75px;
+  }
+`;
+
+export { TopNavbarStyle, TopNavbarUlStyle, TopNavbarLogoStyle };

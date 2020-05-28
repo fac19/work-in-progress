@@ -9,4 +9,27 @@ const LandingLiStyle = styled.li`
   margin: 1rem;
 `;
 
-export { LandingUlStyle, LandingLiStyle };
+const LandingLogoStyle = styled.svg`
+  width: 50%;
+  .cls-1,
+  .cls-3,
+  .cls-4,
+  .cls-5 {
+    fill: none;
+    stroke: #231f20;
+  }
+  .cls-1 {
+    stroke-width: 2px;
+  }
+  .cls-2 {
+    fill: #231f20;
+  }
+  .cls-4 {
+    stroke-width: 0.25px;
+  }
+  .cls-5 {
+    stroke-width: 0.75px;
+  }
+`;
+
+export { LandingUlStyle, LandingLiStyle, LandingLogoStyle };

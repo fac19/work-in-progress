@@ -15,7 +15,7 @@ const UserPage = (props) => {
 
   React.useEffect(() => {
     getUserPageProjects().then((userProjects) => {
-      setUserProjects(userProjects);
+      setUserProjects(userProjects.reverse());
     });
   }, []);
 

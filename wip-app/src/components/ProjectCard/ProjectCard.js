@@ -20,7 +20,10 @@ const ProjectCard = ({
       <h3>{project_name}</h3>
       <p>{username}</p>
       {/* {project_status ? <p>Work in progress</p> : <p>Finished</p>} */}
-      <ProjectCardImage src={step_link} alt="catch em" />
+      <ProjectCardImage
+        src={step_link}
+        alt={`${username}'s project: ${project_name}`}
+      />
     </ProjectCardArticle>
   );
 };

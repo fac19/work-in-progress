@@ -1,22 +1,55 @@
 import React from "react";
-// import { projectPage } from "../../utils/get-fetch";
+import { getProjectPage, getSteps } from "../../utils/get-fetch";
+import StepCard from "../../components/StepCard/StepCard";
 
 const ProjectPage = () => {
-  // const [projectData, setProjectData] = React.useState([]);
+  const [projectData, setProjectData] = React.useState([]);
+  const [stepsObject, setStepsObject] = React.useState([]);
+  // const [feedbackObject, setFeedbackObject] = React.useState([]);
 
-  // React.useEffect(() => {
-  //   projectPage().then(setProjectData);
-  // }, []);
+  const projectId = window.location.pathname.replace("/project/", "");
 
-  //   const {
-  //     id,
-  //     user_id,
-  //     project_name,
-  //     project_description,
-  //     project_status,
-  //   } = projectData;
+  React.useEffect(() => {
+    getProjectPage(projectId).then(setProjectData);
+  }, [projectId]);
 
-  return <h1>Project Page</h1>;
+  React.useEffect(() => {
+    getSteps(projectId).then((steps) => {
+      setStepsObject(steps);
+    });
+  }, [projectId]);
+
+  const {
+    username,
+    project_name,
+    project_description,
+    project_status,
+  } = projectData;
+
+  const makeStepCards = (stepsObject) => {
+    return stepsObject
+      .map((step) => {
+        console.log(step);
+        return <StepCard key={step.id} {...step} />;
+      })
+      .reverse();
+  };
+
+  return (
+    <>
+      <section>
+        <h2>{project_name}</h2>
+        <h3>By {username}</h3>
+        <p>Project status: {project_status ? "Finished" : "In Progress"}</p>
+        <p>{project_description}</p>
+      </section>
+      <section>
+        <h2>Project Steps</h2>
+        <a href="">Add a new step</a>
+        {makeStepCards(stepsObject)}
+      </section>
+    </>
+  );
 };
 
 export default ProjectPage;

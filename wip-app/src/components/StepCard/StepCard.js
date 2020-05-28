@@ -4,8 +4,6 @@ import { useHistory } from "react-router-dom";
 
 const StepCard = ({ id, step_name, step_description, step_link }) => {
   const history = useHistory();
-  const [stepData, setStepData] = React.useState(null);
-
   const goToStepPage = () => {
     history.push(`/step/${id}`);
   };

@@ -1,20 +1,20 @@
 import React from "react";
 import { getFeedback } from "../../utils/get-fetch";
 import FeedbackCard from "../../components/FeedbackCard/FeedbackCard";
+import StepCard from "../../components/StepCard/StepCard";
 
 const StepPage = () => {
   const [feedback, setFeedback] = React.useState(null);
   const [isEmpty, setIsEmpty] = React.useState(false);
-  const [feedbackUser, setFeedbackUser] = React.useState("");
 
   const stepId = window.location.pathname.replace("/step/", "");
 
   React.useEffect(() => {});
 
   React.useEffect(() => {
-    getFeedback(stepId).then((feedback) => {
-      setFeedback(feedback);
-      if (feedback.length === 0) {
+    getFeedback(stepId).then((feedbackObj) => {
+      setFeedback(feedbackObj);
+      if (feedbackObj.length === 0) {
         setIsEmpty(true);
       }
     });
@@ -27,7 +27,11 @@ const StepPage = () => {
   } else if (isEmpty) {
     return <h2>No feedback yet, add some!</h2>;
   } else {
-    return <FeedbackCard feedback={feedback} />;
+    return (
+      <section>
+        <FeedbackCard feedback={feedback} />
+      </section>
+    );
   }
 };
 

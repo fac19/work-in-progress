@@ -56,7 +56,7 @@ function getUserPageProjects() {
 }
 
 function projectPage(projectid) {
-  const projectid = 1;
+  projectid = 1;
   const options = {
     endpoint: `project/${projectid}`,
     errorMessage: "Project page error",

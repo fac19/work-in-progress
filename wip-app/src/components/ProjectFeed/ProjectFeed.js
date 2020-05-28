@@ -7,7 +7,9 @@ const ProjectFeed = ({ projects }) => {
 
   for (let i = 1; i < projects.length; i++) {
     for (let j = 0; j < uniqueProjects.length; j++) {
-      if (uniqueProjects.every((uniqueObj) => uniqueObj.id != projects[i].id)) {
+      if (
+        uniqueProjects.every((uniqueObj) => uniqueObj.id !== projects[i].id)
+      ) {
         uniqueProjects.push(projects[i]);
       }
     }
@@ -22,6 +24,7 @@ const ProjectFeed = ({ projects }) => {
             username={username}
             date={date}
             step_link={step_link}
+            project_id={id}
             key={id}
           />
         );

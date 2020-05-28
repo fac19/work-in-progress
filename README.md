@@ -91,7 +91,7 @@ You can set up everything you need in your terminal.
 REST API deployed on [Heroku](https://wip-rest-api.herokuapp.com/)  
 You can make requests to the Heroku App URL, e.g. `POST` to `https://wip-rest-api.herokuapp.com/signup`
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/1cc197403ff5a2181a1a)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/b12cad151e94635d9f95)
 
 ### No Access Token required for these routes:
 

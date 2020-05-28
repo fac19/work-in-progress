@@ -32,11 +32,7 @@ const ProjectFeed = ({ projects }) => {
     );
   };
 
-  return (
-    <>
-      <ProjectGrid>{renderProjects(projects)}</ProjectGrid>
-    </>
-  );
+  return <ProjectGrid>{renderProjects(projects)}</ProjectGrid>;
 };
 
 export default ProjectFeed;

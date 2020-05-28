@@ -145,6 +145,10 @@ Request body example:
 
 #### Projects
 
+##### GET /project/:projectid
+
+Get a project by project id
+
 ##### GET /followedprojects
 
 Get your watched (followed) projects

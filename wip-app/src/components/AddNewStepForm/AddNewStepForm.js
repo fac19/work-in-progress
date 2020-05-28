@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "@material-ui/core";
 import { NewStepSection, NewStepForm } from "./AddNewStepForm.style";
 import Upload from "../Upload/Upload";
+// import { postStep } from "../../utils/post-fetch";
 
 const AddNewStepForm = (props) => {
   const [stepLink, setStepLink] = React.useState();
@@ -23,8 +24,10 @@ const AddNewStepForm = (props) => {
           name="step_description"
           required
         ></input>
+        <label htmlFor="step_description">Step Link:</label>
+        <input type="file" id="step_link" name="step_link" required></input>
 
-        <Upload setStepLink={setStepLink} />
+        {/* <Upload setStepLink={setStepLink} /> */}
       </NewStepForm>
       <Button variant="contained" color="primary" type="submit">
         Save Step To Project

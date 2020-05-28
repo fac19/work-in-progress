@@ -71,6 +71,14 @@ function getSteps(projectid) {
   return getFetch(options);
 }
 
+function getFeedback(stepid) {
+  const options = {
+    endpoint: `feedback/${stepid}`,
+    errorMessage: "Feedback error",
+  };
+  return getFetch(options);
+}
+
 export {
   feedPage,
   getUser,
@@ -78,4 +86,5 @@ export {
   getUserPageProjects,
   getProjectPage,
   getSteps,
+  getFeedback,
 };

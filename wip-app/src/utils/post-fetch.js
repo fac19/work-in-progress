@@ -84,7 +84,7 @@ function postAddProject(projectData) {
 
 // }
 
-// function postBase64(projectId, b64) {
+// function postStep(projectId) {
 //   const options = {
 //     endpoint: `/steps/:${projectId}`,
 //     body: {

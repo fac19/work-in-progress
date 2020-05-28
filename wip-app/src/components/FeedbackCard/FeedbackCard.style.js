@@ -1,15 +1,30 @@
 import styled from "styled-components";
 
-const FeedbackText = styled.p``;
+const FeedbackText = styled.p`
+  margin: 0.5rem;
+  margin-bottom: 2rem;
+  font-weight: 300;
+`;
 
-const FeedbackTag = styled.p``;
+const FeedbackTag = styled.p`
+  margin-top: 0.55rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+`;
 
 const Comment = styled.div`
   display: flex;
   flex-direction: column;
+  border-top: 0.5px solid lightgrey;
+  border-bottom: 0.5px solid lightgrey;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 `;
 
-const FeedbackUser = styled.h4``;
+const FeedbackUser = styled.h3`
+  margin: 0.5rem;
+`;
 
 const Step = styled.div`
   display: flex;
@@ -19,6 +34,65 @@ const Step = styled.div`
 const FeedbackForm = styled.form`
   display: flex;
   flex-direction: row;
+  width: 80%;
+  justify-content: center;
 `;
 
-export { FeedbackText, FeedbackTag, Comment, FeedbackUser, Step, FeedbackForm };
+const FeedbackInput = styled.input`
+  width: 90%;
+  height: 2rem;
+`;
+
+const FeedbackButton = styled.button`
+  margin-left: 0.3rem;
+  width: 2rem;
+  background-color: #2096ee;
+  color: white;
+  font-size: 1.5rem;
+  border: 0.5px solid black;
+`;
+
+const FeedbackArticle = styled.article`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  border: 1px solid black;
+  border-radius: 7px;
+  margin: 0 auto;
+`;
+
+const FeedbackHeader = styled.header`
+  border-bottom: 1px solid lightgrey;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 0.5px solid lightgrey;
+  margin: 1rem;
+`;
+
+const FeedbackList = styled.ul`
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0;
+  margin-bottom: 0.1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+`;
+
+export {
+  FeedbackText,
+  FeedbackTag,
+  Comment,
+  FeedbackUser,
+  Step,
+  FeedbackForm,
+  FeedbackInput,
+  FeedbackButton,
+  FeedbackArticle,
+  FeedbackHeader,
+  FeedbackList,
+};

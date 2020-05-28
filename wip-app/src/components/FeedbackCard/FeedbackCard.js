@@ -6,6 +6,11 @@ import {
   FeedbackUser,
   Step,
   FeedbackForm,
+  FeedbackInput,
+  FeedbackButton,
+  FeedbackArticle,
+  FeedbackHeader,
+  FeedbackList,
 } from "./FeedbackCard.style";
 import { StepCardImage } from "../../components/StepCard/StepCard.style";
 
@@ -17,30 +22,34 @@ const FeedbackCard = ({ feedback }) => {
       return (
         <>
           <Step>
-            <FeedbackUser>{feedback.step_name}</FeedbackUser>
-            <FeedbackText>{feedback.step_description}</FeedbackText>
+            <FeedbackHeader>
+              <FeedbackUser>{feedback.step_name}</FeedbackUser>
+              <FeedbackText>{feedback.step_description}</FeedbackText>
+            </FeedbackHeader>
             <StepCardImage src={feedback.step_link} alt="" />
           </Step>
           <FeedbackForm>
             <label htmlFor="feedback"></label>
-            <input
+            <FeedbackInput
               name="feedback"
               id="tag"
               type="text"
               placeholder="Feedback..."
-            ></input>
-            <button type="submit">Add</button>
+            ></FeedbackInput>
+            <FeedbackButton type="submit">+</FeedbackButton>
           </FeedbackForm>
           <Comment>
-            <FeedbackUser> {feedback.username}</FeedbackUser>
+            <FeedbackList>
+              <FeedbackUser> {feedback.username}</FeedbackUser>
+              <FeedbackTag> {feedback.feedback_tag}</FeedbackTag>
+            </FeedbackList>
             <FeedbackText>{feedback.feedback_text} </FeedbackText>
-            <FeedbackTag> {feedback.feedback_tag}</FeedbackTag>
           </Comment>
         </>
       );
     });
   };
-  return <article>{feedbackMap()}</article>;
+  return <FeedbackArticle>{feedbackMap()}</FeedbackArticle>;
 };
 
 export default FeedbackCard;

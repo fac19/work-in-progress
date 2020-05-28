@@ -13,6 +13,7 @@ import UserPage from "./pages/UserPage/UserPage";
 import ExplorePage from "./pages/ExplorePage/ExplorePage";
 import ProjectPage from "./pages/ProjectPage/ProjectPage";
 import NotificationPage from "./pages/NotificationPage/NotificationPage";
+import StepPage from "./pages/StepPage/StepPage";
 import { MainWrapper } from "./pages/page.style";
 
 const App = () => {
@@ -55,6 +56,11 @@ const App = () => {
           <Route path="/project">
             <TopNavbar />
             <ProjectPage />
+            <BottomNavbar />
+          </Route>
+          <Route path="/step">
+            <TopNavbar />
+            <StepPage />
             <BottomNavbar />
           </Route>
           <Route path="/">

@@ -1,9 +1,16 @@
 import React from "react";
 import { StepCardArticle, StepCardImage } from "./StepCard.style";
+import { useHistory } from "react-router-dom";
 
-const StepCard = ({ step_name, step_description, step_link }) => {
+const StepCard = ({ id, step_name, step_description, step_link }) => {
+  const history = useHistory();
+
+  const goToStepPage = () => {
+    history.push(`/step/${id}`);
+  };
+
   return (
-    <StepCardArticle>
+    <StepCardArticle onClick={goToStepPage}>
       <h3>{step_name}</h3>
       <p>{step_description}</p>
       <StepCardImage src={step_link} alt="" />

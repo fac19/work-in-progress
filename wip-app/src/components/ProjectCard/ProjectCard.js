@@ -1,19 +1,27 @@
 import React from "react";
 import { ProjectCardArticle, ProjectCardImage } from "./ProjectCard.style";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
-const ProjectCard = ({ project_name, username, date, step_link }) => {
-  const project_url = "/profile";
+const ProjectCard = ({
+  project_name,
+  username,
+  date,
+  step_link,
+  project_id,
+}) => {
+  const history = useHistory();
+
+  function handleProjectClick(event) {
+    history.push(`/project/${project_id}`);
+  }
+
   return (
-    <>
-      <ProjectCardArticle>
-        <h3>{project_name}</h3>
-        <Link to={project_url}>Feed</Link>
-        <p>{username}</p>
-        {/* {project_status ? <p>Work in progress</p> : <p>Finished</p>} */}
-        <ProjectCardImage src={step_link} alt="catch em" />
-      </ProjectCardArticle>
-    </>
+    <ProjectCardArticle onClick={handleProjectClick}>
+      <h3>{project_name}</h3>
+      <p>{username}</p>
+      {/* {project_status ? <p>Work in progress</p> : <p>Finished</p>} */}
+      <ProjectCardImage src={step_link} alt="catch em" />
+    </ProjectCardArticle>
   );
 };
 

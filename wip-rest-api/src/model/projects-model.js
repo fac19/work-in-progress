@@ -1,5 +1,14 @@
 const db = require("../database/connection.js");
 
+function getProjectFromDb(projectId) {
+  return db
+    .query(
+      "SELECT (SELECT username FROM users WHERE projects.user_id=users.id), project_name, project_description, project_status, steps.id, steps.step_name, steps.step_link, steps.date  FROM projects JOIN steps ON projects.id=steps.project_id WHERE projects.id=($1);",
+      [projectId]
+    )
+    .then((project) => project.rows[0]);
+}
+
 function getWatchedProjectsFromDb(userId) {
   return db
     .query(
@@ -40,4 +49,5 @@ module.exports = {
   getUserProjectsFromDb,
   addNewProjectToDb,
   getAllProjectsFromDb,
+  getProjectFromDb,
 };

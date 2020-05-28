@@ -1,5 +1,13 @@
 const model = require("../model/projects-model");
 
+function getProject(req, res, next) {
+  const projectId = req.params.projectId;
+  model
+    .getProjectFromDb(projectId)
+    .then((project) => res.status(200).send(project))
+    .catch(next);
+}
+
 function getWatchedProjects(req, res, next) {
   const userId = req.user.id;
   model
@@ -52,4 +60,5 @@ module.exports = {
   getUserProjects,
   addNewProject,
   getExploreProjects,
+  getProject,
 };

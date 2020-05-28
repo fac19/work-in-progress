@@ -29,44 +29,44 @@ const UserPage = (props) => {
     user_link_3,
   } = userInfo;
 
-  return (
-    <>
-      {userInfo.length === 0 || userProjects.length === 0 ? (
-        <h1>Loading your profile...</h1>
-      ) : (
-        <>
-          <ProfileCard>
-            <h1>{username}'s Profile</h1>
-            <p>{email}</p>
-            <a
-              href={"https://" + user_link_1}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Link 1
-            </a>
-            <a
-              href={"https://" + user_link_2}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Link 2
-            </a>
-            <a
-              href={"https://" + user_link_3}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Link 3
-            </a>
-            <p>{user_bio}</p>
-            <p>{user_vocation}</p>
-          </ProfileCard>
-          <ProjectFeed projects={userProjects} />
-        </>
-      )}
-    </>
-  );
+  const isLoading = userInfo.length === 0 || userProjects.length === 0;
+
+  if (isLoading) {
+    return <h1>Loading your profile...</h1>;
+  } else {
+    return (
+      <>
+        <ProfileCard>
+          <h1>{username}'s Profile</h1>
+          <p>{email}</p>
+          <a
+            href={"https://" + user_link_1}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Link 1
+          </a>
+          <a
+            href={"https://" + user_link_2}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Link 2
+          </a>
+          <a
+            href={"https://" + user_link_3}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Link 3
+          </a>
+          <p>{user_bio}</p>
+          <p>{user_vocation}</p>
+        </ProfileCard>
+        <ProjectFeed projects={userProjects} />
+      </>
+    );
+  }
 };
 
 export default UserPage;

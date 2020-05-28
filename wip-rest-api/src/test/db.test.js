@@ -106,6 +106,12 @@ describe("Database tests for projects", () => {
     await build();
   });
 
+  test("Get project by projectId", async () => {
+    await projectsmodel.getProjectFromDb("1").then((project) => {
+      expect(project.project_name).toEqual("A tree");
+    });
+  });
+
   test("Get all watched projects returns array of correct length", async () => {
     await projectsmodel.getWatchedProjectsFromDb("2").then((projects) => {
       expect(projects.length).toEqual(9);

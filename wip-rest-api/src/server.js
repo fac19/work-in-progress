@@ -29,6 +29,7 @@ server.put("/user", authorise, users.update);
 // server.delete("/user/:username", authorise, users.delete);
 
 //Routes for projects
+server.get("/project/:projectId", authorise, project.getProject);
 server.get("/followedProjects", authorise, project.getWatchedProjects);
 server.get("/userProjects", authorise, project.getUserProjects);
 server.get("/exploreProjects", authorise, project.getExploreProjects);

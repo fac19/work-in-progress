@@ -24,6 +24,7 @@ const ProjectFeed = ({ projects }) => {
             username={username}
             date={date}
             step_link={step_link}
+            project_id={id}
             key={id}
           />
         );

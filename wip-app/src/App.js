@@ -1,6 +1,7 @@
 import React from "react";
-import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
+import "./App.css";
 import TopNavbar from "./components/TopNavbar/TopNavbar";
 import BottomNavbar from "./components/BottomNavbar/BottomNavbar";
 import AddProjectPage from "./pages/AddProjectPage/AddProjectPage";
@@ -10,77 +11,58 @@ import SignUpForm from "./components/SignUpForm/SignUpForm";
 import FeedPage from "./pages/FeedPage/FeedPage";
 import UserPage from "./pages/UserPage/UserPage";
 import ExplorePage from "./pages/ExplorePage/ExplorePage";
+import ProjectPage from "./pages/ProjectPage/ProjectPage";
 import NotificationPage from "./pages/NotificationPage/NotificationPage";
 import { MainWrapper } from "./pages/page.style";
 
 const App = () => {
-  // const [loggedIn, setLoggedIn] = React.useState(false);
-
   return (
-    <Router>
-      {/* {loggedIn && (
-        <>
-          <TopNavbar setLoggedIn={setLoggedIn} />
-          <BottomNavbar />
-        </>
-      )}
-
-      {!loggedIn && <LandingPage setLoggedIn={setLoggedIn} />} */}
-
-      <Switch>
-        <Route path="/sign-up">
-          <MainWrapper>
+    <MainWrapper>
+      <Router>
+        <Switch>
+          <Route path="/sign-up">
             <SignUpForm />
-          </MainWrapper>
-        </Route>
-        <Route path="/log-in">
-          <MainWrapper>
+          </Route>
+          <Route path="/log-in">
             <LogInForm />
-          </MainWrapper>
-        </Route>
-        <Route path="/new-project">
-          <MainWrapper>
+          </Route>
+          <Route path="/new-project">
             <TopNavbar />
             <AddProjectPage />
             <BottomNavbar />
-          </MainWrapper>
-        </Route>
-        <Route path="/sign-out"></Route>
-        <Route path="/feed">
-          <MainWrapper>
+          </Route>
+          <Route path="/sign-out"></Route>
+          <Route path="/feed">
             <TopNavbar />
             <FeedPage />
             <BottomNavbar />
-          </MainWrapper>
-        </Route>
-        <Route path="/profile">
-          <MainWrapper>
+          </Route>
+          <Route path="/profile">
             <TopNavbar />
             <UserPage />
             <BottomNavbar />
-          </MainWrapper>
-        </Route>
-        <Route path="/notifications">
-          <MainWrapper>
+          </Route>
+          <Route path="/notifications">
             <TopNavbar />
             <NotificationPage />
             <BottomNavbar />
-          </MainWrapper>
-        </Route>
-        <Route path="/explore">
-          <MainWrapper>
+          </Route>
+          <Route path="/explore">
             <TopNavbar />
             <ExplorePage />
             <BottomNavbar />
-          </MainWrapper>
-        </Route>
-        <Route path="/">
-          <MainWrapper>
+          </Route>
+          <Route path="/project">
+            <TopNavbar />
+            <ProjectPage />
+            <BottomNavbar />
+          </Route>
+          <Route path="/">
             <LandingPage />
-          </MainWrapper>
-        </Route>
-      </Switch>
-    </Router>
+          </Route>
+        </Switch>
+      </Router>
+    </MainWrapper>
   );
 };
 

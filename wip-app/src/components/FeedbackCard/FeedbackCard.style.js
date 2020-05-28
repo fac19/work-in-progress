@@ -41,6 +41,8 @@ const FeedbackForm = styled.form`
 const FeedbackInput = styled.input`
   width: 90%;
   height: 2rem;
+  border-radius: 3px;
+  border: 0.5px solid black;
 `;
 
 const FeedbackButton = styled.button`
@@ -50,6 +52,7 @@ const FeedbackButton = styled.button`
   color: white;
   font-size: 1.5rem;
   border: 0.5px solid black;
+  border-radius: 3px;
 `;
 
 const FeedbackArticle = styled.article`

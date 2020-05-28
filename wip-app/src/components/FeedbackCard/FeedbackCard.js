@@ -17,7 +17,6 @@ import { StepCardImage } from "../../components/StepCard/StepCard.style";
 const FeedbackCard = ({ feedback }) => {
   // <p>Posted by: </p>
   const feedbackMap = () => {
-    console.log(feedback);
     return feedback.map((feedback) => {
       return (
         <>

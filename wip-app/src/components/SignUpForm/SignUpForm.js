@@ -3,6 +3,7 @@ import { Container, Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
 import { signUpPost } from "../../utils/post-fetch";
+import { HeaderLogoStyle } from "../../components/Logo.style";
 
 const useStyles = makeStyles({
   form: {
@@ -43,6 +44,7 @@ const SignUpForm = (props) => {
 
   return (
     <Container className={classes.formContainer} component="main" maxWidth="xs">
+      <HeaderLogoStyle alt="work in progress logo" src="logo.svg" />
       <h1>Sign Up</h1>
       <form className={classes.form} onSubmit={handleSubmit}>
         <label htmlFor="username">Username *</label>
@@ -73,7 +75,7 @@ const SignUpForm = (props) => {
         <Button
           className={classes.formElement}
           variant="contained"
-          color="primary"
+          color="secondary"
           type="submit"
         >
           Sign Up

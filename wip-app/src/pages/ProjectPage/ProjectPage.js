@@ -29,6 +29,7 @@ const ProjectPage = () => {
   const makeStepCards = (stepsObject) => {
     return stepsObject
       .map((step) => {
+        console.log(step);
         return <StepCard key={step.id} {...step} />;
       })
       .reverse();

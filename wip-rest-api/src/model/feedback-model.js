@@ -2,7 +2,10 @@ const db = require("../database/connection.js");
 
 function getFeedback(stepId) {
   return db
-    .query("SELECT * FROM feedback WHERE step_id=($1);", [stepId])
+    .query(
+      "SELECT feedback.id, feedback_tag, feedback_text, feedback.date, step_name, step_description, step_link, (SELECT username FROM users WHERE users.id=feedback.user_id) FROM feedback JOIN steps ON feedback.step_id=steps.id WHERE step_id=($1);",
+      [stepId]
+    )
     .then((feedback) => feedback.rows);
 }
 

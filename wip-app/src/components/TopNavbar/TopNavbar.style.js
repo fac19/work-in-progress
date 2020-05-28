@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const TopNavbarStyle = styled.nav`
   height: 4rem;
-  border: 1px solid black;
+  border-bottom: 0.5px solid black;
   background-color: white;
   position: fixed;
   width: 100%;
@@ -17,4 +17,10 @@ const TopNavbarUlStyle = styled.ul`
   padding: 0;
 `;
 
-export { TopNavbarStyle, TopNavbarUlStyle };
+const TopNavbarLiStyle = styled.li`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
+
+export { TopNavbarStyle, TopNavbarUlStyle, TopNavbarLiStyle };

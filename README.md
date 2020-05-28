@@ -10,6 +10,10 @@ Deployed on [Netlify](https://wip-app.netlify.app/)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/fdfedb67-dd70-4820-9e62-1c24f12fa5ab/deploy-status)](https://app.netlify.com/sites/wip-app/deploys)
 
+## Credits
+
+Logo designed by Jessica Gooding
+
 ## Co-authoring credits
 
 Co-authored-by: Jack Heriz-Smith <jackherizsmith@gmail.com>

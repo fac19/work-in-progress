@@ -62,7 +62,7 @@ describe("Database tests for users", () => {
   });
 
   test("Can get a user using the username", async () => {
-    await getUserByName("CampbellDocherty").then((data) => {
+    await getUserByName("cammyd").then((data) => {
       expect(data.password).toEqual(
         "$2a$10$bWvVpjSqqysqZarWg38wu.jRzq404fcCWxjOkxUp18M3S8XsWEIse"
       );
@@ -108,19 +108,19 @@ describe("Database tests for projects", () => {
 
   test("Get project by projectId", async () => {
     await projectsmodel.getProjectFromDb("1").then((project) => {
-      expect(project.project_name).toEqual("A tree");
+      expect(project.project_name).toEqual("Plant Lover");
     });
   });
 
   test("Get all watched projects returns array of correct length", async () => {
     await projectsmodel.getWatchedProjectsFromDb("2").then((projects) => {
-      expect(projects.length).toEqual(9);
+      expect(projects.length).toEqual(3);
     });
   });
 
   test("Get info from watched projects", async () => {
     await projectsmodel.getWatchedProjectsFromDb("2").then((projects) => {
-      expect(projects[2].project_name).toEqual("A tree");
+      expect(projects[2].project_name).toEqual("My trusty sidekick");
     });
   });
 
@@ -132,7 +132,7 @@ describe("Database tests for projects", () => {
 
   test("Get info from user project", async () => {
     await projectsmodel.getUserProjectsFromDb("2").then((projects) => {
-      expect(projects[0].project_name).toEqual("A moon");
+      expect(projects[0].project_name).toEqual("The cutest dog in the world");
     });
   });
 
@@ -147,7 +147,7 @@ describe("Database tests for projects", () => {
           const exploreProjects = allProjects.filter(
             (project) => watchedIds.indexOf(project.id) === -1
           );
-          expect(exploreProjects.length).toEqual(9);
+          expect(exploreProjects.length).toEqual(3);
         });
       });
   });
@@ -163,7 +163,9 @@ describe("Database tests for projects", () => {
           const exploreProjects = allProjects.filter(
             (project) => watchedIds.indexOf(project.id) === -1
           );
-          expect(exploreProjects[2].project_name).toEqual("A tree");
+          expect(exploreProjects[0].project_name).toEqual(
+            "The cutest dog in the world"
+          );
         });
       });
   });
@@ -186,13 +188,15 @@ describe("Database tests for steps", () => {
 
   test("Get all steps with project id", async () => {
     await stepsmodel.getStepsWithProjectId("1").then((steps) => {
-      expect(steps.length).toEqual(4);
+      expect(steps.length).toEqual(1);
     });
   });
 
   test("Get detail of steps with project id", async () => {
     await stepsmodel.getStepsWithProjectId("1").then((steps) => {
-      expect(steps[2].step_description).toEqual("1 Some roots");
+      expect(steps[0].step_description).toEqual(
+        "I have roughly mapped out what I want the drawing to look like. It is not a complete concept yet, but I would love some feedback on what I have so far"
+      );
     });
   });
 
@@ -216,17 +220,17 @@ describe("Database tests for feedback", () => {
   });
 
   test("Get feedback from database using stepId", async () => {
-    const stepId = 8;
+    const stepId = 1;
     await getFeedback(stepId).then((feedback) => {
       expect(feedback[0].feedback_text).toEqual(
-        "Hey J man its Han have you considered craters"
+        "Hey Cammy, you really do love plants haha! I think you are going in the right direction, clean up the sketch in black and white first before you add colour."
       );
     });
   });
 
   test("Get userId by FeedbackId", async () => {
     await getUserIdByFeedbackId("2").then((feedback) => {
-      expect(feedback.user_id).toEqual(4);
+      expect(feedback.user_id).toEqual(2);
     });
   });
 
@@ -263,11 +267,11 @@ describe("Database tests for watching", () => {
   });
 
   test("Remove watched project by userId & projectId", async () => {
-    const userId = 4;
-    const projectId = 4;
+    const userId = 2;
+    const projectId = 1;
     await removeFromWatching(userId, projectId).then((watched) => {
-      expect(watched.project_id).toEqual(4);
-      expect(watched.user_id).toEqual(4);
+      expect(watched.project_id).toEqual(1);
+      expect(watched.user_id).toEqual(2);
     });
   });
 });

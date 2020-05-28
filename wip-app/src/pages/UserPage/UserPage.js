@@ -1,6 +1,15 @@
 import React from "react";
 import { getUser, getUserPageProjects } from "../../utils/get-fetch";
-import { ProfileCard } from "./UserPage.style";
+import {
+  ProfileCard,
+  ProfileName,
+  ProfileEmail,
+  ProfileBio,
+  ProfileVocation,
+  ProfileATag,
+  ProfileLink,
+  ProfileLinksSection,
+} from "./UserPage.style";
 import ProjectFeed from "../../components/ProjectFeed/ProjectFeed";
 
 const UserPage = (props) => {
@@ -37,31 +46,33 @@ const UserPage = (props) => {
     return (
       <>
         <ProfileCard>
-          <h1>{username}'s Profile</h1>
-          <p>{email}</p>
-          <a
-            href={"https://" + user_link_1}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Link 1
-          </a>
-          <a
-            href={"https://" + user_link_2}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Link 2
-          </a>
-          <a
-            href={"https://" + user_link_3}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Link 3
-          </a>
-          <p>{user_bio}</p>
-          <p>{user_vocation}</p>
+          <ProfileName>{username}'s Profile</ProfileName>
+          <ProfileVocation>{user_vocation}</ProfileVocation>
+          <ProfileEmail>{email}</ProfileEmail>
+          <ProfileLinksSection>
+            <ProfileATag
+              href={"https://" + user_link_1}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ProfileLink src="link.svg" alt="link icon"></ProfileLink>
+            </ProfileATag>
+            <ProfileATag
+              href={"https://" + user_link_2}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ProfileLink src="link.svg" alt="link icon"></ProfileLink>
+            </ProfileATag>
+            <ProfileATag
+              href={"https://" + user_link_3}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ProfileLink src="link.svg" alt="link icon"></ProfileLink>
+            </ProfileATag>
+          </ProfileLinksSection>
+          <ProfileBio>{user_bio}</ProfileBio>
         </ProfileCard>
         <ProjectFeed projects={userProjects} />
       </>

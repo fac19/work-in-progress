@@ -43,16 +43,15 @@ function getType(filePath) {
 
 const getB64 = function (file) {
   const reader = new FileReader();
-  console.log("file", file);
+
   const type = getType(file.name);
-  console.log("type", type);
 
   reader.onloadend = function () {
     // Since it contains the Data URI, we should remove the prefix and keep only Base64 string
-    var b64 = reader.result.replace(/^data:.+;base64,/, "");
-
-    var b64WithType = addTypeString(type) + b64;
-    console.log(b64WithType);
+    const b64 = reader.result.replace(/^data:.+;base64,/, "");
+    const b64WithType = addTypeString(type) + b64;
+    console.log("reader.onloadend -> b64WithType", b64WithType);
+    return b64WithType;
   };
 
   reader.readAsDataURL(file);

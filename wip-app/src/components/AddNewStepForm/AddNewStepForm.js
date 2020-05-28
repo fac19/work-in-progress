@@ -4,6 +4,12 @@ import { NewStepSection, NewStepForm } from "./AddNewStepForm.style";
 import Upload from "../Upload/Upload";
 
 const AddNewStepForm = (props) => {
+  const [stepLink, setStepLink] = React.useState();
+
+  React.useEffect(() => {
+    console.log(stepLink);
+  }, []);
+
   return (
     <NewStepSection>
       <h2>Add Step to Project</h2>
@@ -17,13 +23,12 @@ const AddNewStepForm = (props) => {
           name="step_description"
           required
         ></input>
-        <label htmlFor="step_link">Step Media Link</label>
-        <input type="text" id="step_link" name="step_link" required></input>
-        <Button variant="contained" color="primary" type="submit">
-          Save Step To Project
-        </Button>
+
+        <Upload setStepLink={setStepLink} />
       </NewStepForm>
-      <Upload />
+      <Button variant="contained" color="primary" type="submit">
+        Save Step To Project
+      </Button>
     </NewStepSection>
   );
 };

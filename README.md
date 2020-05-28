@@ -157,7 +157,7 @@ Get your own projects
 
 Get your unwatched (unfollowed) projects
 
-##### POST /userprojects
+##### POST /newproject
 
 Add a new project to your account
 
@@ -176,7 +176,7 @@ Request body example:
 
 Get project steps by project id
 
-##### GET /steps/:projectid
+##### POST /steps/:projectid
 
 Add project steps by project id
 

@@ -79,9 +79,21 @@ function postAddProject(projectData) {
 
 // function postAddStep() {
 //   const options = {
-//     endpoint:`/steps/:${projection}`,
+//     endpoint:`/steps/:${projectId}`,
 //   }
 
+// }
+
+// function postBase64(projectId, b64) {
+//   const options = {
+//     endpoint: `/steps/:${projectId}`,
+//     body: {
+//       step_name: projectData.project_name,
+//       step_description: projectData.project_description,
+//       step_link: b64,
+//     },
+//     error: "Could not add project",
+//   };
 // }
 
 export { signUpPost, logInPost, postAddProject };

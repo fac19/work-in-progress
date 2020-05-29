@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import ProjectFeed from "../../components/ProjectFeed/ProjectFeed";
 import { explorePage } from "../../utils/get-fetch";
+import { PageHeading } from "../page.style";
 
 const ExplorePage = (props) => {
   const [projects, setProjects] = React.useState(null);
@@ -18,13 +19,15 @@ const ExplorePage = (props) => {
   const isLoading = !projects;
 
   if (isLoading) {
-    return <h2>Loading...</h2>;
+    return <PageHeading>Loading...</PageHeading>;
   } else if (isEmpty) {
-    return <h2>No new projects - you're following them all!</h2>;
+    return (
+      <PageHeading>No new projects - you're following them all!</PageHeading>
+    );
   } else {
     return (
       <>
-        <h1>Find new projects to follow</h1>
+        <PageHeading>Find new projects to follow</PageHeading>
         <ProjectFeed projects={projects}></ProjectFeed>
       </>
     );

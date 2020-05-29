@@ -1,7 +1,7 @@
 import React from "react";
 import { getFeedback } from "../../utils/get-fetch";
 import FeedbackCard from "../../components/FeedbackCard/FeedbackCard";
-import StepCard from "../../components/StepCard/StepCard";
+// import StepCard from "../../components/StepCard/StepCard";
 
 const StepPage = () => {
   const [feedback, setFeedback] = React.useState(null);
@@ -18,7 +18,7 @@ const StepPage = () => {
         setIsEmpty(true);
       }
     });
-  }, []);
+  }, [stepId]);
 
   const isLoading = !feedback;
 

@@ -3,6 +3,10 @@ import { Button } from "@material-ui/core";
 import { AddProjectSection, AddProjectForm } from "./AddProjectPage.style";
 import { useHistory } from "react-router-dom";
 import { postAddProject } from "../../utils/post-fetch";
+import {
+  FormInput,
+  FormLabel,
+} from "../../components/LogInForm/LogInForm.style";
 
 const AddProjectPage = (props) => {
   const history = useHistory();
@@ -25,21 +29,23 @@ const AddProjectPage = (props) => {
     <AddProjectSection>
       <h1>Add New Project</h1>
       <AddProjectForm onSubmit={handleSubmit}>
-        <label htmlFor="project_name">Project Name</label>
-        <input
+        <FormLabel htmlFor="project_name">Project Name</FormLabel>
+        <FormInput
           type="text"
           id="project_name"
           name="project_name"
+          placeholder="Project name..."
           required
-        ></input>
-        <label htmlFor="project_description">Project Description</label>
-        <input
+        ></FormInput>
+        <FormLabel htmlFor="project_description">Project Description</FormLabel>
+        <FormInput
           type="text"
           id="project_description"
           name="project_description"
+          placeholder="Project description..."
           required
-        ></input>
-        <Button variant="contained" color="primary" type="submit">
+        ></FormInput>
+        <Button variant="contained" color="secondary" type="submit">
           Publish
         </Button>
       </AddProjectForm>

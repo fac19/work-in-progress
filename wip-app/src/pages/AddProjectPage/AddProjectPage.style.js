@@ -10,6 +10,7 @@ const AddProjectForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 20rem;
 `;
 
 export { AddProjectSection, AddProjectForm };

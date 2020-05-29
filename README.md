@@ -96,7 +96,7 @@ CREATE DATABASE wip_test WITH OWNER user; -- database name is important for test
 
 ## Scripts
 
-You can set up everything you need in your terminal.
+You can set everything up using CLI from the project root.
 
 `npm run i-all` => installs everything you need
 

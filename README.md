@@ -78,9 +78,8 @@ CREATE DATABASE wip_test WITH OWNER user; -- database name is important for test
 
 5. Run `npm test` to run tests inside wip-rest-api directory
 6. Run `npm run dev` to start development server
-7. If you are having issues with anything related to accessing the databases you have created, you may need to grant privileges:
-   - `GRANT ALL PRIVILEGES ON DATABASE wip_db TO user;`
-   - `GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO user;`
+7. If you are having issues with anything related to accessing the databases you have created, you may need to assign your user again:
+   - `ALTER DATABASE wip_db OWNER TO user;`
 
 ## Scripts
 

@@ -12,7 +12,7 @@ Deployed on [Netlify](https://wip-app.netlify.app/)
 
 ## In this README
 1. [Database set up](#database-set-up)
-2. [Scripts](#scripts) - [![codecov](https://codecov.io/gh/fac19/work-in-progress/branch/master/graph/badge.svg)](https://codecov.io/gh/fac19/work-in-progress)
+2. [Scripts](#scripts) [![codecov](https://codecov.io/gh/fac19/work-in-progress/branch/master/graph/badge.svg)](https://codecov.io/gh/fac19/work-in-progress)
 3. [API routes](#api-routes)
 
 ## Credits

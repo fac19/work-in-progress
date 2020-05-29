@@ -13,7 +13,7 @@ Deployed on [Netlify](https://wip-app.netlify.app/)
 ## In this README
 1. [Database set up](#database-set-up)
 2. [Scripts](#scripts) [![codecov](https://codecov.io/gh/fac19/work-in-progress/branch/master/graph/badge.svg)](https://codecov.io/gh/fac19/work-in-progress)
-3. [API routes](#api-routes)
+3. [API routes](#api-routes) [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/b12cad151e94635d9f95)
 
 ## Credits
 
@@ -98,8 +98,6 @@ You can set up everything you need in your terminal.
 
 REST API deployed on [Heroku](https://wip-rest-api.herokuapp.com/)  
 You can make requests to the Heroku App URL, e.g. `POST` to `https://wip-rest-api.herokuapp.com/signup`
-
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/b12cad151e94635d9f95)
 
 ### No Access Token required for these routes:
 

@@ -29,7 +29,9 @@ Co-authored-by: Hannah Gooding <hannah.gooding@yahoo.com>
 
 Co-authored-by: Alexreid95 <alexreid95@gmail.com>
 
-# Project
+---
+
+# Running our project
 
 ## Database set up
 
@@ -44,9 +46,9 @@ PGPASSWORD=password
 JWT_SECRET=jwtsecret
 ```
 
-## How to set up development and test databases:
+### How to set up development and test databases:
 
-### Set up instructions
+#### Set up instructions
 
 1. `git clone` this repo
 2. cd into wip-app directory and `npm install`
@@ -99,11 +101,11 @@ You can set up everything you need in your terminal.
 REST API deployed on [Heroku](https://wip-rest-api.herokuapp.com/)  
 You can make requests to the Heroku App URL, e.g. `POST` to `https://wip-rest-api.herokuapp.com/signup`
 
-### No Access Token required for these routes:
+:closed_lock_with_key: = Authorization required
 
-#### Users
+### Users
 
-##### POST /signup
+#### POST /signup
 
 Creates access token
 
@@ -119,7 +121,7 @@ Request body example:
 }
 ```
 
-##### POST /login
+#### POST /login
 
 Receive access token
 
@@ -132,15 +134,11 @@ Request body example:
 }
 ```
 
-### Send access token as a Bearer Token in the Authorization Header for these routes:
-
-#### Users
-
-##### GET /user
+#### GET /user :closed_lock_with_key:
 
 Get your user info when signed in
 
-##### PUT /user
+#### PUT /user :closed_lock_with_key:
 
 Update your user info
 
@@ -153,25 +151,25 @@ Request body example:
 }
 ```
 
-#### Projects
+### Projects
 
-##### GET /project/:projectid
+#### GET /project/:projectid :closed_lock_with_key:
 
 Get a project by project id
 
-##### GET /followedprojects
+#### GET /followedprojects :closed_lock_with_key:
 
 Get your watched (followed) projects
 
-##### GET /userprojects
+#### GET /userprojects :closed_lock_with_key:
 
 Get your own projects
 
-##### GET /exploreprojects
+#### GET /exploreprojects :closed_lock_with_key:
 
 Get your unwatched (unfollowed) projects
 
-##### POST /newproject
+#### POST /newproject :closed_lock_with_key:
 
 Add a new project to your account
 
@@ -184,13 +182,13 @@ Request body example:
 }
 ```
 
-#### Steps
+### Steps
 
-##### GET /steps/:projectid
+#### GET /steps/:projectid :closed_lock_with_key:
 
 Get project steps by project id
 
-##### POST /steps/:projectid
+#### POST /steps/:projectid :closed_lock_with_key:
 
 Add project steps by project id
 
@@ -204,13 +202,13 @@ Request body example:
 }
 ```
 
-#### Feedback
+### Feedback
 
-##### GET /feedback/:stepid
+#### GET /feedback/:stepid :closed_lock_with_key:
 
 Get feedback for step by step id
 
-##### POST /feedback/:stepid
+#### POST /feedback/:stepid :closed_lock_with_key:
 
 Add feedback for step by step id
 
@@ -223,7 +221,7 @@ Request body example:
 }
 ```
 
-##### PUT /feedback/:feedbackid
+#### PUT /feedback/:feedbackid :closed_lock_with_key:
 
 Update feedback by feedback id
 
@@ -236,12 +234,12 @@ Request body example:
 }
 ```
 
-#### Watching
+### Watching
 
-##### POST /watching/:projectid
+#### POST /watching/:projectid :closed_lock_with_key:
 
 Start watching (following) a post by project id
 
-##### DELETE /watching/:projectid
+#### DELETE /watching/:projectid :closed_lock_with_key:
 
 Stop watching (following) a post by project id

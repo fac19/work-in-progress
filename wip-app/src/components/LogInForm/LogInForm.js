@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
 import { logInPost } from "../../utils/post-fetch";
 import { HeaderLogoStyle } from "../../components/Logo.style";
+import { FormInput, FormLabel } from "./LogInForm.style";
 
 const useStyles = makeStyles({
   form: {
@@ -46,23 +47,23 @@ const LogInForm = (props) => {
       <HeaderLogoStyle alt="work in progress logo" src="logo.svg" />
       <h1>Log In</h1>
       <form className={classes.form} onSubmit={handleSubmit}>
-        <label htmlFor="username">Username *</label>
-        <input
+        <FormLabel htmlFor="username">Username *</FormLabel>
+        <FormInput
           type="text"
           id="username"
-          placeholder="username"
+          placeholder="Username"
           name="username"
           required
           autoFocus
-        ></input>
-        <label htmlFor="password">Password *</label>
-        <input
+        ></FormInput>
+        <FormLabel htmlFor="password">Password *</FormLabel>
+        <FormInput
           type="password"
           id="password"
           name="password"
           placeholder="Password"
           required
-        ></input>
+        ></FormInput>
         <Button
           className={classes.formElement}
           variant="contained"

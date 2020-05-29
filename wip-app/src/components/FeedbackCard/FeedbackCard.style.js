@@ -61,9 +61,16 @@ const FeedbackArticle = styled.article`
   justify-content: center;
   align-items: center;
   width: 80%;
-  border: 1px solid black;
-  border-radius: 7px;
   margin: 0 auto;
+  margin: 1em 0;
+  padding: 3em;
+  border-radius: 3em;
+  text-align: center;
+  box-shadow: 0 0.5em 1em 0 rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+  &:hover {
+    box-shadow: 0 1em 2em 0 rgba(0, 0, 0, 0.3);
+  }
 `;
 
 const FeedbackHeader = styled.header`

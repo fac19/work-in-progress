@@ -10,6 +10,8 @@ Deployed on [Netlify](https://wip-app.netlify.app/)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/fdfedb67-dd70-4820-9e62-1c24f12fa5ab/deploy-status)](https://app.netlify.com/sites/wip-app/deploys)
 
+(#database-set-up)
+
 ## Credits
 
 Logo designed by Jessica Gooding
@@ -17,11 +19,14 @@ Logo designed by Jessica Gooding
 ## Co-authoring credits
 
 Co-authored-by: Jack Heriz-Smith <jackherizsmith@gmail.com>
+
 Co-authored-by: CampbellDocherty <campbellsofitsidocherty@gmail.com>
+
 Co-authored-by: Hannah Gooding <hannah.gooding@yahoo.com>
+
 Co-authored-by: Alexreid95 <alexreid95@gmail.com>
 
-## Database set up
+## [Database set up](#database-set-up)
 
 ![schema](https://i.imgur.com/4S9e6wz.png)
 

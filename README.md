@@ -95,17 +95,22 @@ CREATE DATABASE wip_test WITH OWNER user; -- database name is important for test
    - `ALTER DATABASE wip_db OWNER TO user;`
 
 ## Scripts
-
 You can set everything up using CLI from the project root.
 
 `npm run i-all` => installs everything you need
 
 `npm run app` => runs the front end on localhost:3001
+
 `npm run api` => runs the back end on localhost:3000 (once you've set up your database)
 
-`npm test` => run tests for whole project; press q once your review is complete
-`npm run app-test` => test the front end
-`npm run api-test` => test the back end
+### Tests
+Jest is used for all testing.
+
+`npm test` => run tests for whole project; press q once you're happy with each review
+
+`npm run app-test` => test just the front end
+
+`npm run api-test` => test just the back end
 
 ## API routes
 

@@ -78,12 +78,13 @@ You can set up everything you need in your terminal.
 
 `npm run i-all` => installs everything you need
 
-`npm run app` => runs the front end on localhost:3000
-
-`npm run app-test` => test the front end
-
+`npm run app` => runs the front end on localhost:3001
 `npm run api` => runs the back end on localhost:3000 (once you've set up your database)
 
+[![codecov](https://codecov.io/gh/fac19/work-in-progress/branch/master/graph/badge.svg)](https://codecov.io/gh/fac19/work-in-progress)
+
+`npm test` => run tests for whole project; press q once your review is complete
+`npm run app-test` => test the front end
 `npm run api-test` => test the back end
 
 ## API routes

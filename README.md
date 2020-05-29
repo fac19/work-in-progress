@@ -10,7 +10,7 @@ Deployed on [Netlify](https://wip-app.netlify.app/)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/fdfedb67-dd70-4820-9e62-1c24f12fa5ab/deploy-status)](https://app.netlify.com/sites/wip-app/deploys)
 
-(#database-set-up)
+[Database set up](#database-set-up)
 
 ## Credits
 
@@ -26,7 +26,7 @@ Co-authored-by: Hannah Gooding <hannah.gooding@yahoo.com>
 
 Co-authored-by: Alexreid95 <alexreid95@gmail.com>
 
-## [Database set up](#database-set-up)
+## Database set up
 
 ![schema](https://i.imgur.com/4S9e6wz.png)
 

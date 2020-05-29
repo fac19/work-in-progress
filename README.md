@@ -10,7 +10,10 @@ Deployed on [Netlify](https://wip-app.netlify.app/)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/fdfedb67-dd70-4820-9e62-1c24f12fa5ab/deploy-status)](https://app.netlify.com/sites/wip-app/deploys)
 
-[Database set up](#database-set-up)
+## In this README
+1. [Database set up](#database-set-up)
+2. [Scripts](#scripts) - [![codecov](https://codecov.io/gh/fac19/work-in-progress/branch/master/graph/badge.svg)](https://codecov.io/gh/fac19/work-in-progress)
+3. [API routes](#api-routes)
 
 ## Credits
 
@@ -25,6 +28,8 @@ Co-authored-by: CampbellDocherty <campbellsofitsidocherty@gmail.com>
 Co-authored-by: Hannah Gooding <hannah.gooding@yahoo.com>
 
 Co-authored-by: Alexreid95 <alexreid95@gmail.com>
+
+# Project
 
 ## Database set up
 
@@ -85,8 +90,6 @@ You can set up everything you need in your terminal.
 
 `npm run app` => runs the front end on localhost:3001
 `npm run api` => runs the back end on localhost:3000 (once you've set up your database)
-
-[![codecov](https://codecov.io/gh/fac19/work-in-progress/branch/master/graph/badge.svg)](https://codecov.io/gh/fac19/work-in-progress)
 
 `npm test` => run tests for whole project; press q once your review is complete
 `npm run app-test` => test the front end

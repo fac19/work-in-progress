@@ -21,13 +21,17 @@ Logo designed by Jessica Gooding
 
 ## Co-authoring credits
 
+Co-authored-by: Alexreid95 <alexreid95@gmail.com>
+_Scrum master_
+
 Co-authored-by: Jack Heriz-Smith <jackherizsmith@gmail.com>
+_QA lead_
 
 Co-authored-by: CampbellDocherty <campbellsofitsidocherty@gmail.com>
+_UX/UI_
 
 Co-authored-by: Hannah Gooding <hannah.gooding@yahoo.com>
-
-Co-authored-by: Alexreid95 <alexreid95@gmail.com>
+_DevOps lead_
 
 ---
 

@@ -19,19 +19,18 @@ Deployed on [Netlify](https://wip-app.netlify.app/)
 
 Logo designed by Jessica Gooding
 
-## Co-authoring credits
-
+## The team
+Kat - _scrum master_
 Co-authored-by: Alexreid95 <alexreid95@gmail.com>
-_Scrum master_
 
-Co-authored-by: Jack Heriz-Smith <jackherizsmith@gmail.com>
-_QA lead_
-
+Cammy - _UX/UI lead_
 Co-authored-by: CampbellDocherty <campbellsofitsidocherty@gmail.com>
-_UX/UI_
 
+Hannah - _DevOps lead_
 Co-authored-by: Hannah Gooding <hannah.gooding@yahoo.com>
-_DevOps lead_
+
+Jack - _QA lead_
+Co-authored-by: Jack Heriz-Smith <jackherizsmith@gmail.com>
 
 ---
 

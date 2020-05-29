@@ -1,6 +1,7 @@
 import React from "react";
 import { getProjectPage, getSteps } from "../../utils/get-fetch";
 import StepCard from "../../components/StepCard/StepCard";
+import { PageHeading } from "../page.style";
 
 const ProjectPage = () => {
   const [projectData, setProjectData] = React.useState([]);
@@ -37,14 +38,14 @@ const ProjectPage = () => {
   return (
     <>
       <section>
-        <h2>{project_name}</h2>
+        <PageHeading>{project_name}</PageHeading>
         <h3>By {username}</h3>
         <p>Project status: {project_status ? "Finished" : "In Progress"}</p>
         <p>{project_description}</p>
       </section>
       <section>
         <h2>Project Steps</h2>
-        <a href="">Add a new step</a>
+        {/* <a href="">Add a new step</a> */}
         {makeStepCards(stepsObject)}
       </section>
     </>

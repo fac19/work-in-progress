@@ -35,6 +35,7 @@ const ProfileLinksSection = styled.section`
   display: flex;
   flex-direction: rows;
   width: 2em;
+  justify-content: center;
 `;
 
 export {

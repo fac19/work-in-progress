@@ -11,6 +11,7 @@ import {
   ProfileLinksSection,
 } from "./UserPage.style";
 import ProjectFeed from "../../components/ProjectFeed/ProjectFeed";
+import { PageHeading } from "../page.style";
 
 const UserPage = (props) => {
   const [userInfo, setUserInfo] = React.useState([]);
@@ -41,7 +42,7 @@ const UserPage = (props) => {
   const isLoading = userInfo.length === 0 || userProjects.length === 0;
 
   if (isLoading) {
-    return <h1>Loading your profile...</h1>;
+    return <PageHeading>Loading your profile...</PageHeading>;
   } else {
     return (
       <>

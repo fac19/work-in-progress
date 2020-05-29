@@ -239,5 +239,3 @@ Start watching (following) a post by project id
 ##### DELETE /watching/:projectid
 
 Stop watching (following) a post by project id
-
-need to add && CI=true npm run husky-app-test

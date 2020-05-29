@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test renders the correct ui 1`] = `
+<h2>
+  Loading your feed...
+</h2>
+`;

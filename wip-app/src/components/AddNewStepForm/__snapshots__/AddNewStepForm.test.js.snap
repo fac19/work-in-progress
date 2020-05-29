@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test renders the correct ui 1`] = `
+<section
+  className="sc-AxjAm lcVokx"
+>
+  <h2>
+    Add Step to Project
+  </h2>
+  <form
+    className="sc-AxirZ dcYQlC"
+  >
+    <label
+      htmlFor="step_name"
+    >
+      Step Name
+    </label>
+    <input
+      id="step_name"
+      name="step_name"
+      required={true}
+      type="text"
+    />
+    <label
+      htmlFor="step_description"
+    >
+      Step Description
+    </label>
+    <input
+      id="step_description"
+      name="step_description"
+      required={true}
+      type="text"
+    />
+    <label
+      htmlFor="step_description"
+    >
+      Step Link:
+    </label>
+    <input
+      id="step_link"
+      name="step_link"
+      required={true}
+      type="file"
+    />
+  </form>
+  <button
+    className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+    disabled={false}
+    onBlur={[Function]}
+    onDragLeave={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    tabIndex={0}
+    type="submit"
+  >
+    <span
+      className="MuiButton-label"
+    >
+      Save Step To Project
+    </span>
+  </button>
+</section>
+`;

@@ -1,7 +1,12 @@
 import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
-import FeedbackCard from "./FeedbackCard";
+import TestRenderer from "react-test-renderer";
+import ProjectFeed from "./ProjectFeed";
 
-test("Jest is working", () => {
-  expect(true).toBeTruthy();
+describe("Snapshot test", () => {
+  const projects = [{ id: 1 }, { id: 2 }];
+  it("renders the correct ui", () => {
+    const component = TestRenderer.create(<ProjectFeed projects={projects} />);
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

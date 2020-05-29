@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test renders the correct ui 1`] = `
+<section
+  className="sc-AxhUy fejNsb"
+>
+  <article
+    className="sc-AxjAm gMVhDx"
+    onClick={[Function]}
+  >
+    <img
+      alt="undefined's project: undefined"
+      className="sc-AxiKw bGHWDv"
+    />
+    <h3
+      className="sc-AxirZ lcIoiq"
+    />
+    <p
+      className="sc-AxhCb goFehh"
+    >
+      By 
+    </p>
+  </article>
+  <article
+    className="sc-AxjAm gMVhDx"
+    onClick={[Function]}
+  >
+    <img
+      alt="undefined's project: undefined"
+      className="sc-AxiKw bGHWDv"
+    />
+    <h3
+      className="sc-AxirZ lcIoiq"
+    />
+    <p
+      className="sc-AxhCb goFehh"
+    >
+      By 
+    </p>
+  </article>
+</section>
+`;

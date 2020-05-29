@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test renders the correct ui 1`] = `
+<article
+  className="sc-AxjAm jQidqc"
+  onClick={[Function]}
+>
+  <h3 />
+  <p />
+  <img
+    alt=""
+    className="sc-AxirZ cUVYWJ"
+  />
+</article>
+`;

@@ -1,8 +1,11 @@
 import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import TestRenderer from "react-test-renderer";
 import App from "./App";
 
-test("renders home link", () => {
-  render(<App />);
-  screen.getAllByText("Home");
+describe("Snapshot test", () => {
+  it("renders the correct ui", () => {
+    const component = TestRenderer.create(<App />);
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 });

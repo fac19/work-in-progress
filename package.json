@@ -4,7 +4,7 @@
   "description": "Weeks 11-13 Student Project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cd wip-app && npm test && cd .. && cd wip-rest-api && npm test",
     "app": "cd wip-app && npm start",
     "app-test": "cd wip-app && npm test",
     "api": "cd wip-rest-api && npm run dev",

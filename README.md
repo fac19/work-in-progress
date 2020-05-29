@@ -42,7 +42,7 @@ Co-authored-by: Jack Heriz-Smith <jackherizsmith@gmail.com>
 
 ---
 
-# Running our project
+# Working with our project
 
 ## Database set up
 

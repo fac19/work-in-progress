@@ -32,7 +32,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && npm run backeslint && npm run husky-api-test && npm run husky-app-test"
+      "pre-commit": "pretty-quick --staged && npm run backeslint && npm run husky-api-test && CI=true npm run husky-app-test"
     }
   }
 }

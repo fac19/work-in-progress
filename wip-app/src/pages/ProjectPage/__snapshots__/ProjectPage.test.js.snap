@@ -3,7 +3,9 @@
 exports[`Snapshot test renders the correct ui 1`] = `
 Array [
   <section>
-    <h2 />
+    <h1
+      className="sc-AxhCb fSlxVM"
+    />
     <h3>
       By 
     </h3>
@@ -17,11 +19,6 @@ Array [
     <h2>
       Project Steps
     </h2>
-    <a
-      href=""
-    >
-      Add a new step
-    </a>
   </section>,
 ]
 `;

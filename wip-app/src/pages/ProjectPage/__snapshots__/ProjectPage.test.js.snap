@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test renders the correct ui 1`] = `
+Array [
+  <section>
+    <h1
+      className="sc-AxhCb fSlxVM"
+    />
+    <h3>
+      By 
+    </h3>
+    <p>
+      Project status: 
+      In Progress
+    </p>
+    <p />
+  </section>,
+  <section>
+    <h2>
+      Project Steps
+    </h2>
+  </section>,
+]
+`;

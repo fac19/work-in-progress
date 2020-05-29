@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test renders the correct ui 1`] = `
+<main
+  className="MuiContainer-root makeStyles-formContainer-2 MuiContainer-maxWidthXs"
+>
+  <img
+    alt="work in progress logo"
+    className="sc-AxjAm ecCdST"
+    src="logo.svg"
+  />
+  <h1>
+    Sign Up
+  </h1>
+  <form
+    className="makeStyles-form-1"
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="username"
+    >
+      Username *
+    </label>
+    <input
+      autoFocus={true}
+      id="username"
+      name="username"
+      placeholder="username"
+      required={true}
+      type="text"
+    />
+    <label
+      htmlFor="email"
+    >
+      Email *
+    </label>
+    <input
+      id="email"
+      name="email"
+      placeholder="email"
+      required={true}
+      type="email"
+    />
+    <label
+      htmlFor="password"
+    >
+      Password *
+    </label>
+    <input
+      id="password"
+      name="password"
+      placeholder="Password"
+      required={true}
+      type="password"
+    />
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-formElement-3 MuiButton-containedSecondary"
+      disabled={false}
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="submit"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        Sign Up
+      </span>
+    </button>
+  </form>
+</main>
+`;

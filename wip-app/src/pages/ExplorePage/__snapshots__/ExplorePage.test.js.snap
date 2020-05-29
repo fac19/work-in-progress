@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test renders the correct ui 1`] = `
+<h1
+  className="sc-AxheI NtAGp"
+>
+  Loading...
+</h1>
+`;

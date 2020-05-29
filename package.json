@@ -4,12 +4,13 @@
   "description": "Weeks 11-13 Student Project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cd wip-app && npm test && cd .. && cd wip-rest-api && npm test",
     "app": "cd wip-app && npm start",
     "app-test": "cd wip-app && npm test",
     "api": "cd wip-rest-api && npm run dev",
     "api-test": "cd wip-rest-api && npm test",
     "husky-api-test": "cd wip-rest-api && npm run husky-test",
+    "husky-app-test": "cd wip-app && npm run husky-test",
     "prettier": "./node_modules/.bin/prettier . --write",
     "backeslint": "./wip-rest-api/node_modules/.bin/eslint wip-rest-api --fix",
     "i-all": "npm i && cd wip-app && npm i && cd .. && cd wip-rest-api && npm i"
@@ -25,13 +26,14 @@
   },
   "homepage": "https://github.com/fac19/work-in-progress#readme",
   "devDependencies": {
+    "codecov": "^3.7.0",
     "husky": "^4.2.5",
     "prettier": "^2.0.5",
     "pretty-quick": "^2.0.1"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && npm run backeslint && npm run husky-api-test"
+      "pre-commit": "pretty-quick --staged && npm run backeslint && npm run husky-api-test && CI=true npm run husky-app-test"
     }
   }
 }

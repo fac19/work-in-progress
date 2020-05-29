@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test renders the correct ui 1`] = `
+<section
+  className="sc-AxjAm lcVokx"
+>
+  <h1>
+    Add New Project
+  </h1>
+  <form
+    className="sc-AxirZ dcYQlC"
+    onSubmit={[Function]}
+  >
+    <label
+      htmlFor="project_name"
+    >
+      Project Name
+    </label>
+    <input
+      id="project_name"
+      name="project_name"
+      required={true}
+      type="text"
+    />
+    <label
+      htmlFor="project_description"
+    >
+      Project Description
+    </label>
+    <input
+      id="project_description"
+      name="project_description"
+      required={true}
+      type="text"
+    />
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+      disabled={false}
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="submit"
+    >
+      <span
+        className="MuiButton-label"
+      >
+        Publish
+      </span>
+    </button>
+  </form>
+</section>
+`;

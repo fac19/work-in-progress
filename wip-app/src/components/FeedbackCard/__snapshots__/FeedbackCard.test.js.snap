@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot test renders the correct ui 1`] = `
+<article
+  className="sc-AxmLO itYlbA"
+>
+  <div
+    className="sc-AxhUy gfXgDx"
+  >
+    <header
+      className="sc-fzozJi yCEqO"
+    >
+      <h3
+        className="sc-AxhCb klWEsU"
+      />
+      <p
+        className="sc-AxjAm hijcPm"
+      />
+    </header>
+    <img
+      alt=""
+      className="sc-fzplWN jHAIBM"
+    />
+  </div>
+  <form
+    className="sc-AxgMl iNvcfR"
+  >
+    <label
+      htmlFor="feedback"
+    />
+    <input
+      className="sc-AxheI gBxvGf"
+      id="tag"
+      name="feedback"
+      placeholder="Feedback..."
+      type="text"
+    />
+    <button
+      className="sc-Axmtr kVnIK"
+      type="submit"
+    >
+      +
+    </button>
+  </form>
+  <div
+    className="sc-AxiKw ioNHUL"
+  >
+    <ul
+      className="sc-fzoLsD dXgjRU"
+    >
+      <h3
+        className="sc-AxhCb klWEsU"
+      >
+         
+      </h3>
+      <p
+        className="sc-AxirZ dJYxqb"
+      >
+         
+      </p>
+    </ul>
+    <p
+      className="sc-AxjAm hijcPm"
+    >
+       
+    </p>
+  </div>
+  <div
+    className="sc-AxhUy gfXgDx"
+  >
+    <header
+      className="sc-fzozJi yCEqO"
+    >
+      <h3
+        className="sc-AxhCb klWEsU"
+      />
+      <p
+        className="sc-AxjAm hijcPm"
+      />
+    </header>
+    <img
+      alt=""
+      className="sc-fzplWN jHAIBM"
+    />
+  </div>
+  <form
+    className="sc-AxgMl iNvcfR"
+  >
+    <label
+      htmlFor="feedback"
+    />
+    <input
+      className="sc-AxheI gBxvGf"
+      id="tag"
+      name="feedback"
+      placeholder="Feedback..."
+      type="text"
+    />
+    <button
+      className="sc-Axmtr kVnIK"
+      type="submit"
+    >
+      +
+    </button>
+  </form>
+  <div
+    className="sc-AxiKw ioNHUL"
+  >
+    <ul
+      className="sc-fzoLsD dXgjRU"
+    >
+      <h3
+        className="sc-AxhCb klWEsU"
+      >
+         
+      </h3>
+      <p
+        className="sc-AxirZ dJYxqb"
+      >
+         
+      </p>
+    </ul>
+    <p
+      className="sc-AxjAm hijcPm"
+    >
+       
+    </p>
+  </div>
+</article>
+`;

@@ -21,22 +21,22 @@ Logo designed by Jessica Gooding
 
 ## The team
 
-Kat - _scrum master_
+### Kat - _scrum master_
 
 Co-authored-by: Alexreid95 <alexreid95@gmail.com>
 
 
-Cammy - _UX/UI lead_
+### Cammy - _UX/UI lead_
 
 Co-authored-by: CampbellDocherty <campbellsofitsidocherty@gmail.com>
 
 
-Hannah - _DevOps lead_
+### Hannah - _DevOps lead_
 
 Co-authored-by: Hannah Gooding <hannah.gooding@yahoo.com>
 
 
-Jack - _QA lead_
+### Jack - _QA lead_
 
 Co-authored-by: Jack Heriz-Smith <jackherizsmith@gmail.com>
 

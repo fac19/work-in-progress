@@ -2,10 +2,10 @@
 
 exports[`Snapshot test renders the correct ui 1`] = `
 <main
-  className="sc-fzqNJr eiYIMw"
+  className="sc-fzoLag geMfBG"
 >
   <section
-    className="sc-fzoLsD irlbNg"
+    className="sc-fzplWN dAjefp"
   >
     <img
       alt="work in progress logo"
@@ -19,10 +19,10 @@ exports[`Snapshot test renders the correct ui 1`] = `
       A social media platform for creatives to receive feedback on their works in progress
     </p>
     <ul
-      className="sc-fzpans eSrRAj"
+      className="sc-fznyAO GCQwC"
     >
       <li
-        className="sc-fzplWN eoXDso"
+        className="sc-fznKkj dRfTTZ"
       >
         <a
           className="makeStyles-links-2"
@@ -55,7 +55,7 @@ exports[`Snapshot test renders the correct ui 1`] = `
         </a>
       </li>
       <li
-        className="sc-fzplWN eoXDso"
+        className="sc-fznKkj dRfTTZ"
       >
         <a
           className="makeStyles-links-2"

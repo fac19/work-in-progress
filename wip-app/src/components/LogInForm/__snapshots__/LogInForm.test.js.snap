@@ -17,24 +17,28 @@ exports[`Snapshot test renders the correct ui 1`] = `
     onSubmit={[Function]}
   >
     <label
+      className="sc-AxhCb djpVYo"
       htmlFor="username"
     >
       Username *
     </label>
     <input
       autoFocus={true}
+      className="sc-AxiKw dxRHDb"
       id="username"
       name="username"
-      placeholder="username"
+      placeholder="Username"
       required={true}
       type="text"
     />
     <label
+      className="sc-AxhCb djpVYo"
       htmlFor="password"
     >
       Password *
     </label>
     <input
+      className="sc-AxiKw dxRHDb"
       id="password"
       name="password"
       placeholder="Password"

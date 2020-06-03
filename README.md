@@ -11,6 +11,7 @@ Deployed on [Netlify](https://wip-app.netlify.app/)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/fdfedb67-dd70-4820-9e62-1c24f12fa5ab/deploy-status)](https://app.netlify.com/sites/wip-app/deploys)
 
 ## In this README
+
 1. [Database set up](#database-set-up)
 2. [Scripts](#scripts) [![codecov](https://codecov.io/gh/fac19/work-in-progress/branch/master/graph/badge.svg)](https://codecov.io/gh/fac19/work-in-progress)
 3. [API routes](#api-routes) [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/b12cad151e94635d9f95)
@@ -30,17 +31,19 @@ Logo designed by Jessica Gooding
 ### [Jack](https://github.com/jackherizsmith) - _QA lead_
 
 ## Technologies Used:
+
 - React
 - Node
 - Express
-- PostgreSQL 
+- PostgreSQL
 - Jest
 - Husky
-- Codecov 
+- Codecov
 - ES Lint
 - Prettier
 
 ## Prototype:
+
 First draft protoyped in [Figma](https://www.figma.com/file/Ck7h1KHhwccjF7YgcB8fe7/Work-In-Progress?node-id=0%3A1) for user testing
 
 ---
@@ -98,6 +101,7 @@ CREATE DATABASE wip_test WITH OWNER user; -- database name is important for test
    - `ALTER DATABASE wip_db OWNER TO user;`
 
 ## Scripts
+
 You can set everything up using CLI from the project root.
 
 `npm run i-all` => installs everything you need
@@ -107,6 +111,7 @@ You can set everything up using CLI from the project root.
 `npm run api` => runs the back end on localhost:3000 (once you've set up your database)
 
 ### Tests
+
 Jest is used for all testing.
 
 `npm test` => run tests for whole project; press q once you're happy with each review
@@ -262,3 +267,10 @@ Start watching (following) a post by project id
 #### DELETE /watching/:projectid :closed_lock_with_key:
 
 Stop watching (following) a post by project id
+
+---
+
+Co-authored-by: Alexreid95 <alexreid95@gmail.com>
+Co-authored-by: Hannah Gooding <hannah.gooding@yahoo.com>
+Co-authored-by: CampbellDocherty <campbellsofitsidocherty@gmail.com>
+Co-authored-by: Jack Heriz-Smith <jackherizsmith@gmail.com>

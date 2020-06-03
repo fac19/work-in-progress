@@ -8,33 +8,39 @@ exports[`Snapshot test renders the correct ui 1`] = `
     Add New Project
   </h1>
   <form
-    className="sc-AxirZ dcYQlC"
+    className="sc-AxirZ kexMxH"
     onSubmit={[Function]}
   >
     <label
+      className="sc-AxhCb djpVYo"
       htmlFor="project_name"
     >
       Project Name
     </label>
     <input
+      className="sc-AxiKw dxRHDb"
       id="project_name"
       name="project_name"
+      placeholder="Project name..."
       required={true}
       type="text"
     />
     <label
+      className="sc-AxhCb djpVYo"
       htmlFor="project_description"
     >
       Project Description
     </label>
     <input
+      className="sc-AxiKw dxRHDb"
       id="project_description"
       name="project_description"
+      placeholder="Project description..."
       required={true}
       type="text"
     />
     <button
-      className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+      className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary"
       disabled={false}
       onBlur={[Function]}
       onDragLeave={[Function]}

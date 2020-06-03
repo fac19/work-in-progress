@@ -21,24 +21,27 @@ Logo designed by Jessica Gooding
 
 ## The team
 
-### Kat - _scrum master_
+### [Kat](https://github.com/Alexreid95) - _Scrum Master_
 
-Co-authored-by: Alexreid95 <alexreid95@gmail.com>
+### [Campbell](https://github.com/CampbellDocherty) - _UX/UI lead_
 
+### [Hannah](https://github.com/hannahgooding) - _DevOps lead_
 
-### Cammy - _UX/UI lead_
+### [Jack](https://github.com/jackherizsmith) - _QA lead_
 
-Co-authored-by: CampbellDocherty <campbellsofitsidocherty@gmail.com>
+## Technologies Used:
+- React
+- Node
+- Express
+- PostgreSQL 
+- Jest
+- Husky
+- Codecov 
+- ES Lint
+- Prettier
 
-
-### Hannah - _DevOps lead_
-
-Co-authored-by: Hannah Gooding <hannah.gooding@yahoo.com>
-
-
-### Jack - _QA lead_
-
-Co-authored-by: Jack Heriz-Smith <jackherizsmith@gmail.com>
+## Prototype:
+First draft protoyped in [Figma](https://www.figma.com/file/Ck7h1KHhwccjF7YgcB8fe7/Work-In-Progress?node-id=0%3A1) for user testing
 
 ---
 

@@ -29,19 +29,23 @@ const useStyles = makeStyles({
 });
 
 const SignUpForm = (props) => {
+  const [form, setForm] = React.useState({
+    username: "",
+    email: "",
+    password: "",
+  });
   const classes = useStyles();
   const history = useHistory();
 
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setForm({ ...form, [name]: value });
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    const form = document.querySelector("form");
-    const formData = new FormData(form);
 
-    signUpPost({
-      username: formData.get("username"),
-      email: formData.get("email"),
-      password: formData.get("password"),
-    })
+    signUpPost(form)
       .then(() => history.push("/feed"))
       .catch((error) => console.error(error));
   };
@@ -57,6 +61,7 @@ const SignUpForm = (props) => {
           id="username"
           placeholder="Username"
           name="username"
+          onChange={handleChange}
           required
           autoFocus
         ></FormInput>
@@ -66,6 +71,7 @@ const SignUpForm = (props) => {
           id="email"
           placeholder="Email"
           name="email"
+          onChange={handleChange}
           required
         ></FormInput>
         <FormLabel htmlFor="password">Password *</FormLabel>
@@ -74,6 +80,7 @@ const SignUpForm = (props) => {
           id="password"
           name="password"
           placeholder="Password"
+          onChange={handleChange}
           required
         ></FormInput>
         <Button

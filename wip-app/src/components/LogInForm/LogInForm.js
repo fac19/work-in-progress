@@ -26,18 +26,20 @@ const useStyles = makeStyles({
 });
 
 const LogInForm = (props) => {
+  const [form, setForm] = React.useState({ username: "", password: "" });
+
   const classes = useStyles();
   const history = useHistory();
 
+  const handleChange = (event) => {
+    let { name, value } = event.target;
+    setForm({ ...form, [name]: value });
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    const form = document.querySelector("form");
-    const logInFormData = new FormData(form);
 
-    logInPost({
-      username: logInFormData.get("username"),
-      password: logInFormData.get("password"),
-    })
+    logInPost(form)
       .then(() => history.push("/feed"))
       .catch((error) => console.error(error));
   };
@@ -55,6 +57,7 @@ const LogInForm = (props) => {
           name="username"
           required
           autoFocus
+          onChange={handleChange}
         ></FormInput>
         <FormLabel htmlFor="password">Password *</FormLabel>
         <FormInput
@@ -63,6 +66,7 @@ const LogInForm = (props) => {
           name="password"
           placeholder="Password"
           required
+          onChange={handleChange}
         ></FormInput>
         <Button
           className={classes.formElement}

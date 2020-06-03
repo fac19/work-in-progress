@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import { logInPost } from "../../utils/post-fetch";
 import { HeaderLogoStyle } from "../../components/Logo.style";
 import { FormInput, FormLabel } from "./LogInForm.style";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   form: {
@@ -23,10 +24,14 @@ const useStyles = makeStyles({
   formElement: {
     margin: "0.5rem",
   },
+  errorMessage: {
+    color: "red",
+  },
 });
 
 const LogInForm = (props) => {
   const [form, setForm] = React.useState({ username: "", password: "" });
+  const [error, setError] = React.useState("");
 
   const classes = useStyles();
   const history = useHistory();
@@ -41,13 +46,15 @@ const LogInForm = (props) => {
 
     logInPost(form)
       .then(() => history.push("/feed"))
-      .catch((error) => console.error(error));
+      .catch(() =>
+        setError("Could not log you in, your details may be incorrect!")
+      );
   };
 
   return (
     <Container className={classes.formContainer} component="main" maxWidth="xs">
       <HeaderLogoStyle alt="work in progress logo" src="logo.svg" />
-      <h1>Log In</h1>
+      <h1>Log in</h1>
       <form className={classes.form} onSubmit={handleSubmit}>
         <FormLabel htmlFor="username">Username *</FormLabel>
         <FormInput
@@ -76,7 +83,11 @@ const LogInForm = (props) => {
         >
           Log In
         </Button>
+        <p className={classes.errorMessage}>{error}</p>
       </form>
+      <p>
+        Don't have an account yet? <Link to="/sign-up">Sign up</Link>
+      </p>
     </Container>
   );
 };

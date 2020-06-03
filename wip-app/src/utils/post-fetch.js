@@ -1,4 +1,4 @@
-async function postFetch({ endpoint, body, error }) {
+async function postFetch({ endpoint, body }) {
   const authToken = localStorage.getItem("auth");
   let headersObject = authToken
     ? {
@@ -17,43 +17,45 @@ async function postFetch({ endpoint, body, error }) {
 
   const fetchURL = `https://wip-rest-api.herokuapp.com/${endpoint}`;
 
-  return await fetch(fetchURL, fetchObject)
-    .then((res) => {
-      if (!res.ok) {
-        throw new Error(`${error}, status: ${res.status}`);
-      } else {
-        return res.json();
-      }
-    })
-    .catch(console.error);
+  return await fetch(fetchURL, fetchObject).then((response) => response.json());
 }
 
-function signUpPost(signUpFormData) {
+function signUpPost(signUpData, setError) {
   const options = {
     endpoint: "signup",
     body: {
-      username: signUpFormData.username,
-      email: signUpFormData.email,
-      password: signUpFormData.password,
+      username: signUpData.username,
+      email: signUpData.email,
+      password: signUpData.password,
     },
-    error: "Sorry, there was a problem signing you up",
   };
-  return postFetch(options).then((res) => {
-    localStorage.setItem("auth", res.token);
+  return postFetch(options, setError).then((data) => {
+    if (data.name === "error") {
+      let errorMessage = data.message.includes("username")
+        ? "This username is already in use!"
+        : "This email is already in use!";
+      setError(errorMessage);
+      throw new Error(`Error: ${data.message}`);
+    } else {
+      localStorage.setItem("auth", data.token);
+    }
   });
 }
 
-function logInPost(logInFormData) {
+function logInPost(logInData) {
   const options = {
     endpoint: "logIn",
     body: {
-      username: logInFormData.username,
-      password: logInFormData.password,
+      username: logInData.username,
+      password: logInData.password,
     },
-    error: "Could not log you in",
   };
-  return postFetch(options).then((res) => {
-    localStorage.setItem("auth", res.token);
+  return postFetch(options).then((data) => {
+    if (data.name) {
+      throw new Error(`${data.message}`);
+    } else {
+      localStorage.setItem("auth", data.token);
+    }
   });
 }
 
@@ -68,32 +70,5 @@ function postAddProject(projectData) {
   };
   return postFetch(options);
 }
-
-// {
-//   "step_name": "Sketch in pen",
-//   "step_description": "Adding more details",
-//   "step_link": "image.jpg"
-// }
-
-// POST /steps/:projectid
-
-// function postAddStep() {
-//   const options = {
-//     endpoint:`/steps/:${projectId}`,
-//   }
-
-// }
-
-// function postStep(projectId) {
-//   const options = {
-//     endpoint: `/steps/:${projectId}`,
-//     body: {
-//       step_name: projectData.project_name,
-//       step_description: projectData.project_description,
-//       step_link: b64,
-//     },
-//     error: "Could not add project",
-//   };
-// }
 
 export { signUpPost, logInPost, postAddProject };

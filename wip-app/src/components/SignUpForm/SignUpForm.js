@@ -8,6 +8,7 @@ import {
   FormInput,
   FormLabel,
 } from "../../components/LogInForm/LogInForm.style";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   form: {
@@ -26,6 +27,9 @@ const useStyles = makeStyles({
   formElement: {
     margin: "0.5rem",
   },
+  errorMessage: {
+    color: "red",
+  },
 });
 
 const SignUpForm = (props) => {
@@ -34,6 +38,8 @@ const SignUpForm = (props) => {
     email: "",
     password: "",
   });
+  const [error, setError] = React.useState("");
+
   const classes = useStyles();
   const history = useHistory();
 
@@ -45,9 +51,9 @@ const SignUpForm = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    signUpPost(form)
+    signUpPost(form, setError)
       .then(() => history.push("/feed"))
-      .catch((error) => console.error(error));
+      .catch(console.error);
   };
 
   return (
@@ -92,6 +98,10 @@ const SignUpForm = (props) => {
           Sign Up
         </Button>
       </form>
+      <p className={classes.errorMessage}>{error}</p>
+      <p>
+        If you already have an account, please <Link to="/log-in">log in</Link>
+      </p>
     </Container>
   );
 };

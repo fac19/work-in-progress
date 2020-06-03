@@ -10,7 +10,7 @@ exports[`Snapshot test renders the correct ui 1`] = `
     src="logo.svg"
   />
   <h1>
-    Log In
+    Log in
   </h1>
   <form
     className="makeStyles-form-1"
@@ -27,6 +27,7 @@ exports[`Snapshot test renders the correct ui 1`] = `
       className="sc-AxiKw dxRHDb"
       id="username"
       name="username"
+      onChange={[Function]}
       placeholder="Username"
       required={true}
       type="text"
@@ -41,6 +42,7 @@ exports[`Snapshot test renders the correct ui 1`] = `
       className="sc-AxiKw dxRHDb"
       id="password"
       name="password"
+      onChange={[Function]}
       placeholder="Password"
       required={true}
       type="password"
@@ -68,6 +70,20 @@ exports[`Snapshot test renders the correct ui 1`] = `
         Log In
       </span>
     </button>
+    <p
+      className="makeStyles-errorMessage-4"
+    >
+      
+    </p>
   </form>
+  <p>
+    Don't have an account yet? 
+    <a
+      href="/sign-up"
+      onClick={[Function]}
+    >
+      Sign up
+    </a>
+  </p>
 </main>
 `;

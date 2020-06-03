@@ -36,7 +36,7 @@ function signUp(req, res, next) {
         })
         .catch(next);
     })
-    .catch(console.error);
+    .catch(next);
 }
 
 function logIn(req, res, next) {

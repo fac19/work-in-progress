@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import { logInPost } from "../../utils/post-fetch";
 import { HeaderLogoStyle } from "../../components/Logo.style";
 import { FormInput, FormLabel } from "./LogInForm.style";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles({
   form: {
@@ -23,29 +24,40 @@ const useStyles = makeStyles({
   formElement: {
     margin: "0.5rem",
   },
+  errorMessage: {
+    color: "red",
+  },
+  link: {
+    color: "#f50057",
+  },
 });
 
 const LogInForm = (props) => {
+  const [form, setForm] = React.useState({ username: "", password: "" });
+  const [error, setError] = React.useState("");
+
   const classes = useStyles();
   const history = useHistory();
 
+  const handleChange = (event) => {
+    let { name, value } = event.target;
+    setForm({ ...form, [name]: value });
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    const form = document.querySelector("form");
-    const logInFormData = new FormData(form);
 
-    logInPost({
-      username: logInFormData.get("username"),
-      password: logInFormData.get("password"),
-    })
+    logInPost(form)
       .then(() => history.push("/feed"))
-      .catch((error) => console.error(error));
+      .catch(() =>
+        setError("Could not log you in, your details may be incorrect!")
+      );
   };
 
   return (
     <Container className={classes.formContainer} component="main" maxWidth="xs">
       <HeaderLogoStyle alt="work in progress logo" src="logo.svg" />
-      <h1>Log In</h1>
+      <h1>Log in</h1>
       <form className={classes.form} onSubmit={handleSubmit}>
         <FormLabel htmlFor="username">Username *</FormLabel>
         <FormInput
@@ -55,6 +67,7 @@ const LogInForm = (props) => {
           name="username"
           required
           autoFocus
+          onChange={handleChange}
         ></FormInput>
         <FormLabel htmlFor="password">Password *</FormLabel>
         <FormInput
@@ -63,6 +76,7 @@ const LogInForm = (props) => {
           name="password"
           placeholder="Password"
           required
+          onChange={handleChange}
         ></FormInput>
         <Button
           className={classes.formElement}
@@ -72,7 +86,14 @@ const LogInForm = (props) => {
         >
           Log In
         </Button>
+        <p className={classes.errorMessage}>{error}</p>
       </form>
+      <p>
+        Don't have an account yet?{" "}
+        <Link to="/sign-up" className={classes.link}>
+          Sign up
+        </Link>
+      </p>
     </Container>
   );
 };

@@ -27,6 +27,7 @@ exports[`Snapshot test renders the correct ui 1`] = `
       className="sc-AxiKw dxRHDb"
       id="username"
       name="username"
+      onChange={[Function]}
       placeholder="Username"
       required={true}
       type="text"
@@ -41,6 +42,7 @@ exports[`Snapshot test renders the correct ui 1`] = `
       className="sc-AxiKw dxRHDb"
       id="email"
       name="email"
+      onChange={[Function]}
       placeholder="Email"
       required={true}
       type="email"
@@ -55,6 +57,7 @@ exports[`Snapshot test renders the correct ui 1`] = `
       className="sc-AxiKw dxRHDb"
       id="password"
       name="password"
+      onChange={[Function]}
       placeholder="Password"
       required={true}
       type="password"
@@ -83,5 +86,21 @@ exports[`Snapshot test renders the correct ui 1`] = `
       </span>
     </button>
   </form>
+  <p
+    className="makeStyles-errorMessage-4"
+  >
+    
+  </p>
+  <p>
+    If you already have an account, please
+     
+    <a
+      className="makeStyles-link-5"
+      href="/log-in"
+      onClick={[Function]}
+    >
+      log in
+    </a>
+  </p>
 </main>
 `;

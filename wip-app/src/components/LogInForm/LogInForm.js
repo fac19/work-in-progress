@@ -27,6 +27,9 @@ const useStyles = makeStyles({
   errorMessage: {
     color: "red",
   },
+  link: {
+    color: "#f50057",
+  },
 });
 
 const LogInForm = (props) => {
@@ -86,7 +89,10 @@ const LogInForm = (props) => {
         <p className={classes.errorMessage}>{error}</p>
       </form>
       <p>
-        Don't have an account yet? <Link to="/sign-up">Sign up</Link>
+        Don't have an account yet?{" "}
+        <Link to="/sign-up" className={classes.link}>
+          Sign up
+        </Link>
       </p>
     </Container>
   );

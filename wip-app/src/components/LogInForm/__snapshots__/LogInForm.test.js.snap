@@ -77,8 +77,10 @@ exports[`Snapshot test renders the correct ui 1`] = `
     </p>
   </form>
   <p>
-    Don't have an account yet? 
+    Don't have an account yet?
+     
     <a
+      className="makeStyles-link-5"
       href="/sign-up"
       onClick={[Function]}
     >

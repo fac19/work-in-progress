@@ -92,8 +92,10 @@ exports[`Snapshot test renders the correct ui 1`] = `
     
   </p>
   <p>
-    If you already have an account, please 
+    If you already have an account, please
+     
     <a
+      className="makeStyles-link-5"
       href="/log-in"
       onClick={[Function]}
     >

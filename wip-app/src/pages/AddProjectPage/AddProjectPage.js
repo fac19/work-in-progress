@@ -10,19 +10,21 @@ import {
 
 const AddProjectPage = (props) => {
   const history = useHistory();
+  const [form, setForm] = React.useState({
+    project_name: "",
+    project_description: "",
+  });
+
+  const handleChange = (event) => {
+    let { name, value } = event.target;
+    setForm({ ...form, [name]: value });
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const form = document.querySelector("form");
-    const projectData = new FormData(form);
-
-    postAddProject({
-      project_name: projectData.get("project_name"),
-      project_description: projectData.get("project_description"),
-    })
-      .then(() => history.push("/profile"))
-      // when project page is built redirect to that page
+    postAddProject(form)
+      .then((data) => history.push("/project/" + data.id))
       .catch((error) => console.error(error));
   };
   return (
@@ -35,6 +37,7 @@ const AddProjectPage = (props) => {
           id="project_name"
           name="project_name"
           placeholder="Project name..."
+          onChange={handleChange}
           required
         ></FormInput>
         <FormLabel htmlFor="project_description">Project Description</FormLabel>
@@ -43,6 +46,7 @@ const AddProjectPage = (props) => {
           id="project_description"
           name="project_description"
           placeholder="Project description..."
+          onChange={handleChange}
           required
         ></FormInput>
         <Button variant="contained" color="secondary" type="submit">

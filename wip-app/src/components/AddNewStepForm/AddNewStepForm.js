@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@material-ui/core";
 import { NewStepSection, NewStepForm } from "./AddNewStepForm.style";
-import Upload from "../Upload/Upload";
+// import Upload from "../Upload/Upload";
 // import { postStep } from "../../utils/post-fetch";
 
 const AddNewStepForm = (props) => {

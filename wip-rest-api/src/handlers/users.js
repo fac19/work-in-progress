@@ -9,7 +9,7 @@ function signUp(req, res, next) {
   if (!req.body.email || !req.body.username || !req.body.password) {
     return res.status(400).send({ message: "Request body cannot be empty" });
   }
-  const newUsername = req.body.username;
+  const newUsername = req.body.username.toLowerCase();
   const newEmail = req.body.email;
   const newBio = req.body.bio;
   const newVocation = req.body.vocation;
@@ -40,7 +40,7 @@ function signUp(req, res, next) {
 }
 
 function logIn(req, res, next) {
-  const username = req.body.username;
+  const username = req.body.username.toLowerCase();
   const password = req.body.password;
   model
     .getUserByName(username)

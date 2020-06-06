@@ -9,6 +9,7 @@ exports[`Snapshot test renders the correct ui 1`] = `
   </h2>
   <form
     className="sc-AxirZ dcYQlC"
+    onSubmit={[Function]}
   >
     <label
       htmlFor="step_name"
@@ -18,6 +19,7 @@ exports[`Snapshot test renders the correct ui 1`] = `
     <input
       id="step_name"
       name="step_name"
+      onChange={[Function]}
       required={true}
       type="text"
     />
@@ -29,6 +31,7 @@ exports[`Snapshot test renders the correct ui 1`] = `
     <input
       id="step_description"
       name="step_description"
+      onChange={[Function]}
       required={true}
       type="text"
     />
@@ -40,32 +43,33 @@ exports[`Snapshot test renders the correct ui 1`] = `
     <input
       id="step_link"
       name="step_link"
+      onChange={[Function]}
       required={true}
       type="file"
     />
-  </form>
-  <button
-    className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
-    disabled={false}
-    onBlur={[Function]}
-    onDragLeave={[Function]}
-    onFocus={[Function]}
-    onKeyDown={[Function]}
-    onKeyUp={[Function]}
-    onMouseDown={[Function]}
-    onMouseLeave={[Function]}
-    onMouseUp={[Function]}
-    onTouchEnd={[Function]}
-    onTouchMove={[Function]}
-    onTouchStart={[Function]}
-    tabIndex={0}
-    type="submit"
-  >
-    <span
-      className="MuiButton-label"
+    <button
+      className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSecondary"
+      disabled={false}
+      onBlur={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="submit"
     >
-      Save Step To Project
-    </span>
-  </button>
+      <span
+        className="MuiButton-label"
+      >
+        Save Step To Project
+      </span>
+    </button>
+  </form>
 </section>
 `;

@@ -28,9 +28,11 @@ const AddNewStepForm = ({ projectId }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    getB64(file)
-      .then(postImage)
-      .then((data) => setForm({ ...form, [step_link]: data.value }));
+
+    postImage(getB64(file)).then((data) => {
+      console.log(data);
+      // setForm({ ...form, [step_link]: data.value });
+    });
     console.log(form);
     // upload media to cloudinary
     // then save new step_link into form

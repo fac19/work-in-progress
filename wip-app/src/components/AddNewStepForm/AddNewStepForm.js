@@ -1,18 +1,17 @@
 import React from "react";
 import { Button } from "@material-ui/core";
 import { NewStepSection, NewStepForm } from "./AddNewStepForm.style";
-// import Upload from "../Upload/Upload";
-import { postStep } from "../../utils/post-fetch";
+import { useHistory } from "react-router-dom";
+import { postAddStep } from "../../utils/post-fetch";
 import { postImage } from "../../utils/ext-fetch";
-import getB64 from "../../utils/b64";
 
 const AddNewStepForm = ({ projectId }) => {
   const [form, setForm] = React.useState({
     step_name: "",
     step_description: "",
-    step_link: "",
   });
-  const [file, uploadFile] = React.useState();
+  const [file, uploadFile] = React.useState({});
+  const history = useHistory();
   const handleChange = (event) => {
     const { name, value } = event.target;
     setForm({ ...form, [name]: value });
@@ -20,24 +19,18 @@ const AddNewStepForm = ({ projectId }) => {
 
   const handleUpload = (event) => {
     uploadFile(event.target.files[0]);
-    console.log(
-      "AddNewStepForm -> event.target.files[0]",
-      event.target.files[0]
-    );
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-
-    postImage(getB64(file)).then((data) => {
-      console.log(data);
-      // setForm({ ...form, [step_link]: data.value });
-    });
-    console.log(form);
-    // upload media to cloudinary
-    // then save new step_link into form
-    // post request add new step
-    // history.push("/project/projectId"))
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      postImage(reader.result)
+        .then((data) => data.eager[0].url)
+        .then((url) => postAddStep(projectId, form, url))
+        .then(() => history.push("/project/" + projectId));
+    };
   };
 
   return (
@@ -68,8 +61,6 @@ const AddNewStepForm = ({ projectId }) => {
           onChange={handleUpload}
           required
         />
-
-        {/* <Upload setStepLink={setStepLink} /> */}
         <Button variant="contained" color="secondary" type="submit">
           Save Step To Project
         </Button>

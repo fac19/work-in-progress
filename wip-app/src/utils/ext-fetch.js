@@ -1,10 +1,15 @@
 async function postImage(file) {
-  const cloudObject = {
-    file: file.b64,
-    format: "WebP",
+  const fetchObject = {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({
+      file: file,
+      upload_preset: "lmos8zte", // secret
+    }),
   };
-  const cloudURL = "/" + file.type + "/upload";
-  return await fetch(cloudURL, cloudObject).then((response) => response.json());
+  const cloudURL = "https://api.cloudinary.com/v1_1/dbtc3cbem/auto/upload";
+  const response = await fetch(cloudURL, fetchObject);
+  return await response.json();
 }
 
 export { postImage };

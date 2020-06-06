@@ -71,7 +71,7 @@ function postAddProject(projectData) {
   return postFetch(options);
 }
 
-function postAddStep(projectId, stepData) {
+function postAddStep(projectId, stepData, stepURL) {
   // post request to cloudinary stepData.file -> stepData.step_link
 
   const options = {
@@ -79,12 +79,10 @@ function postAddStep(projectId, stepData) {
     body: {
       step_name: stepData.step_name,
       step_description: stepData.step_description,
-      step_link: stepData.step_link,
+      step_link: stepURL,
     },
     error: "Could not add step",
   };
-  // return postFetch(options);
-  console.log(options);
 }
 
 export { signUpPost, logInPost, postAddProject, postAddStep };

@@ -17,7 +17,7 @@ const ProjectCard = ({
   const history = useHistory();
 
   function handleProjectClick(event) {
-    history.push(`/project/${project_id}`);
+    history.push("/project/" + project_id);
   }
 
   return (

@@ -38,7 +38,9 @@ BEGIN;
         ('1', 'Plant Lover', 'Me looking for plants to propagate', 'false'),
         ('2', 'The cutest dog in the world', 'My dog Bernard', 'false'),
         ('3', 'Working from home', 'My cosy work station at home', 'true'),
-        ('4', 'My trusty sidekick', 'I wanted to pay homage to the OG Gameboy', 'false');
+        ('4', 'My trusty sidekick', 'I wanted to pay homage to the OG Gameboy', 'false'),
+        ('2', 'My friend Amy', 'I want to draw my lovely friend Amy as a surprise for her', 'false'),
+        ('4', 'Me, a developer', 'Self portrait of me coding 24/7', 'false');
 
     CREATE TABLE steps
     (
@@ -52,12 +54,21 @@ BEGIN;
     );
 
     INSERT INTO steps
-        (project_id, step_name, step_description, step_link)
+        (project_id, step_name, step_description, step_link, date)
     VALUES
-        ('1', 'Quick sketch', 'I have roughly mapped out what I want the drawing to look like. It is not a complete concept yet, but I would love some feedback on what I have so far', 'https://i.imgur.com/HGpC61f.gif'),
-        ('2', 'Initial sketch', 'I would like to add some color, any suggestions?', 'https://i.imgur.com/q7SpqwW.png'),
-        ('3', 'Sketch process', 'I wanted to get feedback on the composition please', 'https://i.imgur.com/gjPq2p6.gif'),
-        ('4', 'Mock-up', 'Experimenting with clean lines and shading for the first time in Adobe Illustrator, how did I do?', 'https://i.imgur.com/SEpp1Oe.png');
+        ('1', 'Quick sketch', 'I have roughly mapped out what I want the drawing to look like. It is not a complete concept yet, but I would love some feedback on what I have so far', 'https://i.imgur.com/HGpC61f.gif', '2020-05-28T18:06:18.438Z'),
+        ('2', 'Initial sketch', 'I would like to add some color, any suggestions?', 'https://i.imgur.com/q7SpqwW.png', '2020-05-28T18:06:18.438Z'),
+        ('3', 'Sketch process', 'I wanted to get feedback on the composition please', 'https://i.imgur.com/gjPq2p6.gif', '2020-05-28T18:06:18.438Z'),
+        ('4', 'Mock-up', 'Experimenting with clean lines and shading for the first time in Adobe Illustrator, how did I do?', 'https://i.imgur.com/SEpp1Oe.png', '2020-05-28T18:06:18.438Z'),
+        ('2', 'Adding colour', 'Thank you for all the feedback, I have added these colours - hope you like them!', 'https://i.imgur.com/t9ftxxf.png', '2020-05-28T18:30:28.326Z'),
+        ('1', 'Bold lines', 'Experimenting with lines and solid shapes before I add colours.', 'https://i.imgur.com/g9ykRNK.png', '2020-05-28T18:32:48.385Z'),
+        ('1', 'Colouring in', 'I really like how this turned out, feedback welcome!', 'https://i.imgur.com/htMAS5G.png', '2020-05-28T18:33:30.228Z'),
+        ('3', 'Line drawing', 'Thank you for the advice everyone, what features can I add?', 'https://i.imgur.com/cJYNRJ8.png', '2020-05-28T18:35:06.736Z'),
+        ('4', 'Initial colour scheme', 'I have added a splash of colour but I am not sure about it, any suggestions?', 'https://i.imgur.com/saupxYG.png', '2020-05-28T18:36:40.836Z'),
+        ('5', 'Initial sketch', 'Taking a sketch I did of myself an adapting it to turn into a woman figure.', 'https://i.imgur.com/u6Xts8e.gif', '2020-05-28T22:04:11.422Z'),
+        ('5', 'Line drawing', 'Made some improvements!', 'https://i.imgur.com/41bbxoq.png', '2020-05-28T22:05:46.379Z'),
+        ('5', 'First concept', 'Let me know what you think please!', 'https://i.imgur.com/D4qh1c2.png', '2020-05-28T22:11:45.311Z'),
+        ('6', 'Sketch', 'Having a play around with lines and shading...', 'https://i.imgur.com/hLI83KC.gif', '2020-05-28T22:20:20.198Z');
 
     CREATE TABLE feedback
     (

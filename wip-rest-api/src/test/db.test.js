@@ -114,19 +114,19 @@ describe("Database tests for projects", () => {
 
   test("Get all watched projects returns array of correct length", async () => {
     await projectsmodel.getWatchedProjectsFromDb("2").then((projects) => {
-      expect(projects.length).toEqual(3);
+      expect(projects.length).toEqual(7);
     });
   });
 
   test("Get info from watched projects", async () => {
     await projectsmodel.getWatchedProjectsFromDb("2").then((projects) => {
-      expect(projects[2].project_name).toEqual("My trusty sidekick");
+      expect(projects[2].project_name).toEqual("Plant Lover");
     });
   });
 
   test("Get user projects returns correct length", async () => {
     await projectsmodel.getUserProjectsFromDb("2").then((projects) => {
-      expect(projects.length).toEqual(1);
+      expect(projects.length).toEqual(5);
     });
   });
 
@@ -147,7 +147,7 @@ describe("Database tests for projects", () => {
           const exploreProjects = allProjects.filter(
             (project) => watchedIds.indexOf(project.id) === -1
           );
-          expect(exploreProjects.length).toEqual(3);
+          expect(exploreProjects.length).toEqual(10);
         });
       });
   });
@@ -188,7 +188,7 @@ describe("Database tests for steps", () => {
 
   test("Get all steps with project id", async () => {
     await stepsmodel.getStepsWithProjectId("1").then((steps) => {
-      expect(steps.length).toEqual(1);
+      expect(steps.length).toEqual(3);
     });
   });
 

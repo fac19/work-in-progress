@@ -56,9 +56,9 @@ const App = () => {
           <RouteType path="/project" component={<ProjectPage />} />
           <RouteType path="/step" component={<StepPage />} />
           <RouteType exact path="/" component={<LandingPage />} />
-          <Route path="*">
-            <MissingPage />
-          </Route>
+          <RouteType path="*" component={<MissingPage />} />
+          {/* <MissingPage />
+          </Route> */}
         </Switch>
       </Router>
     </MainWrapper>

@@ -14,6 +14,7 @@ import ExplorePage from "./pages/ExplorePage/ExplorePage";
 import ProjectPage from "./pages/ProjectPage/ProjectPage";
 import NotificationPage from "./pages/NotificationPage/NotificationPage";
 import StepPage from "./pages/StepPage/StepPage";
+import MissingPage from "./pages/MissingPage/MissingPage";
 import { MainWrapper } from "./pages/page.style";
 
 const App = () => {
@@ -21,50 +22,53 @@ const App = () => {
     <MainWrapper>
       <Router>
         <Switch>
-          <Route path="/sign-up">
+          <Route exact path="/sign-up">
             <SignUpForm />
           </Route>
-          <Route path="/log-in">
+          <Route exact path="/log-in">
             <LogInForm />
           </Route>
-          <Route path="/new-project">
+          <Route exact path="/new-project">
             <TopNavbar />
             <AddProjectPage />
             <BottomNavbar />
           </Route>
-          <Route path="/sign-out"></Route>
-          <Route path="/feed">
+          <Route exact path="/sign-out"></Route>
+          <Route exact path="/feed">
             <TopNavbar />
             <FeedPage />
             <BottomNavbar />
           </Route>
-          <Route path="/profile">
+          <Route exact path="/profile">
             <TopNavbar />
             <UserPage />
             <BottomNavbar />
           </Route>
-          <Route path="/notifications">
+          <Route exact path="/notifications">
             <TopNavbar />
             <NotificationPage />
             <BottomNavbar />
           </Route>
-          <Route path="/explore">
+          <Route exact path="/explore">
             <TopNavbar />
             <ExplorePage />
             <BottomNavbar />
           </Route>
-          <Route path="/project">
+          <Route exact path="/project">
             <TopNavbar />
             <ProjectPage />
             <BottomNavbar />
           </Route>
-          <Route path="/step">
+          <Route exact path="/step">
             <TopNavbar />
             <StepPage />
             <BottomNavbar />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <LandingPage />
+          </Route>
+          <Route path="*">
+            <MissingPage />
           </Route>
         </Switch>
       </Router>

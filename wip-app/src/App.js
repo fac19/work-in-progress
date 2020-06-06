@@ -22,10 +22,12 @@ import StepPage from "./pages/StepPage/StepPage";
 import MissingPage from "./pages/MissingPage/MissingPage";
 import { MainWrapper } from "./pages/page.style";
 
-let authorised = localStorage.getItem("auth");
-
-function ProtectedRoute({ path, component }) {
+function RouteType({ path, component }) {
+  const authorised = localStorage.getItem("auth");
   if (authorised) {
+    if (path === "/" || path === "/log-in" || path === "/sign-up") {
+      return <Redirect to="/feed" />;
+    }
     return (
       <Route path={path}>
         <TopNavbar />
@@ -33,10 +35,8 @@ function ProtectedRoute({ path, component }) {
         <BottomNavbar />
       </Route>
     );
-  } else if (!authorised && path === "*") {
-    return <MissingPage />;
-  } else if (!authorised) {
-    return <Redirect to="/" />;
+  } else {
+    return <Route path={path}>{component}</Route>;
   }
 }
 
@@ -45,27 +45,20 @@ const App = () => {
     <MainWrapper>
       <Router>
         <Switch>
-          <Route exact path="/sign-up">
-            <SignUpForm />
+          <RouteType path="/sign-up" component={<SignUpForm />} />
+          <RouteType path="/log-in" component={<LogInForm />} />
+          <RouteType path="/new-project" component={<AddProjectPage />} />
+          <RouteType path="/sign-out" />
+          <RouteType path="/feed" component={<FeedPage />} />
+          <RouteType path="/profile" component={<UserPage />} />
+          <RouteType path="/notifications" component={<NotificationPage />} />
+          <RouteType path="/explore" component={<ExplorePage />} />
+          <RouteType path="/project" component={<ProjectPage />} />
+          <RouteType path="/step" component={<StepPage />} />
+          <RouteType exact path="/" component={<LandingPage />} />
+          <Route path="*">
+            <MissingPage />
           </Route>
-          <Route exact path="/log-in">
-            <LogInForm />
-          </Route>
-          <ProtectedRoute path="/new-project" component={<AddProjectPage />} />
-          <Route exact path="/sign-out"></Route>
-          <ProtectedRoute path="/feed" component={<FeedPage />} />
-          <ProtectedRoute path="/profile" component={<UserPage />} />
-          <ProtectedRoute
-            path="/notifications"
-            component={<NotificationPage />}
-          />
-          <ProtectedRoute path="/explore" component={<ExplorePage />} />
-          <ProtectedRoute path="/project" component={<ProjectPage />} />
-          <ProtectedRoute path="/step" component={<StepPage />} />
-          <Route exact path="/">
-            <LandingPage />
-          </Route>
-          <ProtectedRoute path="*" component={<MissingPage />} />
         </Switch>
       </Router>
     </MainWrapper>

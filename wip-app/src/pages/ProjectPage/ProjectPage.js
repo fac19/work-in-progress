@@ -10,7 +10,6 @@ const ProjectPage = () => {
   const [projectData, setProjectData] = React.useState([]);
   const [stepsObject, setStepsObject] = React.useState([]);
   const [addingStep, setAddingStep] = React.useState(false);
-  // const [feedbackObject, setFeedbackObject] = React.useState([]);
 
   const projectId = window.location.pathname.replace("/project/", "");
 
@@ -43,7 +42,11 @@ const ProjectPage = () => {
       .reverse();
   };
 
-  if (!addingStep) {
+  const isLoading = projectData.length === 0;
+
+  if (isLoading) {
+    return <PageHeading>Loading your project...</PageHeading>;
+  } else if (!addingStep) {
     return (
       <>
         <section>

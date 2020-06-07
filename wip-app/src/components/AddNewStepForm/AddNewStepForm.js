@@ -1,7 +1,6 @@
 import React from "react";
 import { Button } from "@material-ui/core";
 import { NewStepSection, NewStepForm } from "./AddNewStepForm.style";
-import { useHistory } from "react-router-dom";
 import { postAddStep } from "../../utils/post-fetch";
 import { postImage } from "../../utils/ext-fetch";
 
@@ -11,7 +10,6 @@ const AddNewStepForm = ({ projectId }) => {
     step_description: "",
   });
   const [file, uploadFile] = React.useState({});
-  const history = useHistory();
   const handleChange = (event) => {
     const { name, value } = event.target;
     setForm({ ...form, [name]: value });
@@ -29,7 +27,7 @@ const AddNewStepForm = ({ projectId }) => {
       postImage(reader.result)
         .then((data) => data.eager[0].url)
         .then((url) => postAddStep(projectId, form, url))
-        .then(() => history.push("/project/" + projectId))
+        .then(() => window.location.reload(false))
         .catch(console.error);
     };
   };

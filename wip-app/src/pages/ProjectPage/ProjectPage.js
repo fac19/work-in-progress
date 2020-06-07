@@ -13,6 +13,17 @@ const ProjectPage = () => {
 
   const projectId = window.location.pathname.replace("/project/", "");
 
+  const authToken = localStorage.getItem("auth");
+  const parseJwt = (token) => {
+    try {
+      return JSON.parse(atob(token.split(".")[1]));
+    } catch (_) {
+      return null;
+    }
+  };
+
+  // console.log(parseJwt(authToken).user);
+
   const handleClick = () => {
     setAddingStep(true);
   };

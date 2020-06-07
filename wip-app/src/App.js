@@ -24,6 +24,7 @@ import { MainWrapper } from "./pages/page.style";
 
 function RouteType({ path, component }) {
   const authorised = localStorage.getItem("auth");
+
   if (authorised) {
     if (path === "/" || path === "/log-in" || path === "/sign-up") {
       return <Redirect to="/feed" />;

@@ -83,6 +83,7 @@ function postAddStep(projectId, stepData, stepURL) {
     },
     error: "Could not add step",
   };
+  return postFetch(options);
 }
 
 export { signUpPost, logInPost, postAddProject, postAddStep };

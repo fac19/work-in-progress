@@ -29,7 +29,8 @@ const AddNewStepForm = ({ projectId }) => {
       postImage(reader.result)
         .then((data) => data.eager[0].url)
         .then((url) => postAddStep(projectId, form, url))
-        .then(() => history.push("/project/" + projectId));
+        .then(() => history.push("/project/" + projectId))
+        .catch(console.error);
     };
   };
 

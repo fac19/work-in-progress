@@ -45,7 +45,7 @@ const ProjectPage = () => {
   const isLoading = projectData.length === 0;
 
   if (isLoading) {
-    return <PageHeading>Loading your project...</PageHeading>;
+    return <PageHeading>Loading project...</PageHeading>;
   } else if (!addingStep) {
     return (
       <>

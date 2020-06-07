@@ -10,6 +10,8 @@ const AddNewStepForm = ({ projectId }) => {
     step_description: "",
   });
   const [file, uploadFile] = React.useState({});
+  const [isUploading, clickUpload] = React.useState("");
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setForm({ ...form, [name]: value });
@@ -21,12 +23,16 @@ const AddNewStepForm = ({ projectId }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    clickUpload("file uploading...");
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onloadend = () => {
       postImage(reader.result)
         .then((data) => data.eager[0].url)
-        .then((url) => postAddStep(projectId, form, url))
+        .then((url) => {
+          clickUpload("done!");
+          postAddStep(projectId, form, url);
+        })
         .then(() => window.location.reload(false))
         .catch(console.error);
     };
@@ -63,6 +69,7 @@ const AddNewStepForm = ({ projectId }) => {
         <Button variant="contained" color="secondary" type="submit">
           Save Step To Project
         </Button>
+        <p>{isUploading}</p>
       </NewStepForm>
     </NewStepSection>
   );

@@ -21,8 +21,7 @@ const ProjectPage = () => {
       return null;
     }
   };
-
-  // console.log(parseJwt(authToken).user);
+  const jwtUserId = authToken ? parseJwt(authToken).user : null;
 
   const handleClick = () => {
     setAddingStep(true);
@@ -39,6 +38,7 @@ const ProjectPage = () => {
   }, [projectId]);
 
   const {
+    user_id,
     username,
     project_name,
     project_description,
@@ -54,6 +54,7 @@ const ProjectPage = () => {
   };
 
   const isLoading = projectData.length === 0;
+  const isYourProject = user_id === jwtUserId;
 
   if (isLoading) {
     return <PageHeading>Loading project...</PageHeading>;
@@ -68,9 +69,11 @@ const ProjectPage = () => {
         </section>
         <section>
           <h2>Project Steps</h2>
-          <Button variant="outlined" color="secondary" onClick={handleClick}>
-            Add New Step
-          </Button>
+          {isYourProject ? (
+            <Button variant="outlined" color="secondary" onClick={handleClick}>
+              Add New Step
+            </Button>
+          ) : null}
           {makeStepCards(stepsObject)}
         </section>
       </>

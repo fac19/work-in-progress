@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "PGDATABASE=wip_test jest -i src/test/*.test.js --watch",
+    "test": "PGDATABASE=wip_test JWT_SECRET=test_secret jest -i src/test/*.test.js --coverage",
+    "test-travis": "CI=true PGDATABASE=travis_ci_test jest -i src/test/*.test.js --coverage",
+    "test:watch": "react-scripts test -u --coverage --watchAll=true",
     "husky-test": "PGDATABASE=wip_test jest -i src/test/*.test.js",
     "start": "node src/server.js",
     "dev": "nodemon src/server.js"

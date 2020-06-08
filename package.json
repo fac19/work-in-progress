@@ -15,7 +15,7 @@
     "test": "npm run app-test && npm run api-test",
     "test:watch": "npm run app-test:watch && cd .. && npm run api-test:watch",
     "initdb": "node wip-rest-api/src/database/build.js",
-    "travis-test": "PGDATABASE=travis_ci_test JWT_SECRET=test_secret npm test",
+    "travis-test": "PGDATABASE=travis_ci_test JWT_SECRET=test_secret npm run app-test && cd wip-rest-api && npm test-travis",
     "prettier": "./node_modules/.bin/prettier . --write",
     "backeslint": "./wip-rest-api/node_modules/.bin/eslint wip-rest-api --fix",
     "i-all": "npm i && cd wip-app && npm i && cd .. && cd wip-rest-api && npm i"

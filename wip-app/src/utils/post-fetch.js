@@ -71,4 +71,19 @@ function postAddProject(projectData) {
   return postFetch(options);
 }
 
-export { signUpPost, logInPost, postAddProject };
+function postAddStep(projectId, stepData, stepURL) {
+  // post request to cloudinary stepData.file -> stepData.step_link
+
+  const options = {
+    endpoint: "steps/" + projectId,
+    body: {
+      step_name: stepData.step_name,
+      step_description: stepData.step_description,
+      step_link: stepURL,
+    },
+    error: "Could not add step",
+  };
+  return postFetch(options);
+}
+
+export { signUpPost, logInPost, postAddProject, postAddStep };

@@ -2,9 +2,9 @@ language: node_js
 node_js: 13
 install:
   - npm ci
-  - cd server-api
+  - cd wip-app
   - npm ci
-  - cd ../client-app
+  - cd ../wip-rest-api
   - npm ci
   - cd ..
 before_script:

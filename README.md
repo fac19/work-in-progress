@@ -9,6 +9,7 @@ Weeks 11-13 Student Project
 Deployed on [Netlify](https://wip-app.netlify.app/)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/fdfedb67-dd70-4820-9e62-1c24f12fa5ab/deploy-status)](https://app.netlify.com/sites/wip-app/deploys)
+
 [![Build Status](https://travis-ci.org/fac19/work-in-progress.svg?branch=master)](https://travis-ci.org/fac19/work-in-progress)
 
 ## In this README

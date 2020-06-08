@@ -8,7 +8,6 @@ install:
   - npm ci
   - cd ..
 before_script:
-  - npm i-all
   - psql -c "create database travis_ci_test;" -U postgres
 script:
   - npm run initdb && npm run travis-test
